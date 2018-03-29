@@ -1,0 +1,46 @@
+/* Header Parallax Element Style*/
+.paral {
+    min-height: 930px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+/* Paragraph for Parallax Section */
+.paral p {
+    font-size: 24px;
+    color:#f5f5f5;
+    text-align: center;
+    line-height: 60px;
+}
+
+/* Heading for Parallax Section */
+.paral h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 60px;
+    text-align: center;
+    padding-top: 60px;
+    line-height: 100px;
+}
+
+/* Image for Parallax Section */
+.paralsec {
+    min-height: 930px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/1280px-4LTrophy928.jpg');
+}
+
+.paralsec2 {
+    min-height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/1200px-4LTrophy.jpg');
+}
+.paralsec3 {
+    min-height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/Renault_4L_Tricolore.JPG');
+}
+
+/* Add more images for more sections */
+
+/* Remove Bottom Margin from Jumbotron */
+.jumbotron{
+    margin-bottom: 0; border-radius: 0 !important;
+}
