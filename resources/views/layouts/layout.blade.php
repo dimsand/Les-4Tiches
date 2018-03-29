@@ -72,16 +72,17 @@
                 <li class="nav-item <?= ((Route::currentRouteName() == 'equipage') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('equipage') }}">L'équipage</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'financement') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('financement') }}">Le financement</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown07">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'sponsors') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('sponsors') }}">Nos sponsors</a>
+                </li>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'projet') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('projet') }}">Le projet</a>
+                </li>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'news') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('news') }}">Les news</a>
                 </li>
             </ul>
             <div class="my-2 my-md-0 text-light text-uppercase compte_rebours">
@@ -104,11 +105,11 @@
             <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
                 <ul class="list-inline mb-2">
                     <li class="list-inline-item">
-                        <a href="#">About</a>
+                        <a href="#">A propos</a>
                     </li>
                     <li class="list-inline-item">&sdot;</li>
                     <li class="list-inline-item">
-                        <a href="#">Contact</a>
+                        <a href="{{ route('contact') }}">Contact</a>
                     </li>
                     <li class="list-inline-item">&sdot;</li>
                     <li class="list-inline-item">

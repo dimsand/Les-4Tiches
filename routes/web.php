@@ -18,3 +18,23 @@ Route::get('/', function () {
 Route::get('/equipage', function () {
     return view('equipage');
 })->name('equipage');
+
+Route::get('/financement', function () {
+    return view('financement');
+})->name('financement');
+
+Route::get('/sponsors', function () {
+    return view('sponsors');
+})->name('sponsors');
+
+Route::get('/projet', function () {
+    return view('projet');
+})->name('projet');
+
+Route::get('/news', function () {
+    return view('news');
+})->name('news');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
