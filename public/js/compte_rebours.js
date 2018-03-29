@@ -28,7 +28,6 @@ function initCompteRebours(conteneur)
 
     lanceCompteRebours = function()
     {
-        console.log(dateFinTeasing);
         var maintenant = new Date(),
             // le temps restant en secondes
             tempsRestant = (dateFinTeasing.getTime() - maintenant.getTime()) / 1000,

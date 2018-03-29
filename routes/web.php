@@ -13,8 +13,8 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
 Route::get('/equipage', function () {
     return view('equipage');
-});
+})->name('equipage');

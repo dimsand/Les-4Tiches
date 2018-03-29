@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Selima";
+    font-style: italic;
+    src: url('fonts/Selima.ttf');
+}
+
+a.brand, h1.brand{
+    font-family: "Selima", Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+a.brand{
+    font-size: 26px;
+    padding: 1px;
+}
+
+h1.brand{
+    font-size: 85px;
+}

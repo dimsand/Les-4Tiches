@@ -51,24 +51,26 @@
     <link href="css/landing-page.min.css" rel="stylesheet">
     <link href="css/parallax.css" rel="stylesheet">
 
+    <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="./">4L Trophy</a>
+        <a class="navbar-brand brand" href="{{ route('home') }}">Les 4Tiches</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'home') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('home') }}">Accueil <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="la-team.html">La team</a>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'equipage') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('equipage') }}">L'équipage</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>

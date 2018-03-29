@@ -5,8 +5,8 @@
 @section('content')
 <!-- First Parallax Section -->
 <div class="jumbotron paral paralsec">
-    <h1 class="display-3">4L Trophy 2019</h1>
-    <p>{Nom-de-la-team}</p>
+    <h1 class="display-3 brand">Les 4Tiches</h1>
+    <p>4L Trophy 2019</p>
     <p class="lead mt-3">Here is a short description 1</p>
     <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mt-5">
         <div class="progress" style="height: 25px; border: solid #333 2px;">
