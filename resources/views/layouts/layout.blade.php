@@ -52,6 +52,7 @@
     <link href="css/parallax.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
+    @yield('stylesheet')
 
 </head>
 
@@ -149,6 +150,7 @@
 <script src="js/jquery/jquery.min.js"></script>
 <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="js/compte_rebours.js"></script>
+@yield('javascript')
 
 <script>
     initCompteRebours($("#navbarsExample07"));

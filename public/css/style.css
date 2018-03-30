@@ -16,3 +16,9 @@ a.brand{
 h1.brand{
     font-size: 85px;
 }
+
+@media (min-width: 768px){
+    .compte_rebours {
+        text-align: right;
+    }
+}

@@ -2,6 +2,10 @@
 
 @section('title', '4L Trophy 2019')
 
+@section('stylesheet')
+    <link href="css/caroussel.css" rel="stylesheet">
+@endsection
+
 @section('content')
 <!-- First Parallax Section -->
 <div class="jumbotron paral paralsec">
@@ -81,6 +85,51 @@
     </div>
 </section>
 
+<section class="testimonials text-center bg-light">
+    <div class="container">
+        <h2 class="mb-5">Nos sponsors</h2>
+        <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                <div class="carousel-item col-md-4 active">
+                    <img class="img-fluid mx-auto d-block" src="//placehold.it/500x300/000/fff?text=1" alt="slide 1">
+                </div>
+                <div class="carousel-item col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="//placehold.it/500x300?text=2" alt="slide 2">
+                </div>
+                <div class="carousel-item col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="//placehold.it/500x300?text=3" alt="slide 3">
+                </div>
+                <div class="carousel-item col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="//placehold.it/500x300?text=4" alt="slide 4">
+                </div>
+                <div class="carousel-item col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="//placehold.it/500x300?text=5" alt="slide 5">
+                </div>
+                <div class="carousel-item col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="//placehold.it/500x300?text=6" alt="slide 6">
+                </div>
+                <div class="carousel-item col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="//placehold.it/500x300?text=7" alt="slide 7">
+                </div>
+                <div class="carousel-item col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="//placehold.it/500x300?text=8" alt="slide 7">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <i class="fa fa-chevron-left fa-lg text-muted"></i>
+                <span class="sr-only">Précédent</span>
+            </a>
+            <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+                <i class="fa fa-chevron-right fa-lg text-muted"></i>
+                <span class="sr-only">Suivant</span>
+            </a>
+        </div>
+        <div class="text-right mt-3">
+            <a href="{{ route('sponsors') }}">Voir en détails</a>
+        </div>
+    </div>
+</section>
+
 <!-- Testimonials -->
 <section class="testimonials text-center bg-light">
     <div class="container">
@@ -134,4 +183,8 @@
         </div>
     </div>
 </section>
+@endsection
+
+@section('javascript')
+    <link href="css/caroussel.css" rel="stylesheet">
 @endsection
