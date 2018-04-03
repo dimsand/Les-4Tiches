@@ -9,18 +9,29 @@
     color: red !important;
 }
 .color_orange{
-    color: #ffb802 !important;
+    color: #ffbd4a !important;
+}
+.color_brown{
+    color: #d39525 !important;
 }
 .bg_color_yellow{
-    background-color: #fff70033 !important;
+    background-color: #fffef5 !important;
+}
+.bg_color_yellow2{
+    background-color: #f7f2cb !important;
 }
 /* END - COLORS */
 
 /* MODIF CLASSES BOOTSTRAP */
 
-.features-icons {
+.features-icons, .testimonials {
     padding-top: 3rem;
     padding-bottom: 3rem;
+}
+
+footer.footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 a.brand, h1.brand{
@@ -56,6 +67,10 @@ footer.footer > *, footer.footer a{
 
 i.fa-facebook{
     color: #386ad2;
+}
+
+.call-to-action {
+    background: url("../img/pret_financer.jpg") no-repeat center center;
 }
 
 /* FIN - MODIF CLASSES BOOTSTRAP */
@@ -176,3 +191,26 @@ nav {
 }
 
 /* END - BACK TO TOP */
+
+/* INDEX */
+
+.features-icons-icon img{
+    height: 90px;
+    transition: all 0.2s;
+}
+
+.features-icons-icon img:hover{
+    height: 100px;
+    transition: all 0.2s;
+}
+
+.features-icons-icon{
+    transition: all 0.2s;
+}
+
+.features-icons-item:hover{
+    color: #d39525;
+    transition: all 0.2s;
+}
+
+/* FIN - INDEX */

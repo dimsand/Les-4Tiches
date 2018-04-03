@@ -105,15 +105,19 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-9 mx-auto">
-                <h2 class="mb-4">Prêt pour faire partie de l'aventure ? Participez au financement !</h2>
+                <h2 class="mb-4">Prêt pour faire partie de l'aventure ?</h2>
+                <h4 class="mb-5">Recevez notre dossier de sponsoring et participez au financement !</h4>
             </div>
-            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mt-2">
                 <form>
                     <div class="form-row">
-                        <div class="col-12 col-md-9 mb-2 mb-md-0">
-                            <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
+                        <div class="col-12 col-md-12 mb-2 mb-md-2">
+                            <input type="email" class="form-control form-control-lg" placeholder="Entrer votre nom">
                         </div>
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-12 mb-2 mb-md-2">
+                            <input type="email" class="form-control form-control-lg" placeholder="Entrer votre email">
+                        </div>
+                        <div class="col-12 col-md-12 mb-2 mb-md-2">
                             <button type="submit" class="btn btn-block btn-lg btn-warning">Participez !</button>
                         </div>
                     </div>
