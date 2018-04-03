@@ -38,3 +38,9 @@ Route::get('/news', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::post('/contact', ['as'=>'contact.store','uses'=>'ContactController@contact']);
+
+Route::get('/mentions-legales', function () {
+    return view('mentions_legales');
+})->name('mentions_legales');
