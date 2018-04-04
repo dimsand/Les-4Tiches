@@ -70,6 +70,9 @@
                 <li class="nav-item <?= ((Route::currentRouteName() == 'home') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('home') }}">Accueil <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'projet') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('projet') }}">Le projet</a>
+                </li>
                 <li class="nav-item <?= ((Route::currentRouteName() == 'equipage') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('equipage') }}">L'équipage</a>
                 </li>
@@ -78,9 +81,6 @@
                 </li>
                 <li class="nav-item <?= ((Route::currentRouteName() == 'sponsors') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('sponsors') }}">Nos sponsors</a>
-                </li>
-                <li class="nav-item <?= ((Route::currentRouteName() == 'projet') ? 'active' : '') ?>">
-                    <a class="nav-link" href="{{ route('projet') }}">Le projet</a>
                 </li>
                 <li class="nav-item <?= ((Route::currentRouteName() == 'news') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('news') }}">Les news</a>
@@ -92,6 +92,9 @@
                 <span class="badge badge-light heures" data-toggle="tooltip" data-placement="bottom" title="Heures">XX</span> : <!-- HEURES -->
                 <span class="badge badge-light minutes" data-toggle="tooltip" data-placement="bottom" title="Minutes">XX</span> : <!-- MINUTES -->
                 <span class="badge badge-light secondes" data-toggle="tooltip" data-placement="bottom" title="Secondes">XX</span> <!-- SECONDES -->
+                <button class="navbar-toggler float-right d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon-cross"><i class="fa fa-times"></i></span>
+                </button>
             </div>
         </div>
     </div>
@@ -99,33 +102,44 @@
 
 @yield('content')
 
-<!-- Call to Action -->
-<section class="call-to-action text-white text-center">
-    <div class="overlay"></div>
+<!-- First Parallax Section -->
+<div class="jumbotron paral paralsec3 text-white text-center">
     <div class="container">
         <div class="row">
-            <div class="col-xl-9 mx-auto">
-                <h2 class="mb-4">Prêt pour faire partie de l'aventure ?</h2>
-                <h4 class="mb-5">Recevez notre dossier de sponsoring et participez au financement !</h4>
+            <div class="col-12 col-lg-8">
+                <div class="col-xl-12 mx-auto">
+                    <h2 class="mb-4">Prêt pour faire partie de l'aventure ?</h2>
+                    <h4 class="mb-5">Recevez notre dossier de sponsoring et participez au financement !</h4>
+                </div>
+                <div class="col-md-12 col-lg-9 col-xl-9 mx-auto mt-2">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-12 col-md-12 mb-2 mb-md-2">
+                                <input type="email" class="form-control form-control-lg" placeholder="Entrer votre nom">
+                            </div>
+                            <div class="col-12 col-md-12 mb-2 mb-md-2">
+                                <input type="email" class="form-control form-control-lg" placeholder="Entrer votre email">
+                            </div>
+                            <div class="col-12 col-md-12 mb-2 mb-md-2">
+                                <button type="submit" class="btn btn-block btn-lg btn-warning">Me recontacter !</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mt-2">
-                <form>
-                    <div class="form-row">
-                        <div class="col-12 col-md-12 mb-2 mb-md-2">
-                            <input type="email" class="form-control form-control-lg" placeholder="Entrer votre nom">
-                        </div>
-                        <div class="col-12 col-md-12 mb-2 mb-md-2">
-                            <input type="email" class="form-control form-control-lg" placeholder="Entrer votre email">
-                        </div>
-                        <div class="col-12 col-md-12 mb-2 mb-md-2">
-                            <button type="submit" class="btn btn-block btn-lg btn-warning">Participez !</button>
-                        </div>
-                    </div>
-                </form>
+
+            <div class="col-12 col-lg-4 mt-5 mt-lg-5">
+                <div class="col-xl-12 mx-auto">
+                    <h4 class="mb-4">Ou via notre programme de financement participatif</h4>
+                </div>
+                <div class="col-md-12 col-lg-9 col-xl-9 mx-auto mt-2">
+                    {!! Html::image('img/helloasso-logo-couleurs-2015.png', 'Amitié', array('class' => 'logo_helloasso mb-3')) !!}
+                    <a href="" class="btn btn-lg btn-success big_btn mt-3">Je donne !</a>
+                </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Footer -->
 <footer class="footer bg-light">
@@ -133,10 +147,6 @@
         <div class="row">
             <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
                 <ul class="list-inline mb-2">
-                    <li class="list-inline-item">
-                        <a href="#">A propos</a>
-                    </li>
-                    <li class="list-inline-item">&sdot;</li>
                     <li class="list-inline-item">
                         <a href="{{ route('contact') }}">Contact</a>
                     </li>

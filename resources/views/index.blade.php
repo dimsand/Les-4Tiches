@@ -83,9 +83,11 @@
             <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/soyez_de_ceux.jpg');"></div>
             <div class="col-lg-6 my-auto showcase-text">
                 <h2>Participez au financement</h2>
-                <p class="lead mb-0">Pour participez au financement</p>
+                <p class="lead mb-0">Nous n’avons pas la <span class="font-weight-bold color_red">prétention</span> de bouleverser l’ordre des choses. Mais, malgré notre jeune âge et
+                    notre statut d’étudiants, nous désirons apporter notre <span class="font-weight-bold color_red">pierre à l’édifice</span>.
+                    Nous voulons aider ceux qui en ont <span class="font-weight-bold color_red">besoin</span>, mais nous n’y arriverons pas sans votre <span class="font-weight-bold color_red">support</span>. </p>
                 <p class="lead mt-5">
-                    <a class="btn btn-danger btn-lg btn-md" href="{{ route('financement') }}">C'est par ici !</a>
+                    <a class="btn btn-danger btn-lg btn-md" href="{{ route('financement') }}">Apprendre à nous aider</a>
                 </p>
             </div>
         </div>

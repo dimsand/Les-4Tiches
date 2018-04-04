@@ -3,16 +3,23 @@
     font-style: italic;
     src: url('fonts/Selima.ttf');
 }
+@font-face {
+    font-family: "Graduate";
+    src: url('fonts/Graduate-Regular.ttf');
+}
 
 /* COLORS */
 .color_red{
-    color: red !important;
+    color: #ff3232 !important;
 }
 .color_orange{
     color: #ffbd4a !important;
 }
 .color_brown{
     color: #d39525 !important;
+}
+.color_brown2{
+    color: #56472a !important;
 }
 .bg_color_yellow{
     background-color: #fffef5 !important;
@@ -23,6 +30,15 @@
 /* END - COLORS */
 
 /* MODIF CLASSES BOOTSTRAP */
+
+h2.graduate_font{
+    font-family: "Graduate", Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+p.fs-18{
+    font-size: 18px;
+}
 
 .features-icons, .testimonials {
     padding-top: 3rem;
@@ -71,6 +87,30 @@ i.fa-facebook{
 
 .call-to-action {
     background: url("../img/pret_financer.jpg") no-repeat center center;
+}
+
+.btn.big_btn{
+    padding: 25px 52px;
+}
+
+.collapse.show {
+    background-color: #343a40;
+    padding: 15px;
+    margin-top: 155px;
+}
+
+.navbar-toggler-icon-cross {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.bg-light-transp {
+    background-color: #f8f9fae3!important;
 }
 
 /* FIN - MODIF CLASSES BOOTSTRAP */
@@ -214,3 +254,9 @@ nav {
 }
 
 /* FIN - INDEX */
+
+.logo_helloasso{
+    width: 100%;
+    background-color: #ffffffcf;
+    border-radius: 5px;
+}
