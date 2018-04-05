@@ -50,6 +50,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/landing-page.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/parallax.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     @yield('stylesheet')
@@ -109,7 +110,7 @@
             <div class="col-12 col-lg-8">
                 <div class="col-xl-12 mx-auto">
                     <h2 class="mb-4">Prêt pour faire partie de l'aventure ?</h2>
-                    <h4 class="mb-5">Recevez notre dossier de sponsoring et participez au financement !</h4>
+                    <h4 class="lead mb-5">Recevez notre dossier de sponsoring et participez au financement !</h4>
                 </div>
                 <div class="col-md-12 col-lg-9 col-xl-9 mx-auto mt-2">
                     <form>
@@ -130,11 +131,11 @@
 
             <div class="col-12 col-lg-4 mt-5 mt-lg-5">
                 <div class="col-xl-12 mx-auto">
-                    <h4 class="mb-4">Ou via notre programme de financement participatif</h4>
+                    <p class="mb-4">Ou via notre programme de financement participatif</p>
                 </div>
                 <div class="col-md-12 col-lg-9 col-xl-9 mx-auto mt-2">
                     {!! Html::image('img/helloasso-logo-couleurs-2015.png', 'Amitié', array('class' => 'logo_helloasso mb-3')) !!}
-                    <a href="" class="btn btn-lg btn-success big_btn mt-3">Je donne !</a>
+                    <a id="btn_je_donne_botton" href="" class="btn btn-lg btn-success big_btn mt-3">Je donne !</a>
                 </div>
             </div>
         </div>
@@ -187,6 +188,45 @@
 <script src="{{ asset('js/compte_rebours.js') }}"></script>
 
 <script>
+    $.fn.extend({
+        animateCss: function(animationName, callback) {
+            var animationEnd = (function(el) {
+                var animations = {
+                    animation: 'animationend',
+                    OAnimation: 'oAnimationEnd',
+                    MozAnimation: 'mozAnimationEnd',
+                    WebkitAnimation: 'webkitAnimationEnd',
+                };
+
+                for (var t in animations) {
+                    if (el.style[t] !== undefined) {
+                        return animations[t];
+                    }
+                }
+            })(document.createElement('div'));
+
+            this.addClass('animated ' + animationName).one(animationEnd, function() {
+                $(this).removeClass('animated ' + animationName);
+
+                if (typeof callback === 'function') callback();
+            });
+
+            return this;
+        },
+    });
+
+    $('#btn_je_donne_botton').hover(function() {
+        $(this).animateCss('tada');
+    });
+
+    $(document).on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+    });
+
     initCompteRebours($("#navbarsExample07"));
 
     $(function () {

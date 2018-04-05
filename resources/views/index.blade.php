@@ -4,25 +4,24 @@
 
 @section('stylesheet')
     <link href="css/caroussel.css" rel="stylesheet">
+    <link href="css/write_text.css" rel="stylesheet">
 @endsection
 
 @section('content')
 <!-- First Parallax Section -->
 <div class="jumbotron paral paralsec mt-5">
-    <h1 class="display-3 brand">Les 4Tiches</h1>
+    <h1 id="title_brand" class="display-3 brand">Les 4Tiches</h1>
     <p>4L Trophy 2019</p>
-    <p class="lead mt-3">Here is a short description 1</p>
-    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mt-5">
-        <div class="progress" style="height: 25px; border: solid #333 2px;">
-            <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%">25%</div>
-        </div>
+    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mt-5 mb-5">
+        <p id="dialog1" class="text-left">« Dis, tu voudrais faire le 4L Trophy avec moi ? »</p>
+        <p id="dialog2" class="text-right">« Mais oui ! Carrément ! »</p>
     </div>
-    <p class="lead mt-5">
-        <a class="btn btn-warning btn-lg btn-md" href="">Nous soutenir</a>
-    </p>
+    <div class="lead mt-5 text-center">
+        <div id="chevron_voir_plus" class="scroll-indicator fa fa-chevron-down"></div>
+    </div>
 </div>
 
-<section class="showcase">
+<section class="showcase" id="debut_pres_home">
     <div class="container-fluid p-0">
         <div class="row no-gutters bg_color_yellow2">
             <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/photos_nous/IMG_20180401_191738.jpg');"></div>
@@ -143,4 +142,24 @@
 
 @section('javascript')
     <script src="{{ asset('js/caroussel.js') }}"></script>
+
+    <script>
+        $('#title_brand').animateCss('flipInX', function() {
+            $('#dialog1').show();
+            $('#dialog1').animateCss('bounceInLeft', function() {
+                $('#dialog2').show();
+                $('#dialog2').animateCss('bounceInRight', function() {
+                    $("#chevron_voir_plus").css({ 'margin-top': ($("#dialog2").offset().top) + 'px' });
+                    $('#chevron_voir_plus').fadeIn();
+                });
+            });
+        });
+
+        $(document).on('click', "#chevron_voir_plus", function(){
+            $('html, body').animate({
+                scrollTop: ($("#debut_pres_home").offset().top) - 55
+            }, 1000);
+        });
+    </script>
+
 @endsection

@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- First Parallax Section -->
-<div class="jumbotron paral paralsec2 mt-5">
+<div class="jumbotron paral paralsec_news mt-5">
     <h1 class="display-3">Les news</h1>
 </div>
 

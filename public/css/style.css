@@ -8,6 +8,11 @@
     src: url('fonts/Graduate-Regular.ttf');
 }
 
+@font-face {
+    font-family: "Arimo";
+    src: url('fonts/Arimo-Regular.ttf');
+}
+
 /* COLORS */
 .color_red{
     color: #ff3232 !important;
@@ -34,6 +39,10 @@
 h2.graduate_font{
     font-family: "Graduate", Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
     font-weight: 700;
+}
+
+p.arimo_font, div.arimo_font{
+    font-family: "Arimo", Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 p.fs-18{
@@ -259,4 +268,36 @@ nav {
     width: 100%;
     background-color: #ffffffcf;
     border-radius: 5px;
+}
+
+/* ANIMATION */
+#chevron_voir_plus, #dialog1, #dialog2{
+    display: none;
+}
+
+.scroll-indicator {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+@-webkit-keyframes bounce {
+    0% { top: 15%; }
+    50%   { top: 20%; }
+    100% { top: 15%; }
+}
+
+@keyframes bounce {
+    0% { top: 15%; }
+    50%   { top: 20%; }
+    100% { top: 15%; }
+}
+/* FIN - ANIMATION */
+
+#chevron_voir_plus{
+    cursor: pointer;
 }

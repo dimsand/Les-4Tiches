@@ -25,8 +25,8 @@
 
 /* Image for Parallax Section */
 .paralsec {
-    min-height: 880px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/1280px-4LTrophy928.jpg');
+    min-height: 675px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/1280px-4LTrophy928.jpg');
 }
 
 .paralsec2 {
@@ -40,6 +40,11 @@
 .paralsec-projet {
     min-height: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/enfants_aventure.JPG');
+}
+.paralsec_news {
+    background-size: contain;
+    min-height: 330px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/4l_carton.jpg');
 }
 
 /* Add more images for more sections */
