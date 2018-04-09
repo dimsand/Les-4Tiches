@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <meta charset="utf-8"> <!-- utf-8 works for most cases -->
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
     <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <title>Notre dossier de sponsoring - Les 4Tiches</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <!-- Web Font / @font-face : BEGIN -->
     <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
@@ -13,6 +13,11 @@
     <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
     <!--[if mso]>
     <style>
+        @font-face {
+            font-family: "Selima";
+            font-style: italic;
+            src: url('{{ $message->embed(public_path() . "/css/fonts/Selima.ttf") }}');
+        }
         * {
             font-family: sans-serif !important;
         }
@@ -192,20 +197,12 @@
 
 </head>
 <body width="100%" bgcolor="#222222" style="margin: 0; mso-line-height-rule: exactly;">
-<center style="width: 100%; background: #222222; text-align: left;">
+<center style="width: 100%; text-align: left; background: linear-gradient(45deg, #c19240 2.5%, #ffbd4a 2.5%, #ffbd4a 47.5%, #c19240 47.5%, #c19240 52.5%, #ffbd4a 52.5%, #ffbd4a 97.5%, #c19240 97.5%); background-size: 40px 40px; background-position: 0px 50px;">
 
-    <!-- Visually Hidden Preheader Text : BEGIN -->
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-        (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
+        Demande de contact de Les 4Tiches. Vous serez recontacter prochainement.
     </div>
-    <!-- Visually Hidden Preheader Text : END -->
 
-    <!--
-        Set the email width. Defined in two places:
-        1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
-        2. MSO tags for Desktop Windows Outlook enforce a 680px width.
-        Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
-    -->
     <div style="max-width: 680px; margin: auto;" class="email-container">
         <!--[if mso]>
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" align="center">
@@ -216,8 +213,7 @@
         <!-- Email Header : BEGIN -->
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
             <tr>
-                <td style="padding: 20px 0; text-align: center">
-                    <img src="{{ $message->embed(public_path() . '/img/2-transparent.png') }}" height="75" alt="alt_text" border="0" style="height: 20px; background: #dddddd;  font-size: 20px; line-height: 140%; color: #ffffff; border-radius: 50%;"/>
+                <td style="padding: 20px 0; text-align: center; font-size: 8px;">
                     <a href="https://les4tiches.fr" style="color: #ffffff !important; font-family: sans-serif; font-weight: normal;">Les 4Tiches</a>
                 </td>
             </tr>
@@ -229,34 +225,40 @@
 
             <!-- 1 Column Text + Button : BEGIN -->
             <tr>
-                <td bgcolor="#ffffff">
+                <td bgcolor="#fffef5">
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td style="padding: 40px 40px 20px; text-align: center;">
-                                <h1 style="margin: 0; font-family: sans-serif; font-size: 24px; line-height: 125%; color: #333333; font-weight: normal;">Demande du formulaire de contact</h1>
+                                <h1 style="margin: 0; font-family: 'Selima'; font-size: 24px; line-height: 125%; color: #ffbd4a; font-weight: normal; border: #ff5c5c solid 3px; padding: 16px;">
+                                    <img src="{{ $message->embed(public_path() . '/img/2-transparent.png') }}" height="50" alt="alt_text" border="0" style="height: 50px; font-size: 20px; line-height: 140%; border-radius: 50%;"/>
+                                    <a href="https://les4tiches.fr" style="color: #ff5c5c !important; font-family: 'Selima', Lato,'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: normal; text-decoration: none;">Les 4Tiches</a>
+                                </h1>
                             </td>
                         </tr>
                         <tr>
                             <td style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555; text-align: left;">
-                                <strong>Nom :</strong> {{$name}}<br>
-                                <strong>Email :</strong> {{$email}}<br>
-                                {{--<strong>Sujet :</strong> {{$subject}}<br>--}}
-                                <p style="background-color: #222222; text-align: center; color: #ffffff; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 10px;"><strong>Message :</strong></p>{!! $body_message !!}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555;">
-                                <!-- Button : BEGIN -->
-                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto;">
-                                    <tr>
-                                        <td style="border-radius: 3px; background: #222222; text-align: center;" class="button-td">
-                                            <a href="https://les4tiches.fr/login" style="background: #222222; border: 15px solid #222222; font-family: sans-serif; font-size: 13px; line-height: 110%; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a">
-                                                <span style="color:#ffffff;" class="button-link">Administration</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <!-- Button : END -->
+                                <p style="background-color: #ffbd4a; text-align: center; color: #ffffff; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 10px;"><strong>Ce n'est que le début d'une grande histoire !</strong></p>
+                                <p>
+                                    {!! $name !!},<br>
+                                    Si vous recevez cet email, c'est que vous êtes en partie sensibilisé à la cause humanitaire du <strong>Raid 4L Trophy</strong>. Nous vous <strong>remercions</strong> donc pour l'engouement que vous portez à nos ambitions pour le projet.
+                                </p>
+                                <p>
+                                    Nous vous joignons dans cet email notre <strong>dossier de sponsoring</strong> qui vous permettra de nous découvrir et de comprendre nos objectifs à accomplir lors de cette <strong>aventure</strong>.
+                                </p>
+                                <p>
+                                    Nous mettons à disposition différents moyens, pour que les plus <strong>gros sponsors</strong> comme les <strong>petites bourses</strong> puissent nous aider à leur manière.<br>
+                                    <a href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy">Voir notre page de financement participatif</a>
+                                </p>
+                                <p>Si vous avez la moindre question avant que l'on vous recontacte, vous pouvez déjà <strong>répondre à cet email</strong>, ou nous contacter <strong>par téléphone</strong> :
+                                <ul>
+                                    <li><strong>Dimitri Sandron :</strong> 06.48.59.19.03</li>
+                                    <li><strong>Rémi Sany :</strong> 06.41.98.09.21</li>
+                                </ul>
+                                Nous vous répondrons le plus rapidement possible.
+                                </p>
+                                <p>
+                                    Enfin, n'hésitez pas à parcourir notre <a href="https://les4tiches.fr">Site internet</a> si ce n'est pas encore fait. Celui-ci complètera notre plaquette de présentation (joint à ce mail). Ou encore visiter notre <a href="https://www.facebook.com/Les4Tiches/">Page Facebook</a> sur laquelle vous pourrez suivre nos dernières actualités de l'association Les 4Tiches.
+                                </p>
                             </td>
                         </tr>
 
@@ -271,12 +273,10 @@
         <!-- Email Footer : BEGIN -->
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px; font-family: sans-serif; color: #888888; font-size: 12px; line-height: 140%;">
             <tr>
-                <td style="padding: 40px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #888888;" class="x-gmail-data-detectors">
-                    <webversion style="color: #cccccc; text-decoration: underline; font-weight: bold;">Version web de cet email</webversion>
-                    <br><br>
-                    Les 4Tiches<br>contact@les4tiches.fr<br>00.00.00.00.00
-                    <br><br>
-                    <unsubscribe style="color: #888888; text-decoration: underline;">Se désinscrire</unsubscribe>
+                <td style="padding: 20px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #4c4c4c !important;" class="x-gmail-data-detectors">
+                    Les 4Tiches<br><a href="mailto:contact@les4tiches.fr">contact@les4tiches.fr</a>
+                    {{--<br><br>--}}
+                    {{--<unsubscribe style="color: #888888; text-decoration: underline;">Se désinscrire</unsubscribe>--}}
                 </td>
             </tr>
         </table>
@@ -290,7 +290,7 @@
     </div>
 
     <!-- Full Bleed Background Section : BEGIN -->
-    <table role="presentation" bgcolor="#709f2b" cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
+    <table role="presentation" bgcolor="#ff5c5c" cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
         <tr>
             <td valign="top" align="center">
                 <div style="max-width: 680px; margin: auto;" class="email-container">
@@ -302,7 +302,9 @@
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td style="padding: 20px; text-align: center; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #ffffff;">
-                                <p style="margin: 0;">Copyrights Les 4Tiches 2018</p>
+                                <p style="margin: 0;">Copyrights Les 4Tiches 2018
+                                    <a href="https://www.facebook.com/Les4Tiches/"><img src="{{ $message->embed(public_path() . '/img/facebook.png') }}" height="30" alt="alt_text" border="0" style="height: 30px; font-size: 20px; line-height: 140%; border-radius: 50%;"/></a>
+                                </p>
                             </td>
                         </tr>
                     </table>

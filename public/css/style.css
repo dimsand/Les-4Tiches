@@ -309,7 +309,7 @@ nav {
     border:none;
 }
 
-#haPropulsedBy{
+.haPropulsedBy{
     width: 100%;
     text-align: right;
     font-size: 10px;

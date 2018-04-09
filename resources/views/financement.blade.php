@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- First Parallax Section -->
-<div class="jumbotron paral paralsec2 mt-5">
+<div class="jumbotron paral paralsec_financ mt-5">
     <h1 class="display-3">Nous soutenir</h1>
 </div>
 
@@ -20,7 +20,7 @@
 </section>
 
 <!-- First Parallax Section -->
-<div class="jumbotron paral paralsec3">
+<div class="jumbotron paral paralsec_budget">
     <h1 class="display-3">Budget souhaité</h1>
 </div>
 
@@ -45,14 +45,15 @@
                 enabled: true,
                 alpha: 45,
                 beta: 0
-            }
+            },
+            backgroundColor:'rgba(255, 255, 255, 0.0)'
         },
         credits: false,
         title: {
             text: null
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>'
         },
         plotOptions: {
             pie: {
@@ -67,19 +68,19 @@
         },
         series: [{
             type: 'pie',
-            name: 'Browser share',
+            name: "Part du budget",
             data: [
-                ['Firefox', 45.0],
-                ['IE', 26.8],
+                ['Inscription', 3200],
                 {
-                    name: 'Chrome',
-                    y: 12.8,
+                    name: 'Achat + Préparation 4L',
+                    y: 3500,
                     sliced: true,
                     selected: true
                 },
-                ['Safari', 8.5],
-                ['Opera', 6.2],
-                ['Others', 0.7]
+                ['Essence / Péages', 1000],
+                ['Assurances', 350],
+                ['Fournitures scolaires', 300],
+                ['Divers', 250]
             ]
         }]
     });

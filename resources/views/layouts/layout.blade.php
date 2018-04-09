@@ -118,20 +118,20 @@
                                 <input type="email" name="email" class="form-control form-control-lg" placeholder="Entrer votre email">
                             </div>
                             <div class="col-12 col-md-12 mb-2 mb-md-2">
-                                <button type="submit" id="contactMeSubmit" class="btn btn-block btn-lg btn-warning">Me recontacter !</button>
+                                <button type="submit" id="contactMeSubmit" class="btn btn-block btn-lg btn-warning"><span class="loader"></span>Me recontacter !</button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
 
-            <div class="col-12 col-lg-4 mt-5 mt-lg-5">
+            <div class="col-12 col-lg-4 mt-5 mt-lg-2">
                 <div class="col-xl-12 mx-auto">
                     <p class="mb-4">Ou via notre programme de financement participatif</p>
                 </div>
                 <div class="col-md-12 col-lg-9 col-xl-9 mx-auto mt-2">
                     {!! Html::image('img/helloasso-logo-couleurs-2015.png', 'Amitié', array('class' => 'logo_helloasso mb-3')) !!}
-                    <a id="btn_je_donne_botton" href="" class="btn btn-lg btn-success big_btn mt-3">Je donne !</a>
+                    <a id="btn_je_donne_botton" target="_blank" href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy" class="btn btn-lg btn-success big_btn mt-3">Je donne !</a>
                 </div>
             </div>
         </div>
@@ -265,7 +265,8 @@
 
     $('#contactMeForm').submit(function(e){
         e.preventDefault();
-        console.log('TEST');
+        $('#contactMeSubmit').attr("disabled", true);
+        $('#contactMeSubmit span.loader').html('<img style="height: 30px;" src="img/Spinner-1s-200px.gif">');
         const $form = $('#contactMeForm');
         const data = {
             "name": $form.find('[name="name"]').val(),
@@ -278,8 +279,15 @@
             data: data,
             // contentType: "json"
         }).done(function( json ) {
-            console.log(json);
+            $('#contactMeSubmit span.loader').html('');
+            $('#contactMeSubmit').removeAttr("disabled");
+            $form.find('[name="name"]').val('');
+            $form.find('[name="email"]').val('');
             alertify.alert("Nous vous avons envoyé notre dossier de sponsoring. Nous vous recontacterons dans les plus brefs délais.");
+        }).fail(function( error ) {
+            $('#contactMeSubmit').removeAttr("disabled");
+            $('#contactMeSubmit span.loader').html('');
+            alertify.alert("Erreur. Veuillez réessayer ultérieurement.");
         });
     });
 
