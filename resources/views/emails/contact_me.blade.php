@@ -240,7 +240,7 @@
                             <td style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555; text-align: left;">
                                 <strong>Nom :</strong> {{$name}}<br>
                                 <strong>Email :</strong> {{$email}}<br>
-                                <strong>Sujet :</strong> {{$subject}}<br>
+                                {{--<strong>Sujet :</strong> {{$subject}}<br>--}}
                                 <p style="background-color: #222222; text-align: center; color: #ffffff; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 10px;"><strong>Message :</strong></p>{!! $body_message !!}
                             </td>
                         </tr>

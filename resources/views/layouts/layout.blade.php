@@ -39,15 +39,12 @@
 
     <title>Les 4Tiches - @yield('title')</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
     <link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/fonts/Lato_font.css') }}" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
     <link href="{{ asset('css/landing-page.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/parallax.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
@@ -103,7 +100,6 @@
 
 @yield('content')
 
-<!-- First Parallax Section -->
 <div class="jumbotron paral paralsec3 text-white text-center">
     <div class="container">
         <div class="row">
@@ -113,16 +109,16 @@
                     <h4 class="lead mb-5">Recevez notre dossier de sponsoring et participez au financement !</h4>
                 </div>
                 <div class="col-md-12 col-lg-9 col-xl-9 mx-auto mt-2">
-                    <form>
+                    <form id="contactMeForm">
                         <div class="form-row">
                             <div class="col-12 col-md-12 mb-2 mb-md-2">
-                                <input type="email" class="form-control form-control-lg" placeholder="Entrer votre nom">
+                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Entrer votre nom">
                             </div>
                             <div class="col-12 col-md-12 mb-2 mb-md-2">
-                                <input type="email" class="form-control form-control-lg" placeholder="Entrer votre email">
+                                <input type="email" name="email" class="form-control form-control-lg" placeholder="Entrer votre email">
                             </div>
                             <div class="col-12 col-md-12 mb-2 mb-md-2">
-                                <button type="submit" class="btn btn-block btn-lg btn-warning">Me recontacter !</button>
+                                <button type="submit" id="contactMeSubmit" class="btn btn-block btn-lg btn-warning">Me recontacter !</button>
                             </div>
                         </div>
                     </form>
@@ -142,7 +138,6 @@
     </div>
 </div>
 
-<!-- Footer -->
 <footer class="footer bg-light">
     <div class="container">
         <div class="row">
@@ -185,20 +180,22 @@
 
 <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/highcharts.js') }}"></script>
 <script src="{{ asset('js/compte_rebours.js') }}"></script>
+<script src="{{ asset('js/alertify.js') }}"></script>
 
 <script>
     $.fn.extend({
         animateCss: function(animationName, callback) {
-            var animationEnd = (function(el) {
-                var animations = {
+            const animationEnd = (function(el) {
+                const animations = {
                     animation: 'animationend',
                     OAnimation: 'oAnimationEnd',
                     MozAnimation: 'mozAnimationEnd',
                     WebkitAnimation: 'webkitAnimationEnd',
                 };
 
-                for (var t in animations) {
+                for (let t in animations) {
                     if (el.style[t] !== undefined) {
                         return animations[t];
                     }
@@ -244,16 +241,11 @@
     });
 
     jQuery(document).ready(function($){
-        // browser window scroll (in pixels) after which the "back to top" link is shown
-        var offset = 300,
-            //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+        const offset = 300,
             offset_opacity = 1200,
-            //duration of the top scrolling animation (in ms)
             scroll_top_duration = 700,
-            //grab the "back to top" link
             $back_to_top = $('.cd-top');
 
-        //hide or show the "back to top" link
         $(window).scroll(function(){
             ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
             if( $(this).scrollTop() > offset_opacity ) {
@@ -261,7 +253,6 @@
             }
         });
 
-        //smooth scroll to top
         $back_to_top.on('click', function(event){
             event.preventDefault();
             $('body,html').animate({
@@ -270,6 +261,26 @@
             );
         });
 
+    });
+
+    $('#contactMeForm').submit(function(e){
+        e.preventDefault();
+        console.log('TEST');
+        const $form = $('#contactMeForm');
+        const data = {
+            "name": $form.find('[name="name"]').val(),
+            "email": $form.find('[name="email"]').val(),
+            "_token": "{{ csrf_token() }}"
+        };
+        $.ajax({
+            type: "POST",
+            url: "{{ route('contactMe') }}",
+            data: data,
+            // contentType: "json"
+        }).done(function( json ) {
+            console.log(json);
+            alertify.alert("Nous vous avons envoyé notre dossier de sponsoring. Nous vous recontacterons dans les plus brefs délais.");
+        });
     });
 
 </script>

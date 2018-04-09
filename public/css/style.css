@@ -120,6 +120,7 @@ i.fa-facebook{
 
 .bg-light-transp {
     background-color: #f8f9fae3!important;
+    background-color: rgba(248, 249, 250, 0.90) !important;
 }
 
 /* FIN - MODIF CLASSES BOOTSTRAP */
@@ -300,4 +301,16 @@ nav {
 
 #chevron_voir_plus{
     cursor: pointer;
+}
+
+#haWidget{
+    height: 440px;
+    width:100%;
+    border:none;
+}
+
+#haPropulsedBy{
+    width: 100%;
+    text-align: right;
+    font-size: 10px;
 }

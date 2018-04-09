@@ -41,6 +41,8 @@ Route::get('/contact', function () {
 
 Route::post('/contact', ['as'=>'contact.store','uses'=>'ContactController@contact']);
 
+Route::post('/contactMe', ['uses'=>'ContactController@ajax_contactMe'])->name('contactMe');
+
 Route::get('/mentions-legales', function () {
     return view('mentions_legales');
 })->name('mentions_legales');

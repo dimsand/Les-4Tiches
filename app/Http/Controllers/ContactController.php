@@ -35,4 +35,27 @@ class ContactController extends Controller
             });
         return redirect('/contact')->with('success', 'Votre message a bien été envoyé.');
     }
+
+
+    /**
+     * @param Request $request
+     */
+    public function ajax_contactMe(Request $request){
+
+        $name = $request->input('name');
+        $email = $request->input('email');
+
+        $subiect = "Test Sujet";
+        $message = "Test Message";
+
+        Mail::send(['html' => 'emails.contact_me'], [
+            'name'=>$name,
+            'email'=>$email,
+            'body_message'=>$message
+        ], function($m) use($email, $subiect) {
+            $m->from($email);
+            $m->to('exemple@google.com')->subject($subiect);
+        });
+        echo json_encode(array('rc'=>0, "msg"=>"Success !"));
+    }
 }
