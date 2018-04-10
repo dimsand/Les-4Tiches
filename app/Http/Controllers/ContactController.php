@@ -45,16 +45,19 @@ class ContactController extends Controller
         $name = $request->input('name');
         $email = $request->input('email');
 
-        $subiect = "Test Sujet";
-        $message = "Test Message";
+        $subiect = "Notre dossier de présentation - Les 4Tiches";
 
         Mail::send(['html' => 'emails.contact_me'], [
             'name'=>$name,
-            'email'=>$email,
-            'body_message'=>$message
-        ], function($m) use($email, $subiect) {
-            $m->from($email);
-            $m->to('exemple@google.com')->subject($subiect);
+            'email'=>$email
+        ], function($m) use($email, $name, $subiect) {
+            $m->from('contact@les4tiches.fr', "Les 4Tiches");
+            $m->to($email, $name);
+            $m->subject($subiect);
+            $m->attach('docs/plaquette_v1.pdf', array(
+                    'as' => 'plaquette-sponsoring-les4tiches.pdf',
+                    'mime' => 'application/pdf')
+            );
         });
         echo json_encode(array('rc'=>0, "msg"=>"Success !"));
     }

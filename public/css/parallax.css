@@ -35,7 +35,23 @@
 }
 .paralsec3 {
     min-height: 200px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/Renault_4L_Tricolore.JPG');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/raid_contact.jpg');
+}
+.paralsec_equipage {
+    min-height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/nous_equiage_rogne.jpg');
+}
+.paralsec_notre_4l {
+    min-height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/notre_4l.jpg');
+}
+.paralsec_financ {
+    min-height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/financ_nous_soutenir.JPG');
+}
+.paralsec_budget {
+    min-height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/img_budget.jpg');
 }
 .paralsec-projet {
     min-height: 200px;
