@@ -3,12 +3,11 @@
 @section('title', 'News')
 
 @section('content')
-<!-- First Parallax Section -->
+
 <div class="jumbotron paral paralsec_news mt-5">
     <h1 class="display-3">Les news</h1>
 </div>
 
-<!-- Icons Grid -->
 <section class="features-icons bg-light text-center">
     <div class="container">
 

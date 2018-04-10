@@ -2,13 +2,38 @@
 
 @section('title', 'Le projet')
 
-@section('content')
-<!-- First Parallax Section -->
-{{--<div class="jumbotron paral paralsec2 mt-5">--}}
-    {{--<h1 class="display-3">Défi d’un soir pour une aventure unique</h1>--}}
-{{--</div>--}}
+@section('stylesheet')
+<style>
+    .google-wrapper {
+        position: relative;
+    }
+    #map{
+        width: 100%;
+        height: 55vh;
+    }
+    #google-map-overlay {
+        width  : 100%;
+        height : 55vh;
+        background: #ababab;
+        position: absolute;
+        opacity: 0.3;
+        top: 0px;
+        left: 0px;
+        z-index: 99;
+        -webkit-transition: opacity 1s linear;
+        -moz-transition: opacity 1s linear;
+        -ms-transition: opacity 1s linear;
+        -o-transition: opacity 1s linear;
+        transition: opacity 1s linear;
+    }
+    #google-map-overlay:hover {
+        opacity: 0.05;
+    }
+</style>
+@endsection
 
-<!-- Icons Grid -->
+@section('content')
+
 <div class="jumbotron paral paralsec-projet text-white text-center">
     <section class="features-icons bg-light-transp text-center mt-5 container">
         <div class="row p-5">
@@ -61,4 +86,277 @@
     </section>
 </div>
 
+<div class="google-wrapper">
+    <div id="map"></div>
+    <div id="google-map-overlay">
+</div>
+
+@endsection
+
+@section('javascript')
+<script>
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 38.90230847621309, lng: -0.393521881103549},
+            zoom: 5,
+            styles: [
+                {
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#ebe3cd"
+                        }
+                    ]
+                },
+                {
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#523735"
+                        }
+                    ]
+                },
+                {
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#f5f1e6"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#c9b2a6"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.land_parcel",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#dcd2be"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.land_parcel",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#ae9e90"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#dfd2ae"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#dfd2ae"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#93817c"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#a5b076"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#447530"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#f5f1e6"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.arterial",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#fdfcf8"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#f8c967"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#e9bc62"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway.controlled_access",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#e98d58"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway.controlled_access",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#db8555"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.local",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#806b63"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit.line",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#dfd2ae"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit.line",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#8f7d77"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit.line",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#ebe3cd"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit.station",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#dfd2ae"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#b9d3c2"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#92998d"
+                        }
+                    ]
+                }
+            ]
+        });
+        const directionsService = new google.maps.DirectionsService;
+        const directionsDisplay = new google.maps.DirectionsRenderer({
+            polylineOptions: {
+                strokeColor: "#ff5c5c",
+            },
+            suppressMarkers: true
+        });
+        const pointLyon = new google.maps.LatLng(45.764043, 4.835658999999964),
+            pointMarrakech = new google.maps.LatLng(31.6294723, -7.981084499999952);
+        const markerLyon = new google.maps.Marker({
+                position: pointLyon,
+                title: "Départ",
+                label: "Départ",
+                map: map,
+                icon: null
+            }),
+            markerMarakech = new google.maps.Marker({
+                position: pointMarrakech,
+                title: "Arrivée",
+                label: "Arrivée",
+                map: map,
+                icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+            });
+        // get route from A to B
+        calculateAndDisplayRoute(directionsService, directionsDisplay, pointLyon, pointMarrakech);
+        directionsDisplay.setMap(map);
+    }
+
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+        directionsService.route({
+            origin: pointA,
+            destination: pointB,
+            travelMode: google.maps.TravelMode.DRIVING
+        }, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                console.log(response);
+                directionsDisplay.setDirections(response);
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvP14jqA8gnxJmnTINe_VQKciUGW8gOkk&callback=initMap"></script>
 @endsection

@@ -3,12 +3,11 @@
 @section('title', 'L\'équipage')
 
 @section('content')
-<!-- First Parallax Section -->
+
 <div class="jumbotron paral paralsec2 mt-5">
     <h1 class="display-3">Présentation de l'équipage</h1>
 </div>
 
-<!-- Icons Grid -->
 <section class="features-icons bg-light text-center">
     <div class="container">
         <div class="row">
@@ -21,12 +20,10 @@
     </div>
 </section>
 
-<!-- First Parallax Section -->
 <div class="jumbotron paral paralsec3">
     <h1 class="display-3">Présentation de notre 4L</h1>
 </div>
 
-<!-- Icons Grid -->
 <section class="features-icons bg-light text-center">
     <div class="container">
         <div class="row">

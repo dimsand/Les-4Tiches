@@ -3,12 +3,12 @@
 @section('title', '4L Trophy 2019')
 
 @section('stylesheet')
-    <link href="css/caroussel.css" rel="stylesheet">
-    <link href="css/write_text.css" rel="stylesheet">
+    <link href="{{ asset('css/caroussel.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/write_text.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
-<!-- First Parallax Section -->
+
 <div class="jumbotron paral paralsec mt-5">
     <h1 id="title_brand" class="display-3 brand">Les 4Tiches</h1>
     <p>4L Trophy 2019</p>
@@ -142,7 +142,6 @@
 
 @section('javascript')
     <script src="{{ asset('js/caroussel.js') }}"></script>
-
     <script>
         $('#title_brand').animateCss('flipInX', function() {
             $('#dialog1').show();
