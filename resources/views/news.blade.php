@@ -109,13 +109,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/politics.jpg" alt="">
-                    <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">News</span> </div>
+                <div class="card"> {!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'img-fluid')) !!}
+                    <div class="card-img-overlay"> <span class="badge badge-pill badge-danger">Association</span> </div>
                     <div class="card-body">
                         <div class="news-title">
-                            <h2 class=" title-small"><a href="#">Syria war: Why the battle for Aleppo matters</a></h2>
+                            <h2 class=" title-small"><a href="#">Demande de création d'association effectuée</a></h2>
                         </div>
-                        <p class="card-text"><small class="text-time"><em>3 mins ago</em></small></p>
+                        <p class="card-text"><small class="text-time"><em>il y a 9 jours</em></small></p>
                     </div>
                 </div>
                 <div class="card"> <img class="img-fluid" src="http://grafreez.com/wp-content/temp_demos/river/img/travel.jpg" alt="">

@@ -46,3 +46,7 @@ Route::post('/contactMe', ['uses'=>'ContactController@ajax_contactMe'])->name('c
 Route::get('/mentions-legales', function () {
     return view('mentions_legales');
 })->name('mentions_legales');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
