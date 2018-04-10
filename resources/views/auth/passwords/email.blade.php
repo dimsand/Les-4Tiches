@@ -1,4 +1,8 @@
-@extends('layouts.admin')
+@extends('layouts.auth_layout')
+
+@section('title', 'Mot de passe oublié
+    <!-- partial -->
+    <div class="content-wrapper">')
 
 @section('content')
 <div class="container">

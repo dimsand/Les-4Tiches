@@ -1,4 +1,6 @@
-@extends('layouts.admin')
+@extends('layouts.auth_layout')
+
+@section('title', 'Réinitialiser le mot de passe')
 
 @section('content')
 <div class="container">

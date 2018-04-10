@@ -79,43 +79,31 @@
 <html lang="fr">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Stellar Admin</title>
-    <!-- plugins:css -->
+    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" />
+
     <link rel="stylesheet" href="{{ asset('admin/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/simple-line-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/flag-icon.min.css') }}">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
     <link rel="stylesheet" href="{{ asset('admin/css/chartist.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/jquery-jvectormap.css') }}">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" />
+    <link rel="stylesheet" href="{{ asset('admin/css/admin.css') }}">
+
 </head>
 <body>
 <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
+
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper">
-            <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"></a>
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo_mini.svg" alt="logo"></a>
+            <a class="navbar-brand brand-logo brand color_orange" href="{{ route('admin_dashboard') }}"><span class="color_red">L</span>es <span class="color_red">4</span>Tiches</a>
+            <a class="navbar-brand brand-logo-mini" href="{{ route('admin_dashboard') }}"><img src="{{ asset('admin/images/logo_mini.svg') }}" alt="logo"></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
             <p class="page-name d-none d-lg-block">Hi, Dave Mattew</p>
             <ul class="navbar-nav ml-lg-auto">
-                <li class="nav-item">
-                    <form class="mt-2 mt-md-0 d-none d-lg-block search-input">
-                        <div class="input-group">
-                            <span class="input-group-addon d-flex align-items-center"><i class="icon-magnifier icons"></i></span>
-                            <input type="text" class="form-control" placeholder="Search...">
-                        </div>
-                    </form>
-                </li>
                 <li class="nav-item dropdown mail-dropdown">
                     <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
                         <i class="icon-envelope-letter icons"></i>
@@ -124,7 +112,7 @@
                     <div class="dropdown-menu navbar-dropdown mail-notification dropdownAnimation" aria-labelledby="MailDropdown">
                         <a class="dropdown-item" href="#">
                             <div class="sender-img">
-                                <img src="images/faces/face6.jpg" alt="">
+                                <img src="{{ asset('admin/images/faces/face6.jpg') }}" alt="">
                                 <span class="badge badge-success">&nbsp;</span>
                             </div>
                             <div class="sender">
@@ -134,7 +122,7 @@
                         </a>
                         <a class="dropdown-item" href="#">
                             <div class="sender-img">
-                                <img src="images/faces/face2.jpg" alt="">
+                                <img src="{{ asset('admin/images/faces/face2.jpg') }}" alt="">
                                 <span class="badge badge-success">&nbsp;</span>
                             </div>
                             <div class="sender">
@@ -144,7 +132,7 @@
                         </a>
                         <a class="dropdown-item" href="#">
                             <div class="sender-img">
-                                <img src="images/faces/face3.jpg" alt="">
+                                <img src="{{ asset('admin/images/faces/face3.jpg') }}" alt="">
                                 <span class="badge badge-primary">&nbsp;</span>
                             </div>
                             <div class="sender">
@@ -154,7 +142,7 @@
                         </a>
                         <a class="dropdown-item" href="#">
                             <div class="sender-img">
-                                <img src="images/faces/face4.jpg" alt="">
+                                <img src="{{ asset('admin/images/faces/face4.jpg') }}" alt="">
                                 <span class="badge badge-warning">&nbsp;</span>
                             </div>
                             <div class="sender">
@@ -212,14 +200,9 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item lang-dropdown d-none d-sm-block">
-                    <a class="nav-link" href="#">
-                        <p class="mb-0">English <i class="flag-icon flag-icon-gb"></i></p>
-                    </a>
-                </li>
                 <li class="nav-item d-none d-sm-block profile-img">
                     <a class="nav-link profile-image" href="#">
-                        <img src="images/faces/face4.jpg" alt="profile-img">
+                        <img src="{{ asset('admin/images/faces/face4.jpg') }}" alt="profile-img">
                         <span class="online-status online bg-success"></span>
                     </a>
                 </li>
@@ -229,129 +212,76 @@
             </button>
         </div>
     </nav>
-    <!-- partial -->
+
     <div class="container-fluid page-body-wrapper">
         <div class="row row-offcanvas row-offcanvas-right">
-            <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item nav-category">
-                        <span class="nav-link">GENERAL</span>
+                        <span class="nav-link">ACCUEIL</span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <span class="menu-title">Dashboard</span>
+                        <a class="nav-link" href="{{ route('admin_dashboard') }}">
+                            <span class="menu-title">Tableau de bord</span>
                             <i class="icon-speedometer menu-icon"></i>
                         </a>
                     </li>
+
+                    <li class="nav-item nav-category">
+                        <span class="nav-link">NEWS</span>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/widgets.html">
-                            <span class="menu-title">Widgets</span>
+                        <a class="nav-link" href="{{ route('admin_news') }}">
+                            <span class="menu-title">Liste</span>
+                            <i class="icon-wrench menu-icon"></i>
+                        </a>
+                        <a class="nav-link" href="{{ route('admin_add_news') }}">
+                            <span class="menu-title">Ajouter</span>
                             <i class="icon-wrench menu-icon"></i>
                         </a>
                     </li>
+
                     <li class="nav-item nav-category">
-                        <span class="nav-link">UI FEATURES</span>
+                        <span class="nav-link">SPONSORS</span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                            <span class="menu-title">Basic UI Elements</span>
-                            <i class="icon-layers menu-icon"></i>
+                        <a class="nav-link" href="{{ route('admin_sponsors') }}">
+                            <span class="menu-title">Liste</span>
+                            <i class="icon-wrench menu-icon"></i>
                         </a>
-                        <div class="collapse" id="ui-basic">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/tables/basic-table.html">
-                            <span class="menu-title">Tables</span>
-                            <i class="icon-grid menu-icon"></i>
+                        <a class="nav-link" href="{{ route('admin_add_sponsor') }}">
+                            <span class="menu-title">Ajouter</span>
+                            <i class="icon-wrench menu-icon"></i>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/icons/font-awesome.html">
-                            <span class="menu-title">Icons</span>
-                            <i class="icon-globe menu-icon"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item nav-category">
-                        <span class="nav-link">FORMS</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/forms/basic_elements.html">
-                            <span class="menu-title">Form elements</span>
-                            <i class="icon-flag menu-icon"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item nav-category">
-                        <span class="nav-link">DATA REPRESENTAION</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/charts/flot-chart.html">
-                            <span class="menu-title">Charts</span>
-                            <i class="icon-pie-chart menu-icon"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item nav-category">
-                        <span class="nav-link">SAMPLE PAGES</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                            <span class="menu-title">General Pages</span>
-                            <i class="icon-bubbles menu-icon"></i>
-                        </a>
-                        <div class="collapse" id="auth">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                            </ul>
-                        </div>
                     </li>
                 </ul>
             </nav>
-            <!-- partial -->
             <div class="content-wrapper">
                 @yield('content')
             </div>
-            <!-- content-wrapper ends -->
-            <!-- partial:partials/_footer.html -->
             <footer class="footer">
                 <div class="container-fluid clearfix">
                     <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
                     <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
                 </div>
             </footer>
-            <!-- partial -->
         </div>
-        <!-- row-offcanvas ends -->
     </div>
-    <!-- page-body-wrapper ends -->
 </div>
-<!-- container-scroller -->
 
-<!-- plugins:js -->
 <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
 <script src="{{ asset('admin/js/popper.min.js') }}"></script>
 <script src="{{ asset('admin/js/bootstrap.min.js') }}"></script>
-<!-- endinject -->
-<!-- Plugin js for this page-->
-<script src="node_modules/flot/jquery.flot.js"></script>
-<script src="node_modules/flot/jquery.flot.resize.js"></script>
-<script src="node_modules/flot.curvedlines/curvedLines.js"></script>
-<!-- End plugin js for this page-->
-<!-- inject:js -->
+
+<script src="{{ asset('admin/js/jquery.flot.js') }}"></script>
+<script src="{{ asset('admin/js/jquery.flot.resize.js') }}"></script>
+<script src="{{ asset('admin/js/curvedLines.js') }}"></script>
+
 <script src="{{ asset('admin/js/off-canvas.js') }}"></script>
 <script src="{{ asset('admin/js/misc.js') }}"></script>
-<!-- endinject -->
-<!-- Custom js for this page-->
+
 <script src="{{ asset('admin/js/dashboard.js') }}"></script>
-<!-- End custom js for this page-->
+
 </body>
 
 </html>

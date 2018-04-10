@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Selima";
+    font-style: italic;
+    src: url('../../css/fonts/Selima.ttf');
+}
+@font-face {
+    font-family: "Graduate";
+    src: url('../../css/fonts/Graduate-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Arimo";
+    src: url('../../css/fonts/Arimo-Regular.ttf');
+}
+
+/* COLORS */
+.color_red{
+    color: #ff3232 !important;
+}
+.color_orange{
+    color: #ffbd4a !important;
+}
+.color_brown{
+    color: #d39525 !important;
+}
+.color_brown2{
+    color: #56472a !important;
+}
+.bg_color_yellow{
+    background-color: #fffef5 !important;
+}
+.bg_color_yellow2{
+    background-color: #f7f2cb !important;
+}
+/* END - COLORS */
+
+/* MODIF CLASSES BOOTSTRAP */
+
+h2.graduate_font{
+    font-family: "Graduate", Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+p.arimo_font, div.arimo_font{
+    font-family: "Arimo", Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.navbar .navbar-brand-wrapper .navbar-brand{
+    font-family: "Selima", Lato,'Helvetica Neue', Helvetica, Arial, sans-serif;
+}

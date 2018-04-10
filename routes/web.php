@@ -31,9 +31,8 @@ Route::get('/projet', function () {
     return view('projet');
 })->name('projet');
 
-Route::get('/news', function () {
-    return view('news');
-})->name('news');
+
+Route::get('/news', 'NewsController@index')->name('news');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -49,4 +48,10 @@ Route::get('/mentions-legales', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/&admin-pannel', 'AdminController@index')->name('admin_dashboard');
+
+Route::get('/&admin-pannel/news', 'NewsController@admin_index')->name('admin_news');
+Route::get('/&admin-pannel/news/add', 'NewsController@index')->name('admin_add_news');
+
+Route::get('/&admin-pannel/sponsors', 'SponsorsController@index')->name('admin_sponsors');
+Route::get('/&admin-pannel/sponsors/add', 'SponsorsController@index')->name('admin_add_sponsor');

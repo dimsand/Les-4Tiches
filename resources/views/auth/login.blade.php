@@ -1,4 +1,6 @@
-@extends('layouts.admin')
+@extends('layouts.auth_layout')
+
+@section('title', 'Connexion')
 
 @section('content')
 <div class="container">
@@ -16,7 +18,6 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
