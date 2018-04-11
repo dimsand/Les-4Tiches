@@ -3,49 +3,16 @@
 @section('title', 'News')
 
 <style>
-    body {
-        color: #5a5a5a;
-        font-family: 'Open Sans', Arial, sans-serif;
-        font-size: 15px;
-    }
 
-    h1, h2, h3, h4, h5 {
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    a, a:hover, .btn {
-        outline: none !important;
-    }
-
-    .btn-search {
-        background: #FD3A13;
-        border-color: #FD3A13;
-        color: #fff;
-        padding: 7px 10px
-    }
-
-    .btn-search:hover {
-        background: #ca1b1b;
-        border-color: #ca1b1b
-    }
-
-    section {
+    section.news {
         padding: 30px 0;
-        float: left;
+        /*float: left;*/
         width: 100%
     }
 
     .card {
         float: left;
         width: 100%
-    }
-
-    .navbar {
-        border: medium none;
-        float: left;
-        margin-bottom: 0px;
-        width: 100%;
-        border-radius: 0
     }
 
     .title-large {
@@ -63,23 +30,14 @@
         margin: 6px 0 0;
     }
 
-    .title-x-small {
-        font-size: 18px;
-        margin: 0px;
-    }
-
     .title-large a, .title-small a, .title-x-small a {
         color: inherit
     }
 
-    .banner-sec {
-        float: left;
+    .banner-sec.news {
+        /*float: left;*/
         width: 100%;
         background: #EBEBEB
-    }
-
-    .card-block {
-        padding: 0 10px 10px;
     }
 
     .card-text {
@@ -91,7 +49,7 @@
         font-weight: 600;
     }
 
-    .banner-sec .card-img-overlay {
+    .banner-sec.news .card-img-overlay {
         padding: 0;
         top: 3px;
         left: 7px;
@@ -101,13 +59,6 @@
     header {
         float: left;
         width: 100%
-    }
-
-    .small-top {
-        border-bottom: 1px solid #2b2b2b;
-        float: left;
-        width: 100%;
-        background: #000
     }
 
     .small-top .social-icon {
@@ -138,13 +89,6 @@
         color: #898989
     }
 
-    .top-head {
-        background: #141517;
-        width: 100%;
-        float: left;
-        height: 100px;
-    }
-
     .top-head h1 {
         color: #fff;
         font-size: 36px;
@@ -161,7 +105,7 @@
         margin-left: 5px;
     }
 
-    .top-head .admin-bar {
+    .top-head {
         text-align: right;
         margin-top: 22px;
     }
@@ -200,12 +144,6 @@
         margin-left: 18px;
     }
 
-    .top-nav {
-        background: #fff;
-        padding: 0;
-        border-bottom: 1px solid #dbdbdb
-    }
-
     .top-nav .nav-link {
         padding-bottom: 0.7rem;
         padding-top: 0.7rem;
@@ -229,24 +167,8 @@
         border-bottom: 2px solid #FD3A13
     }
 
-    .top-nav .form-control {
-        border-color: #fff
-    }
-
-    .navbar-toggle {
-        background: #fff;
-    }
-
-    .navbar-toggle .icon-bar {
-        background: #0A2E61;
-    }
-
-    .navbar-brand {
-        display: none;
-    }
-
     .top-slider .carousel-indicators {
-        bottom: 0
+        bottom: -30px;
     }
 
     .top-slider .carousel-indicators li {
@@ -257,207 +179,40 @@
         background: #000;
     }
 
-    .side-bar .nav-tabs {
-        border-bottom: none;
-    }
-
-    .side-bar .nav-tabs .nav-link {
-        color: #aeaeae;
-        text-transform: uppercase;
-        border: none;
-    }
-
-    .side-bar .nav-tabs .nav-link.active, .side-bar .nav-tabs .nav-link:hover {
-        border-bottom: 2px solid #ff0000;
-        text-transform: uppercase;
-        color: #222
-    }
-
-    .sidebar-tabing .media {
-        margin-top: 20px
-    }
-
-    .sidebar-tabing img {
-        width: 120px;
-        height: 100px;
-    }
-
-    .sidebar-tabing .title-small {
-        line-height: 23px;
-        margin-top: 5px;
-        font-size: 18px
-    }
-
-    #search {
-        float: right;
-        margin-top: 9px;
-        width: 250px;
-    }
-
-    .search {
-        padding: 5px 0;
-        width: 230px;
-        height: 30px;
-        position: relative;
-        left: 10px;
-        float: left;
-        line-height: 22px;
-    }
-
-    .search input {
-        background: #d0d0d0;
-        border: medium none;
-        border-radius: 3px 0 0 3px;
-        float: left;
-        height: 36px;
-        line-height: 18px;
-        margin-left: 210px;
-        padding: 0 9px;
-        position: absolute;
-        top: -3px;
-        width: 0;
-        -webkit-transition: all 0.7s ease-in-out;
-        -moz-transition: all 0.7s ease-in-out;
-        -o-transition: all 0.7s ease-in-out;
-        transition: all 0.7s ease-in-out;
-    }
-
-    .search:hover input, .search input:focus {
-        width: 200px;
-        margin-left: 0px;
-        background: #d0d0d0;
-    }
-
-    .top-nav .btn {
-        position: absolute;
-        right: 0;
-        top: -3px;
-        border-radius: 3px;
-    }
-
-    .banner-sec {
-        float: left;
+    .banner-sec.news {
+        /*float: left;*/
         width: 100%;
     }
 
-    .banner-sec .news-block {
+    .banner-sec.news .news-block {
         margin-bottom: 20px
     }
 
-    .banner-sec .news-block:last-child {
+    .banner-sec.news .news-block:last-child {
         margin-bottom: 0px
     }
 
-    .banner-sec .news-des {
+    .banner-sec.news .news-des {
         margin-bottom: 5px;
     }
 
-    .banner-sec .title-large {
+    .banner-sec.news .title-large {
         margin: 18px 0 0
     }
 
-    .banner-sec .time {
+    .banner-sec.news .time {
         margin-top: 0px;
         font-size: 13px;
     }
 
-    .banner-sec .carousel-control.left, .banner-sec .carousel-control.right {
+    .banner-sec.news .carousel-control.left, .banner-sec.news .carousel-control.right {
         background: none;
     }
 
-    .banner-sec .card {
+    .banner-sec.news .card {
         margin-bottom: 20px;
     }
 
-    .section-01 {
-        float: left;
-        width: 100%;
-        border-top: 1px solid #d5d5d5;
-        border-bottom: 1px solid #d5d5d5;
-        background-color: #f8f9fa;
-    }
-
-    .section-01 .heading-large {
-        border-bottom: 2px solid #222;
-        color: #222;
-        float: left;
-        width: 100%;
-        padding: 0 0 6px;
-        margin: 0 0 18px;
-        text-align: left;
-    }
-
-    .section-01 .heading-large::before, .section-01 .heading-large::after {
-        background: transparent;
-    }
-
-    .section-01 .heading-small {
-        border-bottom: 2px solid #222;
-        color: #222;
-        float: left;
-        margin: 7px 0 0;
-        width: 100%;
-        padding-bottom: 10px;
-        font-size: 18px
-    }
-
-    .section-01 .title-small {
-        margin-bottom: 5px;
-        font-size: 17px
-    }
-
-    .section-01 .news-block {
-        border-bottom: 1px dashed #000;
-        padding-bottom: 30px;
-        border: none;
-    }
-
-    .section-01 aside > .news-block {
-        border-bottom: 1px dashed #000;
-        padding-bottom: 19px;
-    }
-
-    .section-01 aside > .news-block:last-child {
-        border-bottom: none;
-        margin-bottom: 20px
-    }
-
-    .section-01 .card {
-        border: none;
-    }
-
-    .section-01 .card-block {
-        padding: 10px 0;
-    }
-
-    .section-01 .video-sec {
-        float: left;
-        margin-top: 30px;
-        width: 100%;
-    }
-
-    .section-01 .video-block {
-        float: left;
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .action-sec {
-        width: 100%;
-        float: left;
-        background: #222
-    }
-
-    .action-box {
-        float: left;
-        width: 100%;
-        text-align: center;
-    }
-
-    .action-box h2 {
-        color: #fff;
-        font-size: 20px;
-    }
 </style>
 
 @section('content')
@@ -466,66 +221,79 @@
         <h1 class="display-3">Les news</h1>
     </div>
 
-    <section class="banner-sec">
+    <section class="banner-sec news">
         <div class="container">
             <div class="row">
 
-                <div class="col-md-3">
-                    <div class="card"> {!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'img-fluid')) !!}
-                        <div class="card-img-overlay"><span
-                                    class="badge badge-pill badge-danger">{{ $news[0]->category_id }}</span></div>
-                        <div class="card-body">
-                            <div class="news-title">
-                                <h2 class=" title-small"><a href="#">{{ $news[0]->title }}</a></h2>
+                @if(!empty($news[0]))
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-img-top" style="background-image:url('{{ 'uploads/'.$news[0]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
+                                        class="badge badge-pill badge-danger">{{ $news[0]->category_id }}</span></div>
+                            <div class="card-body">
+                                <div class="news-title">
+                                    <h2 class=" title-small"><a href="#">{{ $news[0]->title }}</a></h2>
+                                </div>
+                                <p class="card-text">
+                                    <small class="text-time"><em>il y a 9
+                                            jours {{ $news[0]->created_at->format('d/m/Y') }}</em></small>
+                                </p>
                             </div>
-                            <p class="card-text">
-                                <small class="text-time"><em>il y a 9
-                                        jours {{ $news[0]->created_at->format('d/m/Y') }}</em></small>
-                            </p>
                         </div>
-                    </div>
-                    <div class="card"> {!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'img-fluid')) !!}
-                        <div class="card-img-overlay"><span
-                                    class="badge badge-pill badge-danger">{{ $news[1]->category_id }}</span></div>
-                        <div class="card-body">
-                            <div class="news-title">
-                                <h2 class=" title-small"><a href="#">{{ $news[1]->title }}</a></h2>
+                        @if(!empty($news[1]))
+                            <div class="card">
+                                <div class="card-img-top" style="background-image:url('{{ 'uploads/'.$news[1]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
+                                            class="badge badge-pill badge-danger">{{ $news[1]->category_id }}</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="news-title">
+                                        <h2 class=" title-small"><a href="#">{{ $news[1]->title }}</a></h2>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-time"><em>il y a 9
+                                                jours {{ $news[1]->created_at->format('d/m/Y') }}</em></small>
+                                    </p>
+                                </div>
                             </div>
-                            <p class="card-text">
-                                <small class="text-time"><em>il y a 9
-                                        jours {{ $news[1]->created_at->format('d/m/Y') }}</em></small>
-                            </p>
-                        </div>
+                        @endif
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card"> {!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'img-fluid')) !!}
-                        <div class="card-img-overlay"><span
-                                    class="badge badge-pill badge-danger">{{ $news[2]->category_id }}</span></div>
-                        <div class="card-body">
-                            <div class="news-title">
-                                <h2 class=" title-small"><a href="#">{{ $news[2]->title }}</a></h2>
+                    @if(!empty($news[2]))
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img-top" style="background-image:url('{{ 'uploads/'.$news[2]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
+                                            class="badge badge-pill badge-danger">{{ $news[2]->category_id }}</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="news-title">
+                                        <h2 class=" title-small"><a href="#">{{ $news[2]->title }}</a></h2>
+                                    </div>
+                                    <p class="card-text">
+                                        <small class="text-time"><em>il y a 9
+                                                jours {{ $news[2]->created_at->format('d/m/Y') }}</em></small>
+                                    </p>
+                                </div>
                             </div>
-                            <p class="card-text">
-                                <small class="text-time"><em>il y a 9
-                                        jours {{ $news[2]->created_at->format('d/m/Y') }}</em></small>
-                            </p>
+                            @if(!empty($news[3]))
+                                <div class="card">
+                                    <div class="card-img-top" style="background-image:url('{{ 'uploads/'.$news[3]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
+                                                class="badge badge-pill badge-danger">{{ $news[3]->category_id }}</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="news-title">
+                                            <h2 class=" title-small"><a href="#">{{ $news[3]->title }}</a></h2>
+                                        </div>
+                                        <p class="card-text">
+                                            <small class="text-time"><em>il y a 9
+                                                    jours {{ $news[3]->created_at->format('d/m/Y') }}</em></small>
+                                        </p>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
-                    </div>
-                    <div class="card"> {!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'img-fluid')) !!}
-                        <div class="card-img-overlay"><span
-                                    class="badge badge-pill badge-danger">{{ $news[3]->category_id }}</span></div>
-                        <div class="card-body">
-                            <div class="news-title">
-                                <h2 class=" title-small"><a href="#">{{ $news[3]->title }}</a></h2>
-                            </div>
-                            <p class="card-text">
-                                <small class="text-time"><em>il y a 9
-                                        jours {{ $news[3]->created_at->format('d/m/Y') }}</em></small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                @else
+                    <p>IL n'y a pas encore de news</p>
+                @endif
 
                 <div class="col-md-6 top-slider">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -542,11 +310,11 @@
                                 @if($key <= 2)
                                     <div class="carousel-item @if($key == 0) active @endif">
                                         <div class="news-block">
-                                            <div class="news-media">{!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'img-fluid')) !!}</div>
+                                            <div class="news-media" style="background-image:url('{{ 'uploads/'.$n->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:450px;"></div>
                                             <div class="news-title">
                                                 <h2 class=" title-large"><a href="#">{{ $n->title }}</a></h2>
                                             </div>
-                                            <div class="news-des">{{ $n->content }}</div>
+                                            <div class="news-des">{!! $n->content !!}</div>
                                             <div class="time-text"><strong>2h
                                                     ago {{ $n->created_at->format('d/m/Y') }}</strong></div>
                                             <div></div>
@@ -561,40 +329,39 @@
         </div>
     </section>
 
-    <section class="section-01">
+    <section class="section-01 news">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <h3 class="heading-large">Plus anciennement...</h3>
                     <div class="">
-                        @foreach($news as $key => $n)
-                            @if($key >= 4)
-                                <div class="col-lg-6 card">
-                                    <div class="card">{!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'img-fluid')) !!}
-                                        <div class="card-body">
-                                            <div class="news-title"><a href="#">
-                                                    <h2 class=" title-small">{{ $n->title }}</h2>
-                                                </a></div>
-                                            <p class="card-text">{{ $n->content }}</p>
-                                            <p class="card-text">
-                                                <small class="text-time"><em>3 mins ago {{ $n->created_at->format('d/m/Y H:i') }}</em></small>
-                                            </p>
+                        @if(!empty($news[4]))
+                            @foreach($news as $key => $n)
+                                @if($key >= 4)
+                                    <div class="col-lg-6 card">
+                                        <div class="card">{!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'img-fluid')) !!}
+                                            <div class="card-body">
+                                                <div class="news-title"><a href="#">
+                                                        <h2 class=" title-small">{{ $n->title }}</h2>
+                                                    </a></div>
+                                                <p class="card-text">{{ $n->content }}</p>
+                                                <p class="card-text">
+                                                    <small class="text-time"><em>3 mins
+                                                            ago {{ $n->created_at->format('d/m/Y H:i') }}</em></small>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endif
-                        @endforeach
+                                @endif
+                            @endforeach
+                        @else
+                            <p>Attendons qu'il y ait un peu plus d'actus de notre part :)</p>
+                        @endif
                     </div>
                 </div>
                 <aside class="col-lg-4 side-bar col-md-12">
-                    <h3 class="heading-large">Notre facebook</h3>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content sidebar-tabing" id="nav-tabContent">
-
-                    </div>
+                    <h3 class="heading-large">Nos photos</h3>
                     <div class="video-sec">
-                        <h4 class="heading-small">Nos photos</h4>
                         <div class="video-block">
                             <img class="img-fluid mx-auto d-block" src="img/500x300.png">
                         </div>
@@ -607,75 +374,75 @@
 
 
 
-    <section class="features-icons bg-light text-center">
-        <div class="container">
+    {{--<section class="features-icons bg-light text-center">--}}
+        {{--<div class="container">--}}
 
-            <div class="row">
-                <div class="card mb-3">
-                    {!! Html::image('img/1280px-4LTrophy928.jpg', 'Pré-inscription confirmée !', array('class' => 'card-img-top')) !!}
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fa fa-thumbs-up"></i> Pré-inscription confirmée !</h5>
-                        <p class="card-text">Nous sommes officiellement pré-inscrit pour le 4L Trophy ! A nous
-                            maintenant de finir la création de notre site internet et de notre plaquette de présentation
-                            pour démarcher nos prochains sponsors ! Nous allons créer également prochainement une page
-                            <a href="">Hello Asso</a> afin que chacun puisse participer à son financement simplement.
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">Le 03 avril 2018 à 16h52</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="row">--}}
+                {{--<div class="card mb-3">--}}
+                    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Pré-inscription confirmée !', array('class' => 'card-img-top')) !!}--}}
+                    {{--<div class="card-body">--}}
+                        {{--<h5 class="card-title"><i class="fa fa-thumbs-up"></i> Pré-inscription confirmée !</h5>--}}
+                        {{--<p class="card-text">Nous sommes officiellement pré-inscrit pour le 4L Trophy ! A nous--}}
+                            {{--maintenant de finir la création de notre site internet et de notre plaquette de présentation--}}
+                            {{--pour démarcher nos prochains sponsors ! Nous allons créer également prochainement une page--}}
+                            {{--<a href="">Hello Asso</a> afin que chacun puisse participer à son financement simplement.--}}
+                        {{--</p>--}}
+                        {{--<p class="card-text">--}}
+                            {{--<small class="text-muted">Le 03 avril 2018 à 16h52</small>--}}
+                        {{--</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="row">
-                <div class="card mb-3">
-                    {!! Html::image('img/1280px-4LTrophy928.jpg', 'Page Facebook créée', array('class' => 'card-img-top')) !!}
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fa fa-thumbs-up"></i> Notre page Facebook a été créée !</h5>
-                        <p class="card-text">Pour nous <strong>suivre</strong> plus facilement dans votre fil
-                            d'actualités, n'hésitez pas à <strong>aimer</strong> notre <a
-                                    href="https://www.facebook.com/Les4Tiches/">notre Page Facebook</a>. Nous y
-                            posterons les dernières nouveautés de l'application, ainsi que le suivi de la préparation du
-                            <strong>projet</strong> (association, achat de la 4L, nouveaux sponsors, ...)</p>
-                        <p class="card-text">
-                            <small class="text-muted">Le 01 avril 2018</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="row">--}}
+                {{--<div class="card mb-3">--}}
+                    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Page Facebook créée', array('class' => 'card-img-top')) !!}--}}
+                    {{--<div class="card-body">--}}
+                        {{--<h5 class="card-title"><i class="fa fa-thumbs-up"></i> Notre page Facebook a été créée !</h5>--}}
+                        {{--<p class="card-text">Pour nous <strong>suivre</strong> plus facilement dans votre fil--}}
+                            {{--d'actualités, n'hésitez pas à <strong>aimer</strong> notre <a--}}
+                                    {{--href="https://www.facebook.com/Les4Tiches/">notre Page Facebook</a>. Nous y--}}
+                            {{--posterons les dernières nouveautés de l'application, ainsi que le suivi de la préparation du--}}
+                            {{--<strong>projet</strong> (association, achat de la 4L, nouveaux sponsors, ...)</p>--}}
+                        {{--<p class="card-text">--}}
+                            {{--<small class="text-muted">Le 01 avril 2018</small>--}}
+                        {{--</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="row">
-                <div class="card mb-3">
-                    {!! Html::image('img/1280px-4LTrophy928.jpg', 'Pré-inscription envoyée !', array('class' => 'card-img-top')) !!}
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fa fa-thumbs-up"></i> Pré-inscription envoyée !</h5>
-                        <p class="card-text">Notre dossier de pré-inscription a été transmis au 4L Trophy sous le nom de
-                            notre association : Les 4Tiches. Ce dernier sera aussi notre nom d'équipage. Attendons la
-                            fin de ce week-end de 3 jours, pour avoir plus de nouvelles.</p>
-                        <p class="card-text">
-                            <small class="text-muted">Le 01 avril 2018</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="row">--}}
+                {{--<div class="card mb-3">--}}
+                    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Pré-inscription envoyée !', array('class' => 'card-img-top')) !!}--}}
+                    {{--<div class="card-body">--}}
+                        {{--<h5 class="card-title"><i class="fa fa-thumbs-up"></i> Pré-inscription envoyée !</h5>--}}
+                        {{--<p class="card-text">Notre dossier de pré-inscription a été transmis au 4L Trophy sous le nom de--}}
+                            {{--notre association : Les 4Tiches. Ce dernier sera aussi notre nom d'équipage. Attendons la--}}
+                            {{--fin de ce week-end de 3 jours, pour avoir plus de nouvelles.</p>--}}
+                        {{--<p class="card-text">--}}
+                            {{--<small class="text-muted">Le 01 avril 2018</small>--}}
+                        {{--</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="row">
-                <div class="card mb-3">
-                    {!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'card-img-top')) !!}
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fa fa-building"></i> Création de l'association !</h5>
-                        <p class="card-text">Ca y'est, la demande de création de l'association <strong>Les
-                                4Tiches</strong> a été faite ! Plus qu'à attendre une confirmation de l'enresgitrement
-                            dans le <strong>JOAFE</strong> (JOURNAL OFFICIEL DES ASSOCIATIONS ET FONDATIONS
-                            D'ENTREPRISE) pour une inscription officiellement définitive.</p>
-                        <p class="card-text">
-                            <small class="text-muted">Le 01 avril 2018</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            {{--<div class="row">--}}
+                {{--<div class="card mb-3">--}}
+                    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'card-img-top')) !!}--}}
+                    {{--<div class="card-body">--}}
+                        {{--<h5 class="card-title"><i class="fa fa-building"></i></h5>--}}
+                        {{--<p class="card-text">Ca y'est, la demande de création de l'association <strong>Les--}}
+                                {{--4Tiches</strong> a été faite ! Plus qu'à attendre une confirmation de l'enresgitrement--}}
+                            {{--dans le <strong>JOAFE</strong> (JOURNAL OFFICIEL DES ASSOCIATIONS ET FONDATIONS--}}
+                            {{--D'ENTREPRISE) pour une inscription officiellement définitive.</p>--}}
+                        {{--<p class="card-text">--}}
+                            {{--<small class="text-muted">Le 01 avril 2018</small>--}}
+                        {{--</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
 
 @endsection
 

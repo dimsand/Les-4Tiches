@@ -11,6 +11,10 @@
 |
 */
 
+Auth::routes();
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Route::get('/', function () {
     return view('index');
 })->name('home');
@@ -46,12 +50,12 @@ Route::get('/mentions-legales', function () {
     return view('mentions_legales');
 })->name('mentions_legales');
 
-Auth::routes();
 
 Route::get('/&admin-pannel', 'AdminController@index')->name('admin_dashboard');
 
 Route::get('/&admin-pannel/news', 'NewsController@admin_index')->name('admin_news');
-Route::get('/&admin-pannel/news/add', 'NewsController@index')->name('admin_add_news');
+Route::get('/&admin-pannel/news/add', 'NewsController@add')->name('admin_add_news');
+Route::post('/&admin-pannel/news/store', 'NewsController@store')->name('admin_store_news');
 
 Route::get('/&admin-pannel/sponsors', 'SponsorsController@index')->name('admin_sponsors');
 Route::get('/&admin-pannel/sponsors/add', 'SponsorsController@index')->name('admin_add_sponsor');

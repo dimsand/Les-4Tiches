@@ -20,14 +20,48 @@
 </section>
 
 <div class="jumbotron paral paralsec_budget">
-    <h1 class="display-3">Budget souhaité</h1>
+    <h1 class="display-3">Comment nous aider ?</h1>
 </div>
 
 <section class="features-icons bg-light text-center">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div id="graph_container"></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex" style="margin-bottom: 60px;">
+                                {!! Html::image('img/cheque.png', 'Par chèque', array('class' => 'm-auto', 'style' => 'width: 100% !important; height: auto;')) !!}
+                            </div>
+                            <h3>Par chèque</h3>
+                            <p class="lead mb-0">Un simple don d'argent</p>
+                            <p class="font-weight-normal">Qui sera utilisé correctement.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex" style="margin-bottom: 60px;">
+                                {!! Html::image('img/helloasso-logo-couleurs-2015.png', 'Via notre financement participatif', array('class' => 'm-auto', 'style' => 'width: 100% !important; height: auto;')) !!}
+                            </div>
+                            <h3>Via notre financement participatif</h3>
+                            <p class="lead mb-0">Hello Asso</p>
+                            <p class="font-weight-normal">Une méthode simple pour tous les budgets</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex" style="margin-bottom: 60px;">
+                                {!! Html::image('img/donation.png', 'En nature', array('class' => 'm-auto', 'style' => 'width: 100% !important; height: auto;')) !!}
+                            </div>
+                            <h3>En nature</h3>
+                            <p class="lead mb-0">(fournitures scolaires, équipements sportifs, ...)</p>
+                            <p class="font-weight-normal">Pour les écoles du sud-est marocain</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

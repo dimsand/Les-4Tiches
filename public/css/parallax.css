@@ -3,7 +3,6 @@
     min-height: 930px;
     background-attachment: fixed;
     background-size: cover;
-    background-position: 50% 50%;
 }
 
 /* Paragraph for Parallax Section */
@@ -27,40 +26,49 @@
 .paralsec {
     min-height: 675px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/1280px-4LTrophy928.jpg');
+    background-position: 50% 50%;
 }
 
 .paralsec2 {
     min-height: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/1200px-4LTrophy.jpg');
+    background-position: 50% 50%;
 }
 .paralsec3 {
     min-height: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/raid_contact.jpg');
+    background-position: 50% 50%;
 }
 .paralsec_equipage {
     min-height: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/nous_equiage_rogne.jpg');
+    background-position: 50% 50%;
 }
 .paralsec_notre_4l {
     min-height: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/notre_4l.jpg');
+    background-position: 50% 50%;
 }
 .paralsec_financ {
     min-height: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/financ_nous_soutenir.JPG');
+    background-position: 50% 50%;
 }
 .paralsec_budget {
     min-height: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/img_budget.jpg');
+    background-position: 50% 50%;
 }
 .paralsec-projet {
     min-height: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/enfants_aventure.JPG');
+    background-position: 50% 50%;
 }
 .paralsec_news {
     background-size: contain;
     min-height: 330px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/4l_carton.jpg');
+    background-position: 50% 30% !important;
 }
 
 /* Add more images for more sections */

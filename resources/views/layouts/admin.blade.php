@@ -81,6 +81,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Stellar Admin</title>
     <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" />
 
@@ -102,7 +105,7 @@
             <a class="navbar-brand brand-logo-mini" href="{{ route('admin_dashboard') }}"><img src="{{ asset('admin/images/logo_mini.svg') }}" alt="logo"></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
-            <p class="page-name d-none d-lg-block">Hi, Dave Mattew</p>
+            <p class="page-name d-none d-lg-block">Bonjour {{ Auth::user()->name }}</p>
             <ul class="navbar-nav ml-lg-auto">
                 <li class="nav-item dropdown mail-dropdown">
                     <a class="nav-link count-indicator" id="MailDropdown" href="#" data-toggle="dropdown">
@@ -201,10 +204,13 @@
                     </div>
                 </li>
                 <li class="nav-item d-none d-sm-block profile-img">
-                    <a class="nav-link profile-image" href="#">
+                    <a class="nav-link profile-image" href="#" data-toggle="popover" data-trigger="focus" data-content="<a href='{{ route('logout') }}' onclick='event.preventDefault(); document.getElementById('logout-form').submit();'>Se déconnecter</a>">
                         <img src="{{ asset('admin/images/faces/face4.jpg') }}" alt="profile-img">
                         <span class="online-status online bg-success"></span>
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </li>
             </ul>
             <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center ml-auto" type="button" data-toggle="offcanvas">
@@ -257,6 +263,7 @@
                 </ul>
             </nav>
             <div class="content-wrapper">
+                @include('flash::message')
                 @yield('content')
             </div>
             <footer class="footer">
@@ -272,6 +279,7 @@
 <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
 <script src="{{ asset('admin/js/popper.min.js') }}"></script>
 <script src="{{ asset('admin/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('admin/js/popper.min.js') }}"></script>
 
 <script src="{{ asset('admin/js/jquery.flot.js') }}"></script>
 <script src="{{ asset('admin/js/jquery.flot.resize.js') }}"></script>
@@ -281,6 +289,14 @@
 <script src="{{ asset('admin/js/misc.js') }}"></script>
 
 <script src="{{ asset('admin/js/dashboard.js') }}"></script>
+
+<script>
+    $('.profile-image').popover({
+        trigger: 'focus',
+        html: true,
+        placement: 'bottom'
+    })
+</script>
 
 </body>
 

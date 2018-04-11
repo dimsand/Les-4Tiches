@@ -13,6 +13,10 @@ class News extends Model
      */
     protected $table = 'news';
 
+    protected $fillable = [
+        'title', 'content', 'image', 'category_id', 'author_id'
+    ];
+
     /**
      * The categories that belong to the project.
      */
