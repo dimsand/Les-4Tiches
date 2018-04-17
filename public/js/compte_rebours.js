@@ -12,7 +12,6 @@ function initCompteRebours(conteneur)
 
 
     $.getJSON( "settings.json", function( data ) {
-        console.log(data);
         dateFinTeasing = new Date(data.dateDepartCOurse);
         var items = [];
         $.each( data, function( key, val ) {

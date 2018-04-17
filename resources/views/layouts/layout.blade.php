@@ -2,15 +2,16 @@
 <html lang="fr">
 
 <head>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    {{--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116543519-1"></script>--}}
-    {{--<script>--}}
-        {{--window.dataLayer = window.dataLayer || [];--}}
-        {{--function gtag(){dataLayer.push(arguments);}--}}
-        {{--gtag('js', new Date());--}}
-        {{--gtag('config', 'UA-116543519-1');--}}
-    {{--</script>--}}
+    @if( env('APP_ENV') == 'production' )
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116543519-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-116543519-1');
+        </script>
+    @endif
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,19 +40,18 @@
 
     <title>Les 4Tiches - @yield('title')</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fonts/Lato_font.css') }}" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/landing-page.min.css" rel="stylesheet">
-    <link href="css/parallax.css" rel="stylesheet">
+    <link href="{{ asset('css/landing-page.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/parallax.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
+    @yield('stylesheet')
 
 </head>
 
@@ -59,7 +59,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand brand" href="{{ route('home') }}">Les 4Tiches</a>
+        <a class="navbar-brand brand color_orange" href="{{ route('home') }}"><span class="color_red">L</span>es <span class="color_red">4</span>Tiches</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -69,6 +69,9 @@
                 <li class="nav-item <?= ((Route::currentRouteName() == 'home') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('home') }}">Accueil <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'projet') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('projet') }}">Le projet</a>
+                </li>
                 <li class="nav-item <?= ((Route::currentRouteName() == 'equipage') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('equipage') }}">L'équipage</a>
                 </li>
@@ -77,9 +80,6 @@
                 </li>
                 <li class="nav-item <?= ((Route::currentRouteName() == 'sponsors') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('sponsors') }}">Nos sponsors</a>
-                </li>
-                <li class="nav-item <?= ((Route::currentRouteName() == 'projet') ? 'active' : '') ?>">
-                    <a class="nav-link" href="{{ route('projet') }}">Le projet</a>
                 </li>
                 <li class="nav-item <?= ((Route::currentRouteName() == 'news') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('news') }}">Les news</a>
@@ -91,6 +91,9 @@
                 <span class="badge badge-light heures" data-toggle="tooltip" data-placement="bottom" title="Heures">XX</span> : <!-- HEURES -->
                 <span class="badge badge-light minutes" data-toggle="tooltip" data-placement="bottom" title="Minutes">XX</span> : <!-- MINUTES -->
                 <span class="badge badge-light secondes" data-toggle="tooltip" data-placement="bottom" title="Secondes">XX</span> <!-- SECONDES -->
+                <button class="navbar-toggler float-right d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon-cross"><i class="fa fa-times"></i></span>
+                </button>
             </div>
         </div>
     </div>
@@ -98,65 +101,200 @@
 
 @yield('content')
 
-<!-- Footer -->
+<div class="jumbotron paral paralsec3 text-white text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="col-xl-12 mx-auto">
+                    <h2 class="mb-4">Prêt pour faire partie de l'aventure ?</h2>
+                    <h4 class="lead mb-5">Recevez notre dossier de sponsoring et participez au financement !</h4>
+                </div>
+                <div class="col-md-12 col-lg-9 col-xl-9 mx-auto mt-2">
+                    <form id="contactMeForm">
+                        <div class="form-row">
+                            <div class="col-12 col-md-12 mb-2 mb-md-2">
+                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Entrer votre nom">
+                            </div>
+                            <div class="col-12 col-md-12 mb-2 mb-md-2">
+                                <input type="email" name="email" class="form-control form-control-lg" placeholder="Entrer votre email">
+                            </div>
+                            <div class="col-12 col-md-12 mb-2 mb-md-2">
+                                <button type="submit" id="contactMeSubmit" class="btn btn-block btn-lg btn-warning"><span class="loader"></span>Me recontacter !</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4 mt-5 mt-lg-2">
+                <div class="col-xl-12 mx-auto">
+                    <p class="mb-4">Ou via notre programme de financement participatif</p>
+                </div>
+                <div class="col-md-12 col-lg-9 col-xl-9 mx-auto mt-2">
+                    {!! Html::image('img/helloasso-logo-couleurs-2015.png', 'Amitié', array('class' => 'logo_helloasso mb-3')) !!}
+                    <a id="btn_je_donne_botton" target="_blank" href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy" class="btn btn-lg btn-success big_btn mt-3">Je donne !</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer class="footer bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <div class="col-lg-6 text-center text-lg-left my-auto">
                 <ul class="list-inline mb-2">
-                    <li class="list-inline-item">
-                        <a href="#">A propos</a>
-                    </li>
-                    <li class="list-inline-item">&sdot;</li>
                     <li class="list-inline-item">
                         <a href="{{ route('contact') }}">Contact</a>
                     </li>
                     <li class="list-inline-item">&sdot;</li>
                     <li class="list-inline-item">
-                        <a href="#">Terms of Use</a>
-                    </li>
-                    <li class="list-inline-item">&sdot;</li>
-                    <li class="list-inline-item">
-                        <a href="#">Privacy Policy</a>
+                        <a href="{{ route('mentions_legales') }}">Mentions légales</a>
                     </li>
                 </ul>
                 <p class="text-muted small mb-4 mb-lg-0">&copy; Les 4Tiches 2018. All Rights Reserved.</p>
             </div>
-            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <div class="col-lg-6 text-center text-lg-right my-auto">
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item mr-3">
-                        <a href="#">
+                        <a href="https://www.facebook.com/Les4Tiches/">
                             <i class="fa fa-facebook fa-2x fa-fw"></i>
                         </a>
                     </li>
-                    <li class="list-inline-item mr-3">
-                        <a href="#">
-                            <i class="fa fa-twitter fa-2x fa-fw"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fa fa-instagram fa-2x fa-fw"></i>
-                        </a>
-                    </li>
+                    {{--<li class="list-inline-item mr-3">--}}
+                        {{--<a href="#">--}}
+                            {{--<i class="fa fa-twitter fa-2x fa-fw"></i>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="list-inline-item">--}}
+                        {{--<a href="#">--}}
+                            {{--<i class="fa fa-instagram fa-2x fa-fw"></i>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
                 </ul>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="js/jquery/jquery.min.js"></script>
-<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="js/compte_rebours.js"></script>
+<a href="#0" class="cd-top">Top</a>
+
+<script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/highcharts.js') }}"></script>
+<script src="{{ asset('js/compte_rebours.js') }}"></script>
+<script src="{{ asset('js/alertify.js') }}"></script>
 
 <script>
+    $.fn.extend({
+        animateCss: function(animationName, callback) {
+            const animationEnd = (function(el) {
+                const animations = {
+                    animation: 'animationend',
+                    OAnimation: 'oAnimationEnd',
+                    MozAnimation: 'mozAnimationEnd',
+                    WebkitAnimation: 'webkitAnimationEnd',
+                };
+
+                for (let t in animations) {
+                    if (el.style[t] !== undefined) {
+                        return animations[t];
+                    }
+                }
+            })(document.createElement('div'));
+
+            this.addClass('animated ' + animationName).one(animationEnd, function() {
+                $(this).removeClass('animated ' + animationName);
+
+                if (typeof callback === 'function') callback();
+            });
+
+            return this;
+        },
+    });
+
+    $('#btn_je_donne_botton').hover(function() {
+        $(this).animateCss('tada');
+    });
+
+    $(document).on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+    });
+
     initCompteRebours($("#navbarsExample07"));
 
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
-    })
+    });
+
+    $(document).ready(function() {
+        $(window).on('scroll', function() {
+            if (Math.round($(window).scrollTop()) > 100) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+    });
+
+    jQuery(document).ready(function($){
+        const offset = 300,
+            offset_opacity = 1200,
+            scroll_top_duration = 700,
+            $back_to_top = $('.cd-top');
+
+        $(window).scroll(function(){
+            ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+            if( $(this).scrollTop() > offset_opacity ) {
+                $back_to_top.addClass('cd-fade-out');
+            }
+        });
+
+        $back_to_top.on('click', function(event){
+            event.preventDefault();
+            $('body,html').animate({
+                    scrollTop: 0 ,
+                }, scroll_top_duration
+            );
+        });
+
+    });
+
+    $('#contactMeForm').submit(function(e){
+        e.preventDefault();
+        $('#contactMeSubmit').attr("disabled", true);
+        $('#contactMeSubmit span.loader').html('<img style="height: 30px;" src="img/Spinner-1s-200px.gif">');
+        const $form = $('#contactMeForm');
+        const data = {
+            "name": $form.find('[name="name"]').val(),
+            "email": $form.find('[name="email"]').val(),
+            "_token": "{{ csrf_token() }}"
+        };
+        $.ajax({
+            type: "POST",
+            url: "{{ route('contactMe') }}",
+            data: data,
+            // contentType: "json"
+        }).done(function( json ) {
+            $('#contactMeSubmit span.loader').html('');
+            $('#contactMeSubmit').removeAttr("disabled");
+            $form.find('[name="name"]').val('');
+            $form.find('[name="email"]').val('');
+            alertify.alert("Nous vous avons envoyé notre dossier de sponsoring. Nous vous recontacterons dans les plus brefs délais.");
+        }).fail(function( error ) {
+            $('#contactMeSubmit').removeAttr("disabled");
+            $('#contactMeSubmit span.loader').html('');
+            alertify.alert("Erreur. Veuillez réessayer ultérieurement.");
+        });
+    });
+
 </script>
+
+@yield('javascript')
 
 </body>
 

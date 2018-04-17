@@ -3,16 +3,314 @@
     font-style: italic;
     src: url('fonts/Selima.ttf');
 }
-
-a.brand, h1.brand{
-    font-family: "Selima", Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+@font-face {
+    font-family: "Graduate";
+    src: url('fonts/Graduate-Regular.ttf');
 }
 
-a.brand{
-    font-size: 26px;
+@font-face {
+    font-family: "Arimo";
+    src: url('fonts/Arimo-Regular.ttf');
+}
+
+/* COLORS */
+.color_red{
+    color: #ff3232 !important;
+}
+.color_orange{
+    color: #ffbd4a !important;
+}
+.color_brown{
+    color: #d39525 !important;
+}
+.color_brown2{
+    color: #56472a !important;
+}
+.bg_color_yellow{
+    background-color: #fffef5 !important;
+}
+.bg_color_yellow2{
+    background-color: #f7f2cb !important;
+}
+/* END - COLORS */
+
+/* MODIF CLASSES BOOTSTRAP */
+
+h2.graduate_font{
+    font-family: "Graduate", Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+p.arimo_font, div.arimo_font{
+    font-family: "Arimo", Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+p.fs-18{
+    font-size: 18px;
+}
+
+.features-icons, .testimonials {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer.footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+a.brand, h1.brand{
+    font-family: "Selima", Lato,'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.navbar a.brand{
+    font-size: 35px;
     padding: 1px;
 }
 
 h1.brand{
     font-size: 85px;
+}
+
+@media (min-width: 768px){
+    .compte_rebours {
+        text-align: right;
+    }
+}
+
+.navbar li.active a{
+    color: #ffb802 !important;
+}
+
+footer.footer{
+    background-color: #343a40!important;
+}
+
+footer.footer > *, footer.footer a{
+    color: #ffb802 !important;
+}
+
+i.fa-facebook{
+    color: #386ad2;
+}
+
+.call-to-action {
+    background: url("../img/pret_financer.jpg") no-repeat center center;
+}
+
+.btn.big_btn{
+    padding: 25px 52px;
+}
+
+.collapse.show {
+    background-color: #343a40;
+    padding: 15px;
+    margin-top: 210px;
+}
+
+.navbar-toggler-icon-cross {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.bg-light-transp {
+    background-color: #f8f9fae3!important;
+    background-color: rgba(248, 249, 250, 0.90) !important;
+}
+
+/* FIN - MODIF CLASSES BOOTSTRAP */
+
+/* NAVBAR */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+@supports (position: sticky) {
+    body {
+        padding-top: 0;
+    }
+    nav {
+        position: sticky;
+    }
+}
+
+.navbar {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+.navbar .nav {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    float: right;
+    margin-right: 5%;
+}
+
+.navbar .nav .item {
+    list-style: none;
+    display: inline-block;
+    font-size: 18px;
+    padding: 5px;
+    font-weight: 300;
+    line-height: 80px;
+    margin-right: 20px;
+    transition: 0.5s ease;
+}
+
+.scrolled {
+    transition: 0.5s ease;
+}
+
+.scrolled.navbar {
+    height: 55px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: 0.5s ease;
+}
+
+.scrolled.navbar .item {
+    line-height: 40px;
+    transition: 0.5s ease;
+}
+
+.scrolled.navbar a.brand, .scrolled.navbar a.brand .color_red {
+    font-size: 26px;
+    color: #fff !important;
+}
+
+/* END - NAVBAR */
+
+/* BACK TO TOP */
+
+.cd-top {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    /* image replacement properties */
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: #ffb802 url(../img/cd-top-arrow.svg) no-repeat center 50%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.cd-top.cd-is-visible {
+    /* the button becomes visible */
+    visibility: visible;
+    opacity: 1;
+}
+.cd-top.cd-fade-out {
+    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+    opacity: .5;
+}
+.no-touch .cd-top:hover {
+    background-color: #e86256;
+    opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+    .cd-top {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .cd-top {
+        height: 60px;
+        width: 60px;
+        right: 30px;
+        bottom: 30px;
+    }
+}
+
+/* END - BACK TO TOP */
+
+/* INDEX */
+
+.features-icons-icon img{
+    height: 90px;
+    transition: all 0.2s;
+}
+
+.features-icons-icon img:hover{
+    height: 100px;
+    transition: all 0.2s;
+}
+
+.features-icons-icon{
+    transition: all 0.2s;
+}
+
+.features-icons-item:hover{
+    color: #d39525;
+    transition: all 0.2s;
+}
+
+/* FIN - INDEX */
+
+.logo_helloasso{
+    width: 100%;
+    background-color: #ffffffcf;
+    border-radius: 5px;
+}
+
+/* ANIMATION */
+#chevron_voir_plus, #dialog1, #dialog2{
+    display: none;
+}
+
+.scroll-indicator {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+@-webkit-keyframes bounce {
+    0% { top: 15%; }
+    50%   { top: 20%; }
+    100% { top: 15%; }
+}
+
+@keyframes bounce {
+    0% { top: 15%; }
+    50%   { top: 20%; }
+    100% { top: 15%; }
+}
+/* FIN - ANIMATION */
+
+#chevron_voir_plus{
+    cursor: pointer;
+}
+
+#haWidget{
+    height: 440px;
+    width:100%;
+    border:none;
+}
+
+.haPropulsedBy{
+    width: 100%;
+    text-align: right;
+    font-size: 10px;
 }
