@@ -49,16 +49,24 @@ class ContactController extends Controller
 
         Mail::send(['html' => 'emails.contact_me'], [
             'name'=>$name,
-            'email'=>$email
+            'email'=>$email,
+            'APP_URL' => env('APP_URL')
         ], function($m) use($email, $name, $subiect) {
             $m->from('contact@les4tiches.fr', "Les 4Tiches");
             $m->to($email, $name);
             $m->subject($subiect);
-            $m->attach('docs/plaquette_v1.pdf', array(
-                    'as' => 'plaquette-sponsoring-les4tiches.pdf',
-                    'mime' => 'application/pdf')
-            );
         });
         echo json_encode(array('rc'=>0, "msg"=>"Success !"));
+    }
+
+    public function downloadDossier(){
+        header('Content-Type: application/pdf');
+        header('Content-Length: '. filesize(env('fichier_dossier_presentation')));
+        header('Content-disposition: attachment; filename='. "Dossier de présentation Les4Tiches.pdf");
+        header('Pragma: no-cache');
+        header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+        header('Expires: 0');
+        readfile(env('fichier_dossier_presentation'));
+        exit();
     }
 }

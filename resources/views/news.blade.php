@@ -2,6 +2,7 @@
 
 @section('title', 'News')
 
+@section('stylesheet')
 <style>
 
     section.news {
@@ -214,6 +215,7 @@
     }
 
 </style>
+@endsection
 
 @section('content')
 
@@ -228,7 +230,8 @@
                 @if(!empty($news[0]))
                     <div class="col-md-3">
                         <div class="card">
-                            <div class="card-img-top" style="background-image:url('{{ 'uploads/'.$news[0]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
+                            <div class="card-img-top"
+                                 style="background-image:url('{{ 'uploads/'.$news[0]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
                                         class="badge badge-pill badge-danger">{{ $news[0]->category_id }}</span></div>
                             <div class="card-body">
                                 <div class="news-title">
@@ -242,7 +245,8 @@
                         </div>
                         @if(!empty($news[1]))
                             <div class="card">
-                                <div class="card-img-top" style="background-image:url('{{ 'uploads/'.$news[1]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
+                                <div class="card-img-top"
+                                     style="background-image:url('{{ 'uploads/'.$news[1]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
                                             class="badge badge-pill badge-danger">{{ $news[1]->category_id }}</span>
                                 </div>
                                 <div class="card-body">
@@ -260,7 +264,8 @@
                     @if(!empty($news[2]))
                         <div class="col-md-3">
                             <div class="card">
-                                <div class="card-img-top" style="background-image:url('{{ 'uploads/'.$news[2]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
+                                <div class="card-img-top"
+                                     style="background-image:url('{{ 'uploads/'.$news[2]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
                                             class="badge badge-pill badge-danger">{{ $news[2]->category_id }}</span>
                                 </div>
                                 <div class="card-body">
@@ -275,7 +280,8 @@
                             </div>
                             @if(!empty($news[3]))
                                 <div class="card">
-                                    <div class="card-img-top" style="background-image:url('{{ 'uploads/'.$news[3]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
+                                    <div class="card-img-top"
+                                         style="background-image:url('{{ 'uploads/'.$news[3]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
                                                 class="badge badge-pill badge-danger">{{ $news[3]->category_id }}</span>
                                     </div>
                                     <div class="card-body">
@@ -295,36 +301,39 @@
                     <p>IL n'y a pas encore de news</p>
                 @endif
 
-                <div class="col-md-6 top-slider">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        </ol>
+                @if(!empty($news))
+                    <div class="col-md-6 top-slider">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
 
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            @foreach($news as $key => $n)
-                                @if($key <= 2)
-                                    <div class="carousel-item @if($key == 0) active @endif">
-                                        <div class="news-block">
-                                            <div class="news-media" style="background-image:url('{{ 'uploads/'.$n->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:450px;"></div>
-                                            <div class="news-title">
-                                                <h2 class=" title-large"><a href="#">{{ $n->title }}</a></h2>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                @foreach($news as $key => $n)
+                                    @if($key <= 2)
+                                        <div class="carousel-item @if($key == 0) active @endif">
+                                            <div class="news-block">
+                                                <div class="news-media"
+                                                     style="background-image:url('{{ 'uploads/'.$n->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:450px;"></div>
+                                                <div class="news-title">
+                                                    <h2 class=" title-large"><a href="#">{{ $n->title }}</a></h2>
+                                                </div>
+                                                <div class="news-des">{!! $n->content !!}</div>
+                                                <div class="time-text"><strong>2h
+                                                        ago {{ $n->created_at->format('d/m/Y') }}</strong></div>
+                                                <div></div>
                                             </div>
-                                            <div class="news-des">{!! $n->content !!}</div>
-                                            <div class="time-text"><strong>2h
-                                                    ago {{ $n->created_at->format('d/m/Y') }}</strong></div>
-                                            <div></div>
                                         </div>
-                                    </div>
-                                @endif
-                            @endforeach
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </section>
@@ -375,73 +384,73 @@
 
 
     {{--<section class="features-icons bg-light text-center">--}}
-        {{--<div class="container">--}}
+    {{--<div class="container">--}}
 
-            {{--<div class="row">--}}
-                {{--<div class="card mb-3">--}}
-                    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Pré-inscription confirmée !', array('class' => 'card-img-top')) !!}--}}
-                    {{--<div class="card-body">--}}
-                        {{--<h5 class="card-title"><i class="fa fa-thumbs-up"></i> Pré-inscription confirmée !</h5>--}}
-                        {{--<p class="card-text">Nous sommes officiellement pré-inscrit pour le 4L Trophy ! A nous--}}
-                            {{--maintenant de finir la création de notre site internet et de notre plaquette de présentation--}}
-                            {{--pour démarcher nos prochains sponsors ! Nous allons créer également prochainement une page--}}
-                            {{--<a href="">Hello Asso</a> afin que chacun puisse participer à son financement simplement.--}}
-                        {{--</p>--}}
-                        {{--<p class="card-text">--}}
-                            {{--<small class="text-muted">Le 03 avril 2018 à 16h52</small>--}}
-                        {{--</p>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+    {{--<div class="row">--}}
+    {{--<div class="card mb-3">--}}
+    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Pré-inscription confirmée !', array('class' => 'card-img-top')) !!}--}}
+    {{--<div class="card-body">--}}
+    {{--<h5 class="card-title"><i class="fa fa-thumbs-up"></i> Pré-inscription confirmée !</h5>--}}
+    {{--<p class="card-text">Nous sommes officiellement pré-inscrit pour le 4L Trophy ! A nous--}}
+    {{--maintenant de finir la création de notre site internet et de notre plaquette de présentation--}}
+    {{--pour démarcher nos prochains sponsors ! Nous allons créer également prochainement une page--}}
+    {{--<a href="">Hello Asso</a> afin que chacun puisse participer à son financement simplement.--}}
+    {{--</p>--}}
+    {{--<p class="card-text">--}}
+    {{--<small class="text-muted">Le 03 avril 2018 à 16h52</small>--}}
+    {{--</p>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
 
-            {{--<div class="row">--}}
-                {{--<div class="card mb-3">--}}
-                    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Page Facebook créée', array('class' => 'card-img-top')) !!}--}}
-                    {{--<div class="card-body">--}}
-                        {{--<h5 class="card-title"><i class="fa fa-thumbs-up"></i> Notre page Facebook a été créée !</h5>--}}
-                        {{--<p class="card-text">Pour nous <strong>suivre</strong> plus facilement dans votre fil--}}
-                            {{--d'actualités, n'hésitez pas à <strong>aimer</strong> notre <a--}}
-                                    {{--href="https://www.facebook.com/Les4Tiches/">notre Page Facebook</a>. Nous y--}}
-                            {{--posterons les dernières nouveautés de l'application, ainsi que le suivi de la préparation du--}}
-                            {{--<strong>projet</strong> (association, achat de la 4L, nouveaux sponsors, ...)</p>--}}
-                        {{--<p class="card-text">--}}
-                            {{--<small class="text-muted">Le 01 avril 2018</small>--}}
-                        {{--</p>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+    {{--<div class="row">--}}
+    {{--<div class="card mb-3">--}}
+    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Page Facebook créée', array('class' => 'card-img-top')) !!}--}}
+    {{--<div class="card-body">--}}
+    {{--<h5 class="card-title"><i class="fa fa-thumbs-up"></i> Notre page Facebook a été créée !</h5>--}}
+    {{--<p class="card-text">Pour nous <strong>suivre</strong> plus facilement dans votre fil--}}
+    {{--d'actualités, n'hésitez pas à <strong>aimer</strong> notre <a--}}
+    {{--href="https://www.facebook.com/Les4Tiches/">notre Page Facebook</a>. Nous y--}}
+    {{--posterons les dernières nouveautés de l'application, ainsi que le suivi de la préparation du--}}
+    {{--<strong>projet</strong> (association, achat de la 4L, nouveaux sponsors, ...)</p>--}}
+    {{--<p class="card-text">--}}
+    {{--<small class="text-muted">Le 01 avril 2018</small>--}}
+    {{--</p>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
 
-            {{--<div class="row">--}}
-                {{--<div class="card mb-3">--}}
-                    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Pré-inscription envoyée !', array('class' => 'card-img-top')) !!}--}}
-                    {{--<div class="card-body">--}}
-                        {{--<h5 class="card-title"><i class="fa fa-thumbs-up"></i> Pré-inscription envoyée !</h5>--}}
-                        {{--<p class="card-text">Notre dossier de pré-inscription a été transmis au 4L Trophy sous le nom de--}}
-                            {{--notre association : Les 4Tiches. Ce dernier sera aussi notre nom d'équipage. Attendons la--}}
-                            {{--fin de ce week-end de 3 jours, pour avoir plus de nouvelles.</p>--}}
-                        {{--<p class="card-text">--}}
-                            {{--<small class="text-muted">Le 01 avril 2018</small>--}}
-                        {{--</p>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+    {{--<div class="row">--}}
+    {{--<div class="card mb-3">--}}
+    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Pré-inscription envoyée !', array('class' => 'card-img-top')) !!}--}}
+    {{--<div class="card-body">--}}
+    {{--<h5 class="card-title"><i class="fa fa-thumbs-up"></i> Pré-inscription envoyée !</h5>--}}
+    {{--<p class="card-text">Notre dossier de pré-inscription a été transmis au 4L Trophy sous le nom de--}}
+    {{--notre association : Les 4Tiches. Ce dernier sera aussi notre nom d'équipage. Attendons la--}}
+    {{--fin de ce week-end de 3 jours, pour avoir plus de nouvelles.</p>--}}
+    {{--<p class="card-text">--}}
+    {{--<small class="text-muted">Le 01 avril 2018</small>--}}
+    {{--</p>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
 
-            {{--<div class="row">--}}
-                {{--<div class="card mb-3">--}}
-                    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'card-img-top')) !!}--}}
-                    {{--<div class="card-body">--}}
-                        {{--<h5 class="card-title"><i class="fa fa-building"></i></h5>--}}
-                        {{--<p class="card-text">Ca y'est, la demande de création de l'association <strong>Les--}}
-                                {{--4Tiches</strong> a été faite ! Plus qu'à attendre une confirmation de l'enresgitrement--}}
-                            {{--dans le <strong>JOAFE</strong> (JOURNAL OFFICIEL DES ASSOCIATIONS ET FONDATIONS--}}
-                            {{--D'ENTREPRISE) pour une inscription officiellement définitive.</p>--}}
-                        {{--<p class="card-text">--}}
-                            {{--<small class="text-muted">Le 01 avril 2018</small>--}}
-                        {{--</p>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
+    {{--<div class="row">--}}
+    {{--<div class="card mb-3">--}}
+    {{--{!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'card-img-top')) !!}--}}
+    {{--<div class="card-body">--}}
+    {{--<h5 class="card-title"><i class="fa fa-building"></i></h5>--}}
+    {{--<p class="card-text">Ca y'est, la demande de création de l'association <strong>Les--}}
+    {{--4Tiches</strong> a été faite ! Plus qu'à attendre une confirmation de l'enresgitrement--}}
+    {{--dans le <strong>JOAFE</strong> (JOURNAL OFFICIEL DES ASSOCIATIONS ET FONDATIONS--}}
+    {{--D'ENTREPRISE) pour une inscription officiellement définitive.</p>--}}
+    {{--<p class="card-text">--}}
+    {{--<small class="text-muted">Le 01 avril 2018</small>--}}
+    {{--</p>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
     {{--</section>--}}
 
 @endsection

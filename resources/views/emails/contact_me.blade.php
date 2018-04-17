@@ -249,6 +249,9 @@
                                     Nous mettons à disposition différents moyens, pour que les plus <strong>gros sponsors</strong> comme les <strong>petites bourses</strong> puissent nous aider à leur manière.<br>
                                     <a href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy">Voir notre page de financement participatif</a>
                                 </p>
+                                <p style="text-align: center;">
+                                    Télécharger dorénavent notre <strong><a href="{{ $APP_URL }}docs/dossier_validation_v1">dossier de présentation</a></strong> !
+                                </p>
                                 <p>Si vous avez la moindre question avant que l'on vous recontacte, vous pouvez déjà <strong>répondre à cet email</strong>, ou nous contacter <strong>par téléphone</strong> :
                                 <ul>
                                     <li><strong>Dimitri Sandron :</strong> 06.48.59.19.03</li>
@@ -257,7 +260,7 @@
                                 Nous vous répondrons le plus rapidement possible.
                                 </p>
                                 <p>
-                                    Enfin, n'hésitez pas à parcourir notre <a href="https://les4tiches.fr">Site internet</a> si ce n'est pas encore fait. Celui-ci complètera notre plaquette de présentation (joint à ce mail). Ou encore visiter notre <a href="https://www.facebook.com/Les4Tiches/">Page Facebook</a> sur laquelle vous pourrez suivre nos dernières actualités de l'association Les 4Tiches.
+                                    Enfin, n'hésitez pas à parcourir notre <a href="https://les4tiches.fr">Site internet</a> si ce n'est pas encore fait. Celui-ci complètera notre plaquette de présentation. Ou encore visiter notre <a href="https://www.facebook.com/Les4Tiches/">Page Facebook</a> sur laquelle vous pourrez suivre nos dernières actualités de l'association Les 4Tiches.
                                 </p>
                             </td>
                         </tr>
