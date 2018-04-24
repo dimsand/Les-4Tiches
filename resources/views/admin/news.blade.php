@@ -30,7 +30,7 @@
                             @foreach($news as $n)
                                 <tr>
                                     <td>{{ $n->title }}</td>
-                                    <td>{{ $n->title }}</td>
+                                    <td>{{ $n->title }} ---  {{ $n->content }}</td>
                                     <td>{{ $n->created_at->format('d/m/Y H:i') }}</td>
                                     <td>
                                         <label class="badge badge-danger"><td>{{ $n->category_id }}</td></label>

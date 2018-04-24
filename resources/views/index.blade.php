@@ -28,8 +28,13 @@
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                 <h2>L'équipage</h2>
                 <p class="lead mb-2"><span class="color_red">Rémi Sany</span> et <span class="color_red">Dimitri Sandron</span>, 21 ans, originaires de Lyon.</p>
-                <p class="lead mb-2"><span class="font-weight-bold">Numéro d'équipage :</span> <span class="color_brown">0594</span></p>
-                <p class="lead mb-2"><span class="font-weight-bold">Nom d'équipage :</span> <span class="color_brown">Les 4Tiches</span></p>
+                <p class="lead mb-2"><span class="font-weight-bold">Numéro d'équipage :</span> <span class="color_brown">
+                        {!! Html::image('img/zero.png', '0', array('class' => 'm-auto num_equipage')) !!}
+                        {!! Html::image('img/five.png', '5', array('class' => 'm-auto num_equipage')) !!}
+                        {!! Html::image('img/nine.png', '9', array('class' => 'm-auto num_equipage')) !!}
+                        {!! Html::image('img/four.png', '4', array('class' => 'm-auto num_equipage')) !!}
+                    </span></p>
+                <p class="lead mb-2"><span class="font-weight-bold">Nom d'équipage :</span> <span class="nom_equipage">Les 4Tiches</span></p>
                 <p class="lead mt-5">
                     <a class="btn btn-dark btn-lg btn-md" href="{{ route('equipage') }}">Plus d'infos sur nous</a>
                 </p>
@@ -86,7 +91,7 @@
                     notre statut d’étudiants, nous désirons apporter notre <span class="font-weight-bold color_red">pierre à l’édifice</span>.
                     Nous voulons aider ceux qui en ont <span class="font-weight-bold color_red">besoin</span>, mais nous n’y arriverons pas sans votre <span class="font-weight-bold color_red">support</span>. </p>
                 <p class="lead mt-5">
-                    <a class="btn btn-danger btn-lg btn-md" href="{{ route('financement') }}">Apprendre à nous aider</a>
+                    <a class="btn btn-danger btn-lg btn-md" href="{{ route('financement') }}">Comment nous aider</a>
                 </p>
             </div>
         </div>

@@ -19,6 +19,10 @@
                     </div>
                 @endif
 
+                    <div class="alert alert-info">
+                        Pour toute demande de renseigements, veuillez nous contacter via le formulaire ci-dessous ou via notre adresse email : <a href="mailto:contact@les4tiches.fr">contact@les4tiches.fr</a>.
+                    </div>
+
                 {!! Form::open(['route'=>'contact.store']) !!}
 
                 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
