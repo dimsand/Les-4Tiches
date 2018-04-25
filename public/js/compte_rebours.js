@@ -22,7 +22,7 @@ function initCompteRebours(conteneur)
     // Ajoute un zéro si le nombre est inférieur à 10
     formateNombre = function(n)
     {
-        return (n < 10 ? '0' : '') + n;
+        return "J-" + (n < 10 ? '0' : '') + n;
     };
 
     lanceCompteRebours = function()
@@ -43,18 +43,18 @@ function initCompteRebours(conteneur)
         j = Math.floor(tempsRestant / 86400);
         tempsRestant -= j * 86400;
 
-        // nombre d'heures restantes
-        h = Math.floor(tempsRestant / 3600);
-        tempsRestant -= h * 3600;
-
-        // nombre de minutes restantes
-        m = Math.floor(tempsRestant / 60);
-        tempsRestant -= m * 60;
+        // // nombre d'heures restantes
+        // h = Math.floor(tempsRestant / 3600);
+        // tempsRestant -= h * 3600;
+        //
+        // // nombre de minutes restantes
+        // m = Math.floor(tempsRestant / 60);
+        // tempsRestant -= m * 60;
 
         jours.text(formateNombre(j));
-        heures.text(formateNombre(h));
-        minutes.text(formateNombre(m));
-        secondes.text(formateNombre(Math.floor(tempsRestant)));
+        // heures.text(formateNombre(h));
+        // minutes.text(formateNombre(m));
+        // secondes.text(formateNombre(Math.floor(tempsRestant)));
     };
 
     // On appelle la fonction toutes les secondes pour obtenir le compte à rebours

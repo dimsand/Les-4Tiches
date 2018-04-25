@@ -33,6 +33,18 @@ class ContactController extends Controller
                 $message->to('contact@les4tiches.fr', 'Les 4Tiches');
                 $message->subject('Nouveau message de contact sur le site Les4Tiches');
             });
+
+        Mail::send(['html' => 'emails.default'],
+            array(
+                'subject' => "Demande de contact",
+                'message_body' => "<p>Vous avez effectuée une demande de contact sur le site <a href='https://les4tiches.fr'>Les 4Tiches</a>.</p><p>Nous reviendrons vers vous le plus rapidement possible.</p>"
+            ), function($message) use($request)
+            {
+                $message->from('contact@les4tiches.fr');
+                $message->to($request->get('email'), $request->get('name'));
+                $message->subject('Demande de contact sur le site Les4Tiches');
+            });
+
         return redirect('/contact')->with('success', 'Votre message a bien été envoyé.');
     }
 
@@ -49,8 +61,7 @@ class ContactController extends Controller
 
         Mail::send(['html' => 'emails.contact_me'], [
             'name'=>$name,
-            'email'=>$email,
-            'APP_URL' => env('APP_URL')
+            'email'=>$email
         ], function($m) use($email, $name, $subiect) {
             $m->from('contact@les4tiches.fr', "Les 4Tiches");
             $m->to($email, $name);

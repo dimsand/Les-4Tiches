@@ -64,6 +64,11 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/enfants_aventure.JPG');
     background-position: 50% 50%;
 }
+.paralsec-medias {
+    min-height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../img/Retombees media 4L 2017.jpg');
+    background-position: 50% 50%;
+}
 .paralsec_news {
     background-size: contain;
     min-height: 330px;
