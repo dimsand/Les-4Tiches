@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
     <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <title>Notre dossier de sponsoring - Les 4Tiches</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <title>{{ $subject }} - Les 4Tiches</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <!-- Web Font / @font-face : BEGIN -->
     <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
 
     <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
     <!--[if !mso]><!-->
-    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
-    <link href='https://webfonts.ffonts.net/Selima.font' rel='stylesheet' type='text/css'>
+    <link href='{{ $message->embed(public_path() . '/css/fonts/Selima.ttf') }} }}' rel='stylesheet' type='text/css'>
     <!--<![endif]-->
 
     <!-- Web Font / @font-face : END -->
@@ -187,7 +186,7 @@
 <center style="width: 100%; text-align: left; background: linear-gradient(45deg, #c19240 2.5%, #ffbd4a 2.5%, #ffbd4a 47.5%, #c19240 47.5%, #c19240 52.5%, #ffbd4a 52.5%, #ffbd4a 97.5%, #c19240 97.5%); background-size: 40px 40px; background-position: 0px 50px;">
 
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-        Demande de contact de Les 4Tiches. Vous serez recontacter prochainement.
+        {{ $subject }}
     </div>
 
     <div style="max-width: 680px; margin: auto;" class="email-container">
@@ -224,30 +223,10 @@
                         </tr>
                         <tr>
                             <td style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555; text-align: left;">
-                                <p style="background-color: #ffbd4a; text-align: center; color: #ffffff; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 10px;"><strong>Ce n'est que le début d'une grande histoire !</strong></p>
-                                <p>
-                                    {!! $name !!},<br>
-                                    Si vous recevez cet email, c'est que vous êtes en partie sensibilisé à la cause humanitaire du <strong>Raid 4L Trophy</strong>. Nous vous <strong>remercions</strong> donc pour l'engouement que vous portez à nos ambitions pour le projet.
-                                </p>
-                                <p>
-                                    Nous vous joignons dans cet email notre <strong>dossier de sponsoring</strong> qui vous permettra de nous découvrir et de comprendre nos objectifs à accomplir lors de cette <strong>aventure</strong>.
-                                </p>
-                                <p>
-                                    Nous mettons à disposition différents moyens, pour que les plus <strong>gros sponsors</strong> comme les <strong>petites bourses</strong> puissent nous aider à leur manière.<br>
-                                    <a href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy">Voir notre page de financement participatif</a>
-                                </p>
-                                <p style="text-align: center;">
-                                    Télécharger dorénavent notre <strong><a href="{{ $message->embed(public_path() . "docs/plaquette_v1.pdf") }}">dossier de présentation</a></strong> !
-                                </p>
-                                <p>Si vous avez la moindre question avant que l'on vous recontacte, vous pouvez déjà <strong>répondre à cet email</strong>, ou nous contacter <strong>par téléphone</strong> :
-                                <ul>
-                                    <li><strong>Dimitri Sandron :</strong> 06.48.59.19.03</li>
-                                    <li><strong>Rémi Sany :</strong> 06.41.98.09.21</li>
-                                </ul>
-                                Nous vous répondrons le plus rapidement possible.
-                                </p>
-                                <p>
-                                    Enfin, n'hésitez pas à parcourir notre <a href="https://les4tiches.fr">Site internet</a> si ce n'est pas encore fait. Celui-ci complètera notre plaquette de présentation. Ou encore visiter notre <a href="https://www.facebook.com/Les4Tiches/">Page Facebook</a> sur laquelle vous pourrez suivre nos dernières actualités de l'association Les 4Tiches.
+                                <p style="background-color: #ffbd4a; text-align: center; color: #ffffff; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 10px;"><strong>{!! $subject !!}</strong></p>
+                                {!! $message_body !!}
+                                <p style="margin-top: 20px;">
+                                    N'hésitez pas à parcourir notre <a href="https://les4tiches.fr">Site internet</a> si ce n'est pas encore fait. Celui-ci complètera notre plaquette de présentation. Ou encore visiter notre <a href="https://www.facebook.com/Les4Tiches/">Page Facebook</a> sur laquelle vous pourrez suivre nos dernières actualités de l'association Les 4Tiches.
                                 </p>
                             </td>
                         </tr>

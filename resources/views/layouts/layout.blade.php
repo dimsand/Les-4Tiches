@@ -84,13 +84,16 @@
                 <li class="nav-item <?= ((Route::currentRouteName() == 'news') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('news') }}">Les news</a>
                 </li>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'contact') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                </li>
             </ul>
             <div class="my-2 my-md-0 text-light text-uppercase compte_rebours">
                 <i class="fa fa-flag-checkered mr-2" data-toggle="tooltip" data-placement="bottom" title="Départ de la course dans"></i>
-                <span class="badge badge-light jours" data-toggle="tooltip" data-placement="bottom" title="Jours">XX</span> : <!-- JOURS -->
-                <span class="badge badge-light heures" data-toggle="tooltip" data-placement="bottom" title="Heures">XX</span> : <!-- HEURES -->
-                <span class="badge badge-light minutes" data-toggle="tooltip" data-placement="bottom" title="Minutes">XX</span> : <!-- MINUTES -->
-                <span class="badge badge-light secondes" data-toggle="tooltip" data-placement="bottom" title="Secondes">XX</span> <!-- SECONDES -->
+                <span class="badge badge-light jours" data-toggle="tooltip" data-placement="bottom" title="Jours">J-XX</span> <!-- JOURS -->
+                {{--<span class="badge badge-light heures" data-toggle="tooltip" data-placement="bottom" title="Heures">XX</span> : <!-- HEURES -->--}}
+                {{--<span class="badge badge-light minutes" data-toggle="tooltip" data-placement="bottom" title="Minutes">XX</span> : <!-- MINUTES -->--}}
+                {{--<span class="badge badge-light secondes" data-toggle="tooltip" data-placement="bottom" title="Secondes">XX</span> <!-- SECONDES -->--}}
                 <button class="navbar-toggler float-right d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon-cross"><i class="fa fa-times"></i></span>
                 </button>
@@ -119,7 +122,7 @@
                                 <input type="email" name="email" class="form-control form-control-lg" placeholder="Entrer votre email">
                             </div>
                             <div class="col-12 col-md-12 mb-2 mb-md-2">
-                                <button type="submit" id="contactMeSubmit" class="btn btn-block btn-lg btn-warning"><span class="loader"></span>Me recontacter !</button>
+                                <button type="submit" id="contactMeSubmit" class="btn btn-block btn-lg btn-warning"><span class="loader"></span>Nous contacter !</button>
                             </div>
                         </div>
                     </form>
@@ -132,7 +135,7 @@
                 </div>
                 <div class="col-md-12 col-lg-9 col-xl-9 mx-auto mt-2">
                     {!! Html::image('img/helloasso-logo-couleurs-2015.png', 'Amitié', array('class' => 'logo_helloasso mb-3')) !!}
-                    <a id="btn_je_donne_botton" target="_blank" href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy" class="btn btn-lg btn-success big_btn mt-3">Je donne !</a>
+                    <a id="btn_je_donne_botton" target="_blank" href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy" class="btn btn-lg btn-success big_btn mt-3">Je fais un don !</a>
                 </div>
             </div>
         </div>
