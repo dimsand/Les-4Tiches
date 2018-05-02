@@ -256,7 +256,7 @@
                             <img class="img-fluid mx-auto d-block" src="img/500x300.png">
                         </div>
                     </div>
-                    <hr><h3 class="heading-large mt-5">News aléatoires</h3>
+                    <hr><h3 class="heading-large mt-2">News aléatoires</h3>
                     @if(!empty($news))
                         <div class="col-md-12 top-slider">
                             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
