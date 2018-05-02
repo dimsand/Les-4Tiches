@@ -86,6 +86,20 @@
     </section>
 </div>
 
+<!-- Icons Grid -->
+<section class="features-icons text-center bg-yellow-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="lead">Présentation officielle 4L Trophy 2019</p>
+                <div class="facebook-responsive">
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F4l.trophy.officiel%2Fvideos%2F10156521420758846%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="google-wrapper">
     <div id="map"></div>
     <div id="google-map-overlay">

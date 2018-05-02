@@ -60,5 +60,3 @@ Route::post('/&admin-pannel/news/store', 'NewsController@store')->name('admin_st
 Route::get('/&admin-pannel/sponsors', 'SponsorsController@index')->name('admin_sponsors');
 Route::get('/&admin-pannel/sponsors/add', 'SponsorsController@index')->name('admin_add_sponsor');
 
-
-Route::get('/docs/dossier_validation_v1', 'ContactController@downloadDossier')->name('downloadDossier');
