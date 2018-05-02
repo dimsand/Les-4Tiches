@@ -237,7 +237,7 @@
                                     <a href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy">Voir notre page de financement participatif</a>
                                 </p>
                                 <p style="text-align: center;">
-                                    Télécharger dorénavent notre <strong><a href="{{ $message->embed(public_path() . "docs/plaquette_v1.pdf") }}">dossier de présentation</a></strong> !
+                                    Télécharger dorénavent notre <strong><a href="{{ $lien_plaquette_pres }}" target="_blank">dossier de présentation</a></strong> !
                                 </p>
                                 <p>Si vous avez la moindre question avant que l'on vous recontacte, vous pouvez déjà <strong>répondre à cet email</strong>, ou nous contacter <strong>par téléphone</strong> :
                                 <ul>

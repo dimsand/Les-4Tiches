@@ -14,9 +14,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p class="lead">Ci-dessous la vidéo présentant le raid 4L Trophy :</p>
-                    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F4l.trophy.officiel%2Fvideos%2F10156479583703846%2F&show_text=0&width=560"
+                    <div class="facebook-responsive">
+                        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F4l.trophy.officiel%2Fvideos%2F10156479583703846%2F&show_text=0&width=560"
                             width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                             allowTransparency="true" allowFullScreen="true"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
