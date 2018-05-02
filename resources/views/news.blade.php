@@ -25,10 +25,11 @@
 
     .title-small {
         color: #141517;
-        font-size: 16px;
-        font-weight: 400;
+        font-size: 19px;
+        font-weight: bold;
         line-height: 23px;
-        margin: 6px 0 0;
+        margin: 6px 0px 0px;
+        padding-bottom: 10px;
     }
 
     .title-large a, .title-small a, .title-x-small a {
@@ -226,147 +227,27 @@
     <section class="banner-sec news">
         <div class="container">
             <div class="row">
-
-                @if(!empty($news[0]))
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img-top"
-                                 style="background-image:url('{{ 'uploads/'.$news[0]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
-                                        class="badge badge-pill badge-danger">{{ $news[0]->category_id }}</span></div>
-                            <div class="card-body">
-                                <div class="news-title">
-                                    <h2 class=" title-small"><a href="#">{{ $news[0]->title }}</a></h2>
-                                </div>
-                                <p class="card-text">
-                                    <small class="text-time"><em>il y a 9
-                                            jours {{ $news[0]->created_at->format('d/m/Y') }}</em></small>
-                                </p>
-                            </div>
-                        </div>
-                        @if(!empty($news[1]))
-                            <div class="card">
-                                <div class="card-img-top"
-                                     style="background-image:url('{{ 'uploads/'.$news[1]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
-                                            class="badge badge-pill badge-danger">{{ $news[1]->category_id }}</span>
-                                </div>
-                                <div class="card-body">
-                                    <div class="news-title">
-                                        <h2 class=" title-small"><a href="#">{{ $news[1]->title }}</a></h2>
-                                    </div>
-                                    <p class="card-text">
-                                        <small class="text-time"><em>il y a 9
-                                                jours {{ $news[1]->created_at->format('d/m/Y') }}</em></small>
-                                    </p>
-                                </div>
-                            </div>
-                        @endif
-                    </div>
-                    @if(!empty($news[2]))
-                        <div class="col-md-3">
-                            <div class="card">
-                                <div class="card-img-top"
-                                     style="background-image:url('{{ 'uploads/'.$news[2]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
-                                            class="badge badge-pill badge-danger">{{ $news[2]->category_id }}</span>
-                                </div>
-                                <div class="card-body">
-                                    <div class="news-title">
-                                        <h2 class=" title-small"><a href="#">{{ $news[2]->title }}</a></h2>
-                                    </div>
-                                    <p class="card-text">
-                                        <small class="text-time"><em>il y a 9
-                                                jours {{ $news[2]->created_at->format('d/m/Y') }}</em></small>
-                                    </p>
-                                </div>
-                            </div>
-                            @if(!empty($news[3]))
-                                <div class="card">
-                                    <div class="card-img-top"
-                                         style="background-image:url('{{ 'uploads/'.$news[3]->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span
-                                                class="badge badge-pill badge-danger">{{ $news[3]->category_id }}</span>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="news-title">
-                                            <h2 class=" title-small"><a href="#">{{ $news[3]->title }}</a></h2>
-                                        </div>
-                                        <p class="card-text">
-                                            <small class="text-time"><em>il y a 9
-                                                    jours {{ $news[3]->created_at->format('d/m/Y') }}</em></small>
-                                        </p>
-                                    </div>
-                                </div>
-                            @endif
-                        </div>
-                    @endif
-                @else
-                    <p>IL n'y a pas encore de news</p>
-                @endif
-
-                @if(!empty($news))
-                    <div class="col-md-6 top-slider">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                                @foreach($news as $key => $n)
-                                    @if($key <= 2)
-                                        <div class="carousel-item @if($key == 0) active @endif">
-                                            <div class="news-block">
-                                                <div class="news-media"
-                                                     style="background-image:url('{{ 'uploads/'.$n->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:450px;"></div>
-                                                <div class="news-title">
-                                                    <h2 class=" title-large"><a href="#">{{ $n->title }}</a></h2>
-                                                </div>
-                                                <div class="news-des">{!! $n->content !!}</div>
-                                                <div class="time-text"><strong>2h
-                                                        ago {{ $n->created_at->format('d/m/Y') }}</strong></div>
-                                                <div></div>
-                                            </div>
-                                        </div>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </section>
-
-    <section class="section-01 news">
-        <div class="container">
-            <div class="row">
                 <div class="col-lg-8 col-md-12">
-                    <h3 class="heading-large">Plus anciennement...</h3>
-                    <div class="">
-                        @if(!empty($news[4]))
-                            @foreach($news as $key => $n)
-                                @if($key >= 4)
-                                    <div class="col-lg-6 card">
-                                        <div class="card">{!! Html::image('img/1280px-4LTrophy928.jpg', 'Association créée', array('class' => 'img-fluid')) !!}
-                                            <div class="card-body">
-                                                <div class="news-title"><a href="#">
-                                                        <h2 class=" title-small">{{ $n->title }}</h2>
-                                                    </a></div>
-                                                <p class="card-text">{{ $n->content }}</p>
-                                                <p class="card-text">
-                                                    <small class="text-time"><em>3 mins
-                                                            ago {{ $n->created_at->format('d/m/Y H:i') }}</em></small>
-                                                </p>
-                                            </div>
-                                        </div>
+                    @if(!empty($news))
+                        @foreach($news as $key => $n)
+                            <div class="card mb-3">
+                                <div class="card-img-top"
+                                     style="background-image:url('{{ 'uploads/'.$n->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:225px;"><span class="badge badge-pill badge-danger">{{ $n->category_id }}</span></div>
+                                <div class="card-body">
+                                    <div class="news-title">
+                                        <h2 class=" title-small">{{ $n->title }}</h2>
                                     </div>
-                                @endif
-                            @endforeach
-                        @else
-                            <p>Attendons qu'il y ait un peu plus d'actus de notre part :)</p>
-                        @endif
-                    </div>
+                                    <p class="card-text">{!! $n->content !!}</p>
+                                    <p class="card-text">
+                                        <small class="text-time"><em>3 mins
+                                                ago {{ $n->created_at->format('d/m/Y H:i') }}</em></small>
+                                    </p>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <p>Attendons qu'il y ait un peu plus d'actus de notre part :)</p>
+                    @endif
                 </div>
                 <aside class="col-lg-4 side-bar col-md-12">
                     <h3 class="heading-large">Nos photos</h3>
@@ -375,12 +256,44 @@
                             <img class="img-fluid mx-auto d-block" src="img/500x300.png">
                         </div>
                     </div>
+                    <hr><h3 class="heading-large mt-5">News aléatoires</h3>
+                    @if(!empty($news))
+                        <div class="col-md-12 top-slider">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    @foreach($news as $key => $n)
+                                        @if($key <= 2)
+                                            <div class="carousel-item @if($key == 0) active @endif">
+                                                <div class="news-block">
+                                                    <div class="news-media"
+                                                         style="background-image:url('{{ 'uploads/'.$n->image }}');background-repeat:no-repeat;background-position:50%;background-size:cover;height:150px;"></div>
+                                                    <div class="news-title">
+                                                        <h2 class=" title-large"><a href="#">{{ $n->title }}</a></h2>
+                                                    </div>
+                                                    <div class="news-des">{!! $n->content !!}</div>
+                                                    <div class="time-text"><strong>2h
+                                                            ago {{ $n->created_at->format('d/m/Y') }}</strong></div>
+                                                    <div></div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </aside>
             </div>
         </div>
     </section>
-
-
 
 
     {{--<section class="features-icons bg-light text-center">--}}

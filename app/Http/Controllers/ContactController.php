@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Contact;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -20,6 +21,13 @@ class ContactController extends Controller
         if ($validator->fails()) {
             return redirect('/contact')->withErrors($validator)->withInput();
         }
+
+        $contact = new Contact;
+        $contact->nom = $request->get('name');
+        $contact->email = $request->get('email');
+        $contact->subject = $request->get('subject');
+        $contact->message = nl2br($request->get('body_message'));
+        $contact->save();
 
         Mail::send(['html' => 'emails.contact'],
             array(
@@ -45,7 +53,13 @@ class ContactController extends Controller
                 $message->subject('Demande de contact sur le site Les4Tiches');
             });
 
-        return redirect('/contact')->with('success', 'Votre message a bien été envoyé.');
+        if(count(Mail::failures()) > 0){
+            return redirect('/contact')->with('error', 'Votre message n\'a pas pu être envoyé. Veuillez nous contacter par mail à cet adresse : contact@les4tiches.fr');
+        }else{
+            $contact->mail_sent = 1;
+            $contact->save();
+            return redirect('/contact')->with('success', 'Votre message a bien été envoyé.');
+        }
     }
 
 
@@ -59,25 +73,31 @@ class ContactController extends Controller
 
         $subiect = "Notre dossier de présentation - Les 4Tiches";
 
+        $contact = new Contact;
+        $contact->nom = $name;
+        $contact->email = $email;
+        $contact->subject = "Contact plaquette presentation";
+        $contact->save();
+
         Mail::send(['html' => 'emails.contact_me'], [
             'name'=>$name,
-            'email'=>$email
+            'email'=>$email,
+            'lien_plaquette_pres' => env('APP_URL') . "/docs/plaquette_v1.pdf"
         ], function($m) use($email, $name, $subiect) {
             $m->from('contact@les4tiches.fr', "Les 4Tiches");
             $m->to($email, $name);
             $m->subject($subiect);
         });
-        echo json_encode(array('rc'=>0, "msg"=>"Success !"));
+
+        if(count(Mail::failures()) > 0){
+            echo json_encode(array('rc'=>-1, "msg"=>"Error"));
+        }else{
+            echo json_encode(array('rc'=>0, "msg"=>"Success !"));
+            $contact->mail_sent = 1;
+        }
+
+        $contact->save();
+
     }
 
-    public function downloadDossier(){
-        header('Content-Type: application/pdf');
-        header('Content-Length: '. filesize(env('fichier_dossier_presentation')));
-        header('Content-disposition: attachment; filename='. "Dossier de présentation Les4Tiches.pdf");
-        header('Pragma: no-cache');
-        header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
-        header('Expires: 0');
-        readfile(env('fichier_dossier_presentation'));
-        exit();
-    }
 }
