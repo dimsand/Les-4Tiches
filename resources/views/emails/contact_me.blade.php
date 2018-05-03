@@ -95,7 +95,7 @@
 
         /* What it does: Forces Gmail app to display email full width */
         u ~ div .email-container {
-            min-width: 100vw;
+            min-width: 90%;
         }
 
     </style>
