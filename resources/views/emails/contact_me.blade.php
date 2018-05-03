@@ -7,17 +7,6 @@
     <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
     <title>Notre dossier de sponsoring - Les 4Tiches</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
-    <!-- Web Font / @font-face : BEGIN -->
-    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
-
-    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
-    <!--[if !mso]><!-->
-    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
-    <link href='https://webfonts.ffonts.net/Selima.font' rel='stylesheet' type='text/css'>
-    <!--<![endif]-->
-
-    <!-- Web Font / @font-face : END -->
-
     <!-- CSS Reset : BEGIN -->
     <style>
 
@@ -217,7 +206,7 @@
                         <tr>
                             <td style="padding: 40px 40px 20px; text-align: center;">
                                 <h1 style="margin: 0; font-family: 'Selima'; font-size: 24px; line-height: 125%; color: #ffbd4a; font-weight: normal; border: #ff5c5c solid 3px; padding: 16px;">
-                                    <img src="{{ $message->embed(public_path() . '/img/2-transparent.png') }}" height="50" alt="alt_text" border="0" style="height: 50px; font-size: 20px; line-height: 140%; border-radius: 50%;"/>
+                                    <img src="{{ $message->embed(public_path() . '/img/2-transparent.png') }}" height="25" alt="" border="0" style="height: 25px; font-size: 20px; line-height: 140%; border-radius: 50%;"/>
                                     <a href="https://les4tiches.fr" style="color: #ff5c5c !important; font-family: 'Selima', Lato,'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: normal; text-decoration: none;">Les 4Tiches</a>
                                 </h1>
                             </td>
@@ -226,26 +215,26 @@
                             <td style="padding: 0 40px 40px; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #555555; text-align: left;">
                                 <p style="background-color: #ffbd4a; text-align: center; color: #ffffff; border-top-left-radius: 5px; border-top-right-radius: 5px; padding: 10px;"><strong>Ce n'est que le début d'une grande histoire !</strong></p>
                                 <p>
-                                    {!! $name !!},<br>
+                                    {!! $name !!},<br><br>
                                     Si vous recevez cet email, c'est que vous êtes en partie sensibilisé à la cause humanitaire du <strong>Raid 4L Trophy</strong>. Nous vous <strong>remercions</strong> donc pour l'engouement que vous portez à nos ambitions pour le projet.
-                                </p>
-                                <p>
-                                    Nous vous joignons dans cet email notre <strong>dossier de sponsoring</strong> qui vous permettra de nous découvrir et de comprendre nos objectifs à accomplir lors de cette <strong>aventure</strong>.
-                                </p>
+                                </p><br>
                                 <p>
                                     Nous mettons à disposition différents moyens, pour que les plus <strong>gros sponsors</strong> comme les <strong>petites bourses</strong> puissent nous aider à leur manière.<br>
-                                    <a href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy">Voir notre page de financement participatif</a>
+                                <p style="text-align: center;"><a href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy">Voir notre page de financement participatif</a></p>
+                                </p><br>
+                                <p>
+                                   Vous trouverez ci-dessous notre <strong>dossier de sponsoring</strong> qui vous permettra de nous découvrir et de comprendre nos objectifs à accomplir lors de cette <strong>aventure</strong>.
                                 </p>
                                 <p style="text-align: center;">
                                     Télécharger dorénavent notre <strong><a href="{{ $lien_plaquette_pres }}" target="_blank">dossier de présentation</a></strong> !
-                                </p>
+                                </p><br>
                                 <p>Si vous avez la moindre question avant que l'on vous recontacte, vous pouvez déjà <strong>répondre à cet email</strong>, ou nous contacter <strong>par téléphone</strong> :
                                 <ul>
                                     <li><strong>Dimitri Sandron :</strong> 06.48.59.19.03</li>
                                     <li><strong>Rémi Sany :</strong> 06.41.98.09.21</li>
                                 </ul>
                                 Nous vous répondrons le plus rapidement possible.
-                                </p>
+                                </p><br>
                                 <p>
                                     Enfin, n'hésitez pas à parcourir notre <a href="https://les4tiches.fr">Site internet</a> si ce n'est pas encore fait. Celui-ci complètera notre plaquette de présentation. Ou encore visiter notre <a href="https://www.facebook.com/Les4Tiches/">Page Facebook</a> sur laquelle vous pourrez suivre nos dernières actualités de l'association Les 4Tiches.
                                 </p>
@@ -293,7 +282,7 @@
                         <tr>
                             <td style="padding: 20px; text-align: center; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #ffffff;">
                                 <p style="margin: 0;">Copyrights Les 4Tiches 2018
-                                    <a href="https://www.facebook.com/Les4Tiches/"><img src="{{ $message->embed(public_path() . '/img/facebook.png') }}" height="30" alt="alt_text" border="0" style="height: 30px; font-size: 20px; line-height: 140%; border-radius: 50%;"/></a>
+                                    <a href="https://www.facebook.com/Les4Tiches/"><img src="{{ $message->embed(public_path() . '/img/facebook.png') }}" height="25" alt="" border="0" style="height: 25px !important; font-size: 20px; line-height: 140%; border-radius: 50%;"/></a>
                                 </p>
                             </td>
                         </tr>
