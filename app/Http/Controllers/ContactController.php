@@ -37,7 +37,7 @@ class ContactController extends Controller
                 'body_message' => nl2br($request->get('body_message'))
             ), function($message)
             {
-                $message->from('contact@les4tiches.fr');
+                $message->from('contact@les4tiches.fr', "Les 4Tiches");
                 $message->to('contact@les4tiches.fr', 'Les 4Tiches');
                 $message->subject('Nouveau message de contact sur le site Les4Tiches');
             });
@@ -48,7 +48,7 @@ class ContactController extends Controller
                 'message_body' => "<p>Vous avez effectuée une demande de contact sur le site <a href='https://les4tiches.fr'>Les 4Tiches</a>.</p><p>Nous reviendrons vers vous le plus rapidement possible.</p>"
             ), function($message) use($request)
             {
-                $message->from('contact@les4tiches.fr');
+                $message->from('contact@les4tiches.fr', "Les 4Tiches");
                 $message->to($request->get('email'), $request->get('name'));
                 $message->subject('Demande de contact sur le site Les4Tiches');
             });
