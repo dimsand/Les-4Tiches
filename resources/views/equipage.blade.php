@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <img src="img/Frise_equipage_v1.png" style="border-radius: 10px;">
+                <a href="{{ "/docs/Frise Chrono Les 4Tiches - v3.pdf" }}" target="_blank"><img src="img/Frise Chrono Les 4Tiches - v3.png" style="border-radius: 10px; width: 100%; height: auto;"></a>
             </div>
         </div>
     </div>

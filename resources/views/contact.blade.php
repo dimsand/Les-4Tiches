@@ -11,7 +11,7 @@
 <section class="features-icons bg-light text-center">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8">
 
                 @if(Session::has('success'))
                     <div class="alert alert-success">
@@ -52,6 +52,13 @@
                 {!! Form::close() !!}
 
             </div>
+
+            <div class="col-lg-4">
+                <div class="facebook-responsive2">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLes4Tiches%2F&tabs=messages&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
