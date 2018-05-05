@@ -20,9 +20,9 @@ class News extends Model
     /**
      * The categories that belong to the project.
      */
-    public function categories()
+    public function category()
     {
-        return $this->belongsTo('App\Category', 'category_id');
+        return $this->belongsTo('App\Categories', 'category_id');
 
     }
 

@@ -25,8 +25,8 @@
     </section>
 
     <div class="jumbotron paral paralsec-medias text-center">
-        <section class="features-icons bg-light-transp text-center mt-5 container">
-            <div class="row p-5">
+        <section class="features-icons bg-light-transp text-center mt-0 container">
+            <div class="row p-4">
                 <div class="col-lg-12">
                     <h2 class="graduate_font color_red mb-3">Les retombées médiatiques</h2>
                     <h4 class="color_brown2 mt-4">Télévision, radios, presse, ...</h4>
@@ -36,7 +36,7 @@
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            {!! Html::image('img/volunteer.png', 'Amitié', array('class' => 'm-auto')) !!}
+                            {!! Html::image('img/media/Turbo_Logo.png', 'Amitié', array('class' => 'm-auto')) !!}
                         </div>
                         <h3>Turbo - M6</h3>
                         <p class="lead mb-0 color_brown2">« Le plus grand Rallye étudiant au Monde »</p>
@@ -45,7 +45,7 @@
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            {!! Html::image('img/volunteer.png', 'Amitié', array('class' => 'm-auto')) !!}
+                            {!! Html::image('img/media/Télématin_logo.png', 'Amitié', array('class' => 'm-auto')) !!}
                         </div>
                         <h3>Télématin – France 2</h3>
                         <p class="lead mb-0 color_brown2">« Une aventure exceptionnelle »</p>
@@ -54,7 +54,7 @@
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            {!! Html::image('img/volunteer.png', 'Amitié', array('class' => 'm-auto')) !!}
+                            {!! Html::image('img/media/Logo_JT_13H_TF1.png', 'Amitié', array('class' => 'm-auto')) !!}
                         </div>
                         <h3>Journal de 13h – TF1</h3>
                         <p class="lead mb-0 color_brown2">« L’école de la débrouille »</p>
@@ -66,7 +66,7 @@
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            {!! Html::image('img/volunteer.png', 'Amitié', array('class' => 'm-auto')) !!}
+                            {!! Html::image('img/media/DKlAS_wW4AEqeVh.png', 'Amitié', array('class' => 'm-auto')) !!}
                         </div>
                         <h3>Auto Moto – TF1</h3>
                         <p class="lead mb-0 color_brown2">« Belle aventure humaine et solidaire »</p>
@@ -75,7 +75,7 @@
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            {!! Html::image('img/volunteer.png', 'Amitié', array('class' => 'm-auto')) !!}
+                            {!! Html::image('img/media/MelloPlot-CNews-Matin.png', 'Amitié', array('class' => 'm-auto')) !!}
                         </div>
                         <h3>CNEWS Matin</h3>
                         <p class="lead mb-0 color_brown2">« Le 4L Trophy : un périple sportif et solidaire » </p>
@@ -84,14 +84,14 @@
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                         <div class="features-icons-icon d-flex">
-                            {!! Html::image('img/volunteer.png', 'Amitié', array('class' => 'm-auto')) !!}
+                            {!! Html::image('img/media/dauphiné-libéré.png', 'Amitié', array('class' => 'm-auto')) !!}
                         </div>
                         <h3>Le Dauphiné</h3>
                         <p class="lead mb-0 color_brown2">« (…)10 jours d’expédition intense »</p>
                     </div>
                 </div>
             </div>
-            <div class="float-center">{{ HTML::link("img/Retombees media 4L 2017.jpg", "Retombées médiatiques 4L Trophy 2017", array('class'=>'link-unstyled color_brown', 'target'=>'_blank')) }}</div>
+            <div class="float-center color_brown"><i class="fa fa-external-link"></i> {{ HTML::link("img/Retombees media 4L 2017.jpg", "Retombées médiatiques 4L Trophy 2017", array('class'=>'link-unstyled color_brown', 'target'=>'_blank')) }}</div>
         </section>
     </div>
 

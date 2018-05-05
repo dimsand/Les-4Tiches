@@ -30,7 +30,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::all();
+        $news = News::with('category')->get();
         return view('news', [
             'news' => $news
         ]);
