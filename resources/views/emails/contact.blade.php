@@ -1,30 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <meta charset="utf-8"> <!-- utf-8 works for most cases -->
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
     <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
-
-    <!-- Web Font / @font-face : BEGIN -->
-    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
-
-    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
-    <!--[if mso]>
-    <style>
-        * {
-            font-family: sans-serif !important;
-        }
-    </style>
-    <![endif]-->
-
-    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
-    <!--[if !mso]><!-->
-    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
-    <!--<![endif]-->
-
-    <!-- Web Font / @font-face : END -->
+    <title>Demande du formulaire de contact  - Les 4Tiches</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <!-- CSS Reset : BEGIN -->
     <style>
@@ -114,7 +95,7 @@
 
         /* What it does: Forces Gmail app to display email full width */
         u ~ div .email-container {
-            min-width: 100vw;
+            min-width: 90%;
         }
 
     </style>
@@ -196,16 +177,9 @@
 
     <!-- Visually Hidden Preheader Text : BEGIN -->
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-        (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
+        Demande à partir du formulaire de contact  du site Les 4Tiches
     </div>
-    <!-- Visually Hidden Preheader Text : END -->
 
-    <!--
-        Set the email width. Defined in two places:
-        1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
-        2. MSO tags for Desktop Windows Outlook enforce a 680px width.
-        Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
-    -->
     <div style="max-width: 680px; margin: auto;" class="email-container">
         <!--[if mso]>
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" align="center">
@@ -217,7 +191,7 @@
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
             <tr>
                 <td style="padding: 20px 0; text-align: center">
-                    <img src="{{ $message->embed(public_path() . '/img/2-transparent.png') }}" height="75" alt="alt_text" border="0" style="height: 20px; background: #dddddd;  font-size: 20px; line-height: 140%; color: #ffffff; border-radius: 50%;"/>
+                    <img src="{{ $message->embed(public_path() . '/img/2-transparent.png') }}" height="25" alt="" border="0" style="height: 25px; background: #dddddd;  font-size: 20px; line-height: 140%; color: #ffffff; border-radius: 50%;"/>
                     <a href="https://les4tiches.fr" style="color: #ffffff !important; font-family: sans-serif; font-weight: normal;">Les 4Tiches</a>
                 </td>
             </tr>
@@ -250,7 +224,7 @@
                                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto;">
                                     <tr>
                                         <td style="border-radius: 3px; background: #222222; text-align: center;" class="button-td">
-                                            <a href="https://les4tiches.fr/login" style="background: #222222; border: 15px solid #222222; font-family: sans-serif; font-size: 13px; line-height: 110%; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a">
+                                            <a href="https://les4tiches.fr/&admin-pannel" style="background: #222222; border: 15px solid #222222; font-family: sans-serif; font-size: 13px; line-height: 110%; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a">
                                                 <span style="color:#ffffff;" class="button-link">Administration</span>
                                             </a>
                                         </td>
