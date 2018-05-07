@@ -24,7 +24,7 @@
     color: #d39525 !important;
 }
 .color_brown2{
-    color: #56472a !important;
+    color: #a06a00 !important;
 }
 .bg_color_yellow{
     background-color: #fffef5 !important;
@@ -360,4 +360,8 @@ nav {
     height:100%;
     width:100%;
     position:absolute;
+}
+
+.aside_facebook, .contact_facebook{
+    min-height: 400px;
 }
