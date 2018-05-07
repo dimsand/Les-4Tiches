@@ -80,7 +80,7 @@
                 <p class="color_brown">Aventure</p>
             </div>
             <div class="col-lg-9 mt-1">
-                <p class="text-justify color_brown fs-18">L’aventure à laquelle nous voulons participer, nous ne voulons pas que nous nous la racontions. Nous voulons la <span class="font-weight-bold color_red">vivre</span> ! Quitter notre vie pendant <span class="font-weight-bold color_red">10 jours</span>, traverser <span class="font-weight-bold color_red">3 pays</span> et parcourir plus de <span class="font-weight-bold color_red">7000 km</span>. C’est ce que nous nous apprêtons à expérimenter. Une aventure agrémentée de ses péripéties mais surtout de <span class="font-weight-bold color_red">rencontres</span> et d’<span class="font-weight-bold color_red">échanges</span>. Et c’est ce que nous retiendrons !</p>
+                <p class="text-justify color_brown fs-18">L’aventure à laquelle nous voulons participer, nous ne voulons pas se la faire raconter. Nous voulons la <span class="font-weight-bold color_red">vivre</span> ! Quitter notre vie pendant <span class="font-weight-bold color_red">10 jours</span>, traverser <span class="font-weight-bold color_red">3 pays</span> et parcourir plus de <span class="font-weight-bold color_red">7000 km</span>. C’est ce que nous nous apprêtons à expérimenter. Une aventure agrémentée de ses péripéties mais surtout de <span class="font-weight-bold color_red">rencontres</span> et d’<span class="font-weight-bold color_red">échanges</span>. Et c’est ce que nous retiendrons !</p>
             </div>
         </div>
     </section>

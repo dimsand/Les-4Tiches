@@ -24,6 +24,76 @@
         </div>
     </section>
 
+    <div class="jumbotron paral paralsec_financ mt-5">
+        <h1 class="display-3">Nous soutenir via <a class="link-unstyled text-white" target="_blank" href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy" rel="nofollow">HelloAsso</a></h1>
+    </div>
+
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <iframe id="haWidget" allowtransparency="true"
+                            src="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy/widget"
+                            onload="window.scroll(0, this.offsetTop)"></iframe>
+                    <div class="haPropulsedBy">Propulsé par <a class="link-unstyled color_brown"
+                                                               href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy"
+                                                               rel="nofollow">HelloAsso</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="jumbotron paral paralsec_budget">
+        <h1 class="display-3">Comment nous aider ?</h1>
+    </div>
+
+    <section class="features-icons bg-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="graph_container"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                <div class="features-icons-icon d-flex" style="margin-bottom: 60px;">
+                                    {!! Html::image('img/cheque.png', 'Par chèque', array('class' => 'm-auto', 'style' => 'width: 100% !important; height: auto;')) !!}
+                                </div>
+                                <h5>Par chèque</h5>
+                                <p class="lead mb-0">Un simple don d'argent</p>
+                                <p class="font-weight-normal">Nous contacter</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                <div class="features-icons-icon d-flex" style="margin-bottom: 60px;">
+                                    {!! Html::image('img/helloasso-logo-couleurs-2015.png', 'Via notre financement participatif', array('class' => 'm-auto', 'style' => 'width: 100% !important; height: auto;')) !!}
+                                </div>
+                                <h5>Via notre financement participatif</h5>
+                                <p class="lead mb-0"><a target="_blank"
+                                                        href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy">Hello
+                                        Asso</a></p>
+                                <p class="font-weight-normal">Une méthode simple pour tous les budgets</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                                <div class="features-icons-icon d-flex" style="margin-bottom: 60px;">
+                                    {!! Html::image('img/donation.png', 'En nature', array('class' => 'm-auto', 'style' => 'width: 100% !important; height: auto;')) !!}
+                                </div>
+                                <h5>En nature</h5>
+                                <p class="lead mb-0">(fournitures scolaires, équipements sportifs, ...)</p>
+                                <p class="font-weight-normal">Pour les écoles du sud-est marocain</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="jumbotron paral paralsec-medias text-center">
         <section class="features-icons bg-light-transp text-center mt-0 container">
             <div class="row p-4">
@@ -95,75 +165,6 @@
         </section>
     </div>
 
-    <div class="jumbotron paral paralsec_financ mt-5">
-        <h1 class="display-3">Nous soutenir via <a class="link-unstyled text-white" target="_blank" href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy" rel="nofollow">HelloAsso</a></h1>
-    </div>
-
-    <!-- Icons Grid -->
-    <section class="features-icons bg-light text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <iframe id="haWidget" allowtransparency="true"
-                            src="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy/widget"
-                            onload="window.scroll(0, this.offsetTop)"></iframe>
-                    <div class="haPropulsedBy">Propulsé par <a class="link-unstyled color_brown"
-                                                               href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy"
-                                                               rel="nofollow">HelloAsso</a></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="jumbotron paral paralsec_budget">
-        <h1 class="display-3">Comment nous aider ?</h1>
-    </div>
-
-    <section class="features-icons bg-light text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div id="graph_container"></div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                                <div class="features-icons-icon d-flex" style="margin-bottom: 60px;">
-                                    {!! Html::image('img/cheque.png', 'Par chèque', array('class' => 'm-auto', 'style' => 'width: 100% !important; height: auto;')) !!}
-                                </div>
-                                <h5>Par chèque</h5>
-                                <p class="lead mb-0">Un simple don d'argent</p>
-                                <p class="font-weight-normal">Nous contacter</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                                <div class="features-icons-icon d-flex" style="margin-bottom: 60px;">
-                                    {!! Html::image('img/helloasso-logo-couleurs-2015.png', 'Via notre financement participatif', array('class' => 'm-auto', 'style' => 'width: 100% !important; height: auto;')) !!}
-                                </div>
-                                <h5>Via notre financement participatif</h5>
-                                <p class="lead mb-0"><a target="_blank"
-                                                        href="https://www.helloasso.com/associations/les-4tiches/collectes/participation-au-raid-4l-trophy">Hello
-                                        Asso</a></p>
-                                <p class="font-weight-normal">Une méthode simple pour tous les budgets</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                                <div class="features-icons-icon d-flex" style="margin-bottom: 60px;">
-                                    {!! Html::image('img/donation.png', 'En nature', array('class' => 'm-auto', 'style' => 'width: 100% !important; height: auto;')) !!}
-                                </div>
-                                <h5>En nature</h5>
-                                <p class="lead mb-0">(fournitures scolaires, équipements sportifs, ...)</p>
-                                <p class="font-weight-normal">Pour les écoles du sud-est marocain</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 @endsection
 
 @section('javascript')
