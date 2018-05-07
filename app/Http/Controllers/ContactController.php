@@ -82,7 +82,7 @@ class ContactController extends Controller
         Mail::send(['html' => 'emails.contact_me'], [
             'name'=>$name,
             'email'=>$email,
-            'lien_plaquette_pres' => env('APP_URL') . "/docs/plaquette_v1.pdf"
+            'lien_plaquette_pres' => env('APP_URL') . "/docs/plaquette_v2.pdf"
         ], function($m) use($email, $name, $subiect) {
             $m->from('contact@les4tiches.fr', "Les 4Tiches");
             $m->to($email, $name);

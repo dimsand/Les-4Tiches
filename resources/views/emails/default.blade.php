@@ -216,7 +216,7 @@
                         <tr>
                             <td style="padding: 40px 40px 20px; text-align: center;">
                                 <h1 style="margin: 0; font-family: 'Selima'; font-size: 24px; line-height: 125%; color: #ffbd4a; font-weight: normal; border: #ff5c5c solid 3px; padding: 16px;">
-                                    <img src="{{ $message->embed(public_path() . '/img/2-transparent.png') }}" height="50" alt="alt_text" border="0" style="height: 50px; font-size: 20px; line-height: 140%; border-radius: 50%;"/>
+                                    <img src="{{ $message->embed(public_path() . '/img/2-transparent-sm.png') }}" height="50" alt="alt_text" border="0" style="height: 50px; font-size: 20px; line-height: 140%; border-radius: 50%;"/>
                                     <a href="https://les4tiches.fr" style="color: #ff5c5c !important; font-family: 'Selima', Lato,'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: normal; text-decoration: none;">Les 4Tiches</a>
                                 </h1>
                             </td>
@@ -272,7 +272,7 @@
                         <tr>
                             <td style="padding: 20px; text-align: center; font-family: sans-serif; font-size: 15px; line-height: 140%; color: #ffffff;">
                                 <p style="margin: 0;">Copyrights Les 4Tiches 2018
-                                    <a href="https://www.facebook.com/Les4Tiches/"><img src="{{ $message->embed(public_path() . '/img/facebook.png') }}" height="30" alt="alt_text" border="0" style="height: 30px; font-size: 20px; line-height: 140%; border-radius: 50%;"/></a>
+                                    <a href="https://www.facebook.com/Les4Tiches/"><img src="{{ $message->embed(public_path() . '/img/facebook-sm.png') }}" height="30" alt="alt_text" border="0" style="height: 30px; font-size: 20px; line-height: 140%; border-radius: 50%;"/></a>
                                 </p>
                             </td>
                         </tr>
