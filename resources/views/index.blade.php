@@ -27,7 +27,7 @@
             <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/photos_nous/IMG_20180401_191738.jpg');"></div>
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                 <h2>L'équipage</h2>
-                <p class="lead mb-2"><span class="color_red">Rémi Sany</span> et <span class="color_red">Dimitri Sandron</span>, 21 ans, originaires de Lyon.</p>
+                <p class="lead mb-2"><span class="color_red">Rémi Sany</span> et <span class="color_red">Dimitri Sandron</span>, 22 ans, originaires de Lyon.</p>
                 <p class="lead mb-2"><span class="font-weight-bold">Numéro d'équipage :</span> <span class="color_brown">
                         {!! Html::image('img/zero.png', '0', array('class' => 'm-auto num_equipage')) !!}
                         {!! Html::image('img/five.png', '5', array('class' => 'm-auto num_equipage')) !!}

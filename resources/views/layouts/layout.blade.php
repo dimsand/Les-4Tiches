@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
     @if( env('APP_ENV') == 'production' )
@@ -15,7 +15,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Nous participerons, sous le nom d'équipage Les 4Tiches, le Raid 4L Trophy, du 21 avril au 3 mars 2019">
+    <meta name="description" content="Nous sommes deux étudiants, Rémi Sany et Dimitri Sandron. Nous participerons, sous le nom d'équipage Les 4Tiches, au Raid 4L Trophy, du 21 avril au 3 mars 2019">
     <meta name="author" content="Dimitri Sandron">
     <meta name="keywords" content="les 4tiches, 4tiches, les fortiches, fortiches, 4ltrophy, 4L Trophy, Raid humanitaire, course, Maroc" />
     <meta name="robots" content="index,follow" />
@@ -38,7 +38,7 @@
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <title>Les 4Tiches - @yield('title')</title>
+    <title>Les 4Tiches - @yield('title') - Equipage 0594 au 4L Trophy 2019 - Rémi Sany & Dimitri Sandron</title>
 
     <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -46,10 +46,10 @@
     <link href="{{ asset('css/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fonts/Lato_font.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('css/landing-page.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/parallax.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/landing-page.min.css') }}?v={{ time() }}" rel="stylesheet">
+    <link href="{{ asset('css/parallax.css') }}?v={{ time() }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}?v={{ time() }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}?v={{ time() }}" rel="stylesheet">
 
     @yield('stylesheet')
 
@@ -164,16 +164,6 @@
                             <i class="fa fa-facebook fa-2x fa-fw"></i>
                         </a>
                     </li>
-                    {{--<li class="list-inline-item mr-3">--}}
-                        {{--<a href="#">--}}
-                            {{--<i class="fa fa-twitter fa-2x fa-fw"></i>--}}
-                        {{--</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-inline-item">--}}
-                        {{--<a href="#">--}}
-                            {{--<i class="fa fa-instagram fa-2x fa-fw"></i>--}}
-                        {{--</a>--}}
-                    {{--</li>--}}
                 </ul>
             </div>
         </div>
@@ -185,7 +175,7 @@
 <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('js/highcharts.js') }}"></script>
-<script src="{{ asset('js/compte_rebours.js') }}"></script>
+<script src="{{ asset('js/compte_rebours.js') }}?v={{ time() }}"></script>
 <script src="{{ asset('js/alertify.js') }}"></script>
 
 <script>

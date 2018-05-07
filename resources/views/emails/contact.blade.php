@@ -191,7 +191,7 @@
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
             <tr>
                 <td style="padding: 20px 0; text-align: center">
-                    <img src="{{ $message->embed(public_path() . '/img/2-transparent.png') }}" height="25" alt="" border="0" style="height: 25px; background: #dddddd;  font-size: 20px; line-height: 140%; color: #ffffff; border-radius: 50%;"/>
+                    <img src="{{ $message->embed(public_path() . '/img/2-transparent-sm.png') }}" height="25" alt="" border="0" style="height: 25px; background: #dddddd;  font-size: 20px; line-height: 140%; color: #ffffff; border-radius: 50%;"/>
                     <a href="https://les4tiches.fr" style="color: #ffffff !important; font-family: sans-serif; font-weight: normal;">Les 4Tiches</a>
                 </td>
             </tr>
@@ -248,7 +248,7 @@
                 <td style="padding: 40px 10px; width: 100%; font-family: sans-serif; font-size: 12px; line-height: 140%; text-align: center; color: #888888;" class="x-gmail-data-detectors">
                     <webversion style="color: #cccccc; text-decoration: underline; font-weight: bold;">Version web de cet email</webversion>
                     <br><br>
-                    Les 4Tiches<br>contact@les4tiches.fr<br>00.00.00.00.00
+                    Les 4Tiches<br>contact@les4tiches.fr
                     <br><br>
                     <unsubscribe style="color: #888888; text-decoration: underline;">Se désinscrire</unsubscribe>
                 </td>

@@ -361,3 +361,7 @@ nav {
     width:100%;
     position:absolute;
 }
+
+.aside_facebook, .contact_facebook{
+    min-height: 400px;
+}

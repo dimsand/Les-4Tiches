@@ -274,7 +274,7 @@
                         <p>Attendons qu'il y ait un peu plus d'actus de notre part :)</p>
                     @endif
                 </div>
-                <aside class="col-lg-4 side-bar col-md-12">
+                <aside class="col-lg-4 side-bar col-md-12 aside_facebook">
                     {{--<h3 class="heading-large">Nos photos</h3>--}}
                     {{--<div class="video-sec">--}}
                     {{--<div class="video-block">--}}
