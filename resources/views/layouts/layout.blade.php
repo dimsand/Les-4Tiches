@@ -15,7 +15,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Nous sommes deux étudiants, Rémi Sany et Dimitri Sandron. Nous participerons, sous le nom d'équipage Les 4Tiches, au Raid 4L Trophy, du 21 avril au 3 mars 2019">
+    <meta name="description" content="Nous sommes deux étudiants, Rémi Sany et Dimitri Sandron. Nous participerons, sous le nom d'équipage Les 4Tiches, au Raid 4L Trophy, du 21 février au 3 mars 2019">
     <meta name="author" content="Dimitri Sandron">
     <meta name="keywords" content="les 4tiches, 4tiches, les fortiches, fortiches, 4ltrophy, 4L Trophy, Raid humanitaire, course, Maroc" />
     <meta name="robots" content="index,follow" />
