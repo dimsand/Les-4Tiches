@@ -50,7 +50,7 @@
                 <p class="color_brown">Amitié</p>
             </div>
             <div class="col-lg-9 mt-1">
-                <p class="text-justify color_brown fs-18">Si nous devions conter notre histoire, elle débuterait en <span class="font-weight-bold color_red">septembre 2007</span>. Voilà maintenant <span class="font-weight-bold color_red">11 ans</span> que nous avançons ensemble. Et ce, même quand les études nous ont divisées. En effet, depuis septembre 2017, près de 600 km séparent nos domiciles. Le <span class="font-weight-bold color_red">4L Trophy</span> sera une excellente façon de nous retrouver. Cette longue fraternité constituera une force pour les épreuves du raid. </p>
+                <p class="text-justify color_brown fs-18">Si nous devions conter notre histoire, elle débuterait en <span class="font-weight-bold color_red">septembre 2007</span>. Voilà maintenant <span class="font-weight-bold color_red">11 ans</span> que nous avançons ensemble. Et ce, même quand les études nous ont divisés. En effet, depuis septembre 2017, près de 600 km séparent nos domiciles. Le <span class="font-weight-bold color_red">4L Trophy</span> sera une excellente façon de nous retrouver. Cette longue fraternité constituera une force pour les épreuves du raid. </p>
             </div>
         </div>
 
