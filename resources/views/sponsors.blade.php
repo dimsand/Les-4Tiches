@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="text-center mt-3" style="width: 100%;">
-                            Si vous souhaitez participez à l'aventure tout en donnant de la visibilité à votre entreprise durant le Raid,<br>
+                            Si vous souhaitez participer à l'aventure tout en donnant de la visibilité à votre entreprise durant le Raid,<br>
                             contactez-nous via le formulaire en bas de page, ou via la page de <a href="{{ route('contact') }}">contact</a>
                         </div>
 
