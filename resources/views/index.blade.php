@@ -104,7 +104,8 @@
         <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false">
             <div class="carousel-inner row w-100 mx-auto" role="listbox">
                 <div class="carousel-item col-md-4 active">
-                    <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 1">
+                    <a href="{{ route('sponsors') }}#copie-conforme"><div class="card-img-top" style="background-image:url('img/sponsors/logo-copie-conforme.jpg');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
+                    {{--<img class="img-fluid mx-auto d-block" src="img/sponsors/logo-copie-conforme.jpg" alt="Logo Copie Conforme">--}}
                 </div>
                 <div class="carousel-item col-md-4">
                     <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 2">
