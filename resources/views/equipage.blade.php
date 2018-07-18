@@ -26,7 +26,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <p>A venir...</p>
+                <img src="img/image_4l.jpg" alt="Notre 4L" class="img-thumbnail">
+                <p class="mt-3 pl-5 pr-5">La voici, la voilà, notre troisième coéquipière avec qui nous allons traverser le désert marocain pour acheminer fournitures scolaires et équipements sportifs aux enfants les plus défavorisés. 🚗<p>
+                <p>
+                    <span class="badge badge-pill badge-warning">Renault R4</span>
+                    <span class="badge badge-pill badge-danger">34CV</span>
+                    <span class="badge badge-pill badge-warning">1108cm3</span>
+                    <span class="badge badge-pill badge-danger">Année 1982</span>
+                </p>
             </div>
         </div>
     </div>
