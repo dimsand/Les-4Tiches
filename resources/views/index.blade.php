@@ -108,10 +108,12 @@
                     {{--<img class="img-fluid mx-auto d-block" src="img/sponsors/logo-copie-conforme.jpg" alt="Logo Copie Conforme">--}}
                 </div>
                 <div class="carousel-item col-md-4">
-                    <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 2">
+                    {{--<img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 2">--}}
+                    <a href="{{ route('sponsors') }}#formulr"><div class="card-img-top" style="background-image:url('img/sponsors/LOGO-HD-FORMUL-R.png');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
                 </div>
                 <div class="carousel-item col-md-4">
-                    <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 3">
+                    {{--<img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 3">--}}
+                    <a href="{{ route('sponsors') }}#parquet-sol"><div class="card-img-top" style="background-image:url('img/sponsors/LOGO PARQUETSOL JPG.jpg');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
                 </div>
                 <div class="carousel-item col-md-4">
                     <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 4">
