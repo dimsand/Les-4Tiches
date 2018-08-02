@@ -75,6 +75,12 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/4l_carton.jpg');
     background-position: 50% 30% !important;
 }
+.paralsec_photos {
+    background-size: contain;
+    min-height: 330px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/4l_carton.jpg');
+    background-position: 50% 30% !important;
+}
 
 /* Add more images for more sections */
 
