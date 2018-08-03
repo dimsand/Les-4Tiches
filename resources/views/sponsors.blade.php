@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
-                        <div class="col-sm-12 col-md-12" id="copie-conforme">
+                        <div class="col-sm-12 col-md-6" id="copie-conforme">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Copie Conforme</h5>
@@ -61,7 +61,7 @@
                         </div>
 
                         <!-- Auto-école Formul'R -->
-                        <div class="col-sm-12 col-md-12 mt-4" id="formulr">
+                        <div class="col-sm-12 col-md-6" id="formulr">
                             <div class="card bg-dark text-white">
                                 <div class="card-body">
                                     <h5 class="card-title">Auto-école Formul'R</h5>
@@ -100,14 +100,55 @@
                                         </div>
 
                                     </div>
-
                                 </div>
                             </div>
+                        </div>
 
+                        <!-- Piegay Environement -->
+                        <div class="col-sm-12 col-md-6 mt-4" id="piegay-envionnement">
+                            <div class="card bg-dark text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Piegay Environnement</h5>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
+                                            <div class="text-center">
+                                                <img src="img/sponsors/piegay environnement 2x3 m 3 copie.jpg" class="rounded"
+                                                     alt="Piegay Environnement" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-lg-12 mt-3 section-box text-justify">
+                                            <p>
+                                                <strong>Activité : </strong> PIEGAY ENVIRONNEMENT crée avec vous vos projets d'aménagement extérieur : piscine, terrasse, allée, portail, muret, cache-vue, arrosage, éclairage, etc.
+                                            </p>
+                                            <p>Ils ont d'ailleurs réalisé la très belle terrasse chez Rémi ;)</p>
+                                            <a href="https://www.paysagiste-mornant.com/" target="_blank" class="btn btn-primary mt-2 btn-sm">Site internet <i class="fa fa-external-link"></i></a>
+                                            <hr/>
+                                            <div class="row rating-desc">
+                                                <div class="col-md-5">
+                                                    <img src="img/sponsors/piegay_example_sol.jpg" alt="Aménagement exterieur" style="width: 100%;">
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <p><strong>Adresse :</strong><br>La Saulee<br>69440 Saint-Didier-Sous-Riverie</p>
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <div class="row rating-desc">
+                                                <div class="col-md-12">
+                                                    <div class="alert alert-secondary" role="alert">
+                                                        <i class="fa fa-money"></i> <strong>Don financier.</strong> Merci à toute l'équipe de Piegay Environnement, et plus particulièrement à Frédéric et Sylvie Fabre.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Parquet Sol -->
-                        <div class="col-sm-12 col-md-12 mt-4" id="parquet-sol">
+                        <div class="col-sm-12 col-md-6 mt-4" id="parquet-sol">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Parquet Sol</h5>
@@ -149,7 +190,139 @@
 
                                 </div>
                             </div>
+                        </div>
 
+                        <!-- AROBAS Technologies -->
+                        <div class="col-sm-12 col-md-6 mt-4" id="arobas">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">AROBAS Technologies</h5>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
+                                            <div class="text-center">
+                                                <img src="img/sponsors/Arobas_logobichro2010_v4.png" class="rounded"
+                                                     alt="AROBAS Technologies" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-lg-12 mt-3 section-box text-justify">
+                                            <p>
+                                                <strong>Activité : </strong> Bureau d'études en simulation numérique & Développement de logiciels métier sur-mesures
+                                            </p>
+                                            <a href="http://www.arobas-technologies.com/" target="_blank" class="btn btn-primary mt-2 btn-sm">Site internet <i class="fa fa-external-link"></i></a>
+                                            <hr/>
+                                            <div class="row rating-desc">
+                                                <div class="col-md-5">
+                                                    <img src="img/sponsors/97e2340619810671b28aaa1ca8246dd7_245_0.png" alt="Simulation numérique chez Arobase" style="width: 100%;">
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <p><strong>Adresse :</strong><br>1 Chemin Jean-Marie Vianney<br>
+                                                        69130 Écully</p>
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <div class="row rating-desc">
+                                                <div class="col-md-12">
+                                                    <div class="alert alert-secondary" role="alert">
+                                                        <i class="fa fa-money"></i> <strong>Don financier.</strong> Un immense merci au directeur général Jacky Verguet pour son très généreux don !
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Garage du centre - Peugeot Chaponost -->
+                        <div class="col-sm-12 col-md-6 mt-4" id="garage-du-centre">
+                            <div class="card bg-dark text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Garage du centre - Peugeot Chaponost</h5>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
+                                            <div class="text-center">
+                                                <img src="img/sponsors/garage_du_centre.JPG" class="rounded"
+                                                     alt="Garage du centre - Peugeot Chaponost" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-lg-12 mt-3 section-box text-justify">
+                                            <p>
+                                                <strong>Activité : </strong> Votre garage et concessionnaire Peugeot vous accueille à Chaponost.
+                                                Nous prenons en charge le dépannage de votre voiture.
+                                                De plus, nous disposons du service après-vente pour les travaux de réparation.
+                                                Consultez notre page internet pour plus d'informations et pour découvrir nos propositions.
+                                            </p>
+                                            <a href="http://agents.peugeot.fr/chaponost" target="_blank" class="btn btn-primary mt-2 btn-sm">Site internet <i class="fa fa-external-link"></i></a>
+                                            <hr/>
+                                            <div class="row rating-desc">
+                                                <div class="col-md-5">
+                                                    <img src="img/sponsors/04782380_N_0001_photo.jpeg" alt="Façade extérieur du garage" style="width: 100%;">
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <p><strong>Adresse :</strong><br>2 Bis rue Marius Paire<br>69630 Chaponost</p>
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <div class="row rating-desc">
+                                                <div class="col-md-12">
+                                                    <div class="alert alert-secondary" role="alert">
+                                                        <i class="fa fa-money"></i> <strong>Don financier.</strong> Nous remercions Maxime, un autre commercant chaponnois, qui a pu nous aider financièrement dans notre projet.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Santinov -->
+                        <div class="col-sm-12 col-md-6 mt-4" id="santinov">
+                            <div class="card bg-dark text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Santinov</h5>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-lg-12 text-center">
+                                            <div class="text-center">
+                                                <img src="img/sponsors/Logo Santinov rose et gris.png" class="rounded"
+                                                     alt="Santinov" style="width: 100%; background-color: #fff;">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-lg-12 mt-3 section-box text-justify">
+                                            <p>
+                                                <strong>Activité : </strong> Créés en 2007, les Laboratoires SANTINOV sont spécialisés dans la conception et la commercialisation de compléments alimentaires destinés tout particulièrement au suivi des personnes obèses ayant bénéficié d’une intervention de chirurgie de l’obésité.<br>Basés à Chaponost en proche banlieue Lyonnaise, nos laboratoires vous proposent des produits entièrement conçus et fabriqués en France.
+                                            </p>
+                                            <a href="https://www.santinov.fr/" target="_blank" class="btn btn-primary mt-2 btn-sm">Site internet <i class="fa fa-external-link"></i></a>
+                                            <hr/>
+                                            <div class="row rating-desc">
+                                                <div class="col-md-5">
+                                                    <img src="img/sponsors/2f24adaf14ae7a28af50412527cb1d673676f4f2_slide surgiline 2 en 1.jpg" alt="Simulation numérique chez Arobase" style="width: 100%;">
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <p><strong>Adresse :</strong><br>54 route de brignais<br>
+                                                        69630 CHAPONOST</p>
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <div class="row rating-desc">
+                                                <div class="col-md-12">
+                                                    <div class="alert alert-secondary" role="alert">
+                                                        <i class="fa fa-money"></i> <strong>Don financier.</strong> Nous remercions le gérant de Santinov pour son aide financière pour notre projet.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
 
                         <div class="text-center mt-3" style="width: 100%;">
