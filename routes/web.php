@@ -38,6 +38,8 @@ Route::get('/projet', function () {
 
 Route::get('/news', 'NewsController@index')->name('news');
 
+Route::get('/photos', 'PhotosController@index')->name('photos');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');

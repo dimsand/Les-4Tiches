@@ -84,6 +84,9 @@
                 <li class="nav-item <?= ((Route::currentRouteName() == 'news') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('news') }}">Les news</a>
                 </li>
+                <li class="nav-item <?= ((Route::currentRouteName() == 'photos') ? 'active' : '') ?>">
+                    <a class="nav-link" href="{{ route('photos') }}">Les photos</a>
+                </li>
                 <li class="nav-item <?= ((Route::currentRouteName() == 'contact') ? 'active' : '') ?>">
                     <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                 </li>
