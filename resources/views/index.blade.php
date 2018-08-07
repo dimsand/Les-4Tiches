@@ -108,24 +108,37 @@
                     {{--<img class="img-fluid mx-auto d-block" src="img/sponsors/logo-copie-conforme.jpg" alt="Logo Copie Conforme">--}}
                 </div>
                 <div class="carousel-item col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 7">
+                </div>
+                <div class="carousel-item col-md-4">
                     {{--<img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 2">--}}
                     <a href="{{ route('sponsors') }}#formulr"><div class="card-img-top" style="background-image:url('img/sponsors/LOGO-HD-FORMUL-R.png');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
                 </div>
                 <div class="carousel-item col-md-4">
                     {{--<img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 3">--}}
-                    <a href="{{ route('sponsors') }}#parquet-sol"><div class="card-img-top" style="background-image:url('img/sponsors/LOGO PARQUETSOL JPG.jpg');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
-                </div>
-                <div class="carousel-item col-md-4">
-                    <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 4">
-                </div>
-                <div class="carousel-item col-md-4">
-                    <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 5">
-                </div>
-                <div class="carousel-item col-md-4">
-                    <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 6">
+                    <a href="{{ route('sponsors') }}#piegay-envionnement"><div class="card-img-top" style="background-image:url('img/sponsors/piegay environnement 2x3 m 3 copie.jpg');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
                 </div>
                 <div class="carousel-item col-md-4">
                     <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 7">
+                </div>
+                <div class="carousel-item col-md-4">
+                    {{--<img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 4">--}}
+                    <a href="{{ route('sponsors') }}#parquet-sol"><div class="card-img-top" style="background-image:url('img/sponsors/LOGO PARQUETSOL JPG.jpg');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
+                </div>
+                <div class="carousel-item col-md-4">
+                    {{--<img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 5">--}}
+                    <a href="{{ route('sponsors') }}#arobas"><div class="card-img-top" style="background-image:url('img/sponsors/Arobas_logobichro2010_v4.png');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
+                </div>
+                <div class="carousel-item col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 7">
+                </div>
+                <div class="carousel-item col-md-4">
+                    {{--<img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 6">--}}
+                    <a href="{{ route('sponsors') }}#garage-du-centre"><div class="card-img-top" style="background-image:url('img/sponsors/garage_du_centre.JPG');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
+                </div>
+                <div class="carousel-item col-md-4">
+                    {{--<img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 7">--}}
+                    <a href="{{ route('sponsors') }}#santinov"><div class="card-img-top" style="background-image:url('img/sponsors/Logo Santinov rose et gris.png');background-repeat:no-repeat;background-position:50%;background-size:cover;height:100%;"></div></a>
                 </div>
                 <div class="carousel-item col-md-4">
                     <img class="img-fluid mx-auto d-block" src="img/500x300.png" alt="slide 7">
