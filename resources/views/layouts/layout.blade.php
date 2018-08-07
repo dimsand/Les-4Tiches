@@ -46,6 +46,22 @@
     <meta property="og:image" content="https://les4tiches.fr/img/2-transparent.png" />
     <meta property="og:locale" content="fr_FR" />
 
+    <!-- Balisage JSON-LD généré par l'outil d'aide au balisage de données structurées de Google -->
+    <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Article",
+      "name" : "L'équipage",
+      "author" : {
+        "@type" : "Person",
+        "name" : "Les  4Tiches"
+      },
+      "image" : "https://les4tiches.fr/img/photos_nous/IMG_20180401_191738.jpg",
+      "articleBody" : "Rémi Sany</SPAN> et <SPAN class=\"color_red\">Dimitri Sandron</SPAN>, 22 ans, originaires de Lyon.</P>\n                <P class=\"lead mb-2\"><SPAN class=\"font-weight-bold\">Numéro d&#39;équipage :</SPAN> <SPAN class=\"color_brown\">\n                        <IMG src=\"https://les4tiches.fr/img/zero.png\" class=\"m-auto num_equipage\" alt=\"0\"/>\n                        <IMG src=\"https://les4tiches.fr/img/five.png\" class=\"m-auto num_equipage\" alt=\"5\"/>\n                        <IMG src=\"https://les4tiches.fr/img/nine.png\" class=\"m-auto num_equipage\" alt=\"9\"/>\n                        <IMG src=\"https://les4tiches.fr/img/four.png\" class=\"m-auto num_equipage\" alt=\"4\"/>\n                    </SPAN></P>\n                <P class=\"lead mb-2\"><SPAN class=\"font-weight-bold\">Nom d&#39;équipage :</SPAN> <SPAN class=\"nom_equipage\">Les 4Tiches",
+      "url" : "https://les4tiches.fr/equipage"
+    }
+    </script>
+
     <title>Les 4Tiches - @yield('title') - Equipage 0594 au 4L Trophy 2019 - Rémi Sany & Dimitri Sandron</title>
 
     <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
