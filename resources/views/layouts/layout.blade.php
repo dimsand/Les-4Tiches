@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" xmlns:og=”http://opengraphprotocol.org/schema/” xmlns:fb=”http://ogp.me/ns/fb#” xmlns:og=”http://opengraphprotocol.org/schema/”>
 
 <head>
     @if( env('APP_ENV') == 'production' )
@@ -37,6 +37,14 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <meta property=”og:site_name” content=”Les4Tiches” />
+    <meta property="og:title" content="Les 4Tiches - Equipage 0594 - 4L Trophy 2019" />
+    <meta property="og:description" content="Nous sommes deux étudiants, Rémi Sany et Dimitri Sandron. Nous participerons, sous le nom d'équipage Les 4Tiches, au Raid 4L Trophy, du 21 février au 3 mars 2019." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://les4tiches.fr/" />
+    <meta property="og:image" content="https://les4tiches.fr/img/2-transparent.png" />
+    <meta property="og:locale" content="fr_FR" />
 
     <title>Les 4Tiches - @yield('title') - Equipage 0594 au 4L Trophy 2019 - Rémi Sany & Dimitri Sandron</title>
 
