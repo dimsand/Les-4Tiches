@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" xmlns:og=”http://opengraphprotocol.org/schema/” xmlns:fb=”http://ogp.me/ns/fb#” xmlns:og=”http://opengraphprotocol.org/schema/”>
+<html lang="{{ app()->getLocale() }}" xmlns:og="http://ogp.me/ns#">
 
 <head>
     @if( env('APP_ENV') == 'production' )
