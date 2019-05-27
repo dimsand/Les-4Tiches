@@ -30,7 +30,32 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        return view('photos');
+        $photos = [];
+        $dir    = public_path() . DIRECTORY_SEPARATOR . env('GALLERIES_FOLDER');
+        $galleries = scandir($dir);
+        foreach ($galleries as $g){
+            if($g != '.' && $g != '..'){
+                $photos[$g] = [];
+                $sousGalleries = scandir($dir . DIRECTORY_SEPARATOR . $g);
+                foreach ($sousGalleries as $sg){
+                    if($sg != '.' && $sg != '..'){
+                        $photos[$g][$sg] = [];
+                        if(is_dir($dir . DIRECTORY_SEPARATOR . $g . DIRECTORY_SEPARATOR . $sg)){
+                            $sousGalleries2 = scandir($dir . DIRECTORY_SEPARATOR . $g . DIRECTORY_SEPARATOR . $sg);
+                            foreach ($sousGalleries2 as $sg2){
+                                if($sg2 != '.' && $sg2 != '..'){
+                                    array_push($photos[$g][$sg], DIRECTORY_SEPARATOR . $g . DIRECTORY_SEPARATOR . $sg . DIRECTORY_SEPARATOR . $sg2);
+                                }
+                            }
+                        }else{
+                            array_push($photos[$g][$sg], DIRECTORY_SEPARATOR . $g . DIRECTORY_SEPARATOR . $sg);
+                        }
+                    }
+                }
+            }
+        }
+//        dd($photos);
+        return view('photos', ['galleries' => $photos]);
     }
 
 //    /**
