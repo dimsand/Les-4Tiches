@@ -16,7 +16,8 @@ class ContactController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'body_message' => 'required'
+            'body_message' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
         if ($validator->fails()) {
             return redirect('/contact')->withErrors($validator)->withInput();
