@@ -16,6 +16,12 @@
         <p id="dialog1" class="text-left">« Dis, tu voudrais faire le 4L Trophy avec moi ? »</p>
         <p id="dialog2" class="text-right">« Mais oui ! Carrément ! »</p>
     </div>
+    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto mt-5 mb-5">
+        <p id="dialog1" class="text-left">Le 4L Trophy, c'est fini pour nous :'(</p>
+    </div>
+    <div class="text-center">
+        <a class="btn btn-warning btn-lg btn-md" href="{{ route('photos') }}">Clique ici pour voir nos photos</a>
+    </div>
     <div class="lead mt-5 text-center">
         <div id="chevron_voir_plus" class="scroll-indicator fa fa-chevron-down"></div>
     </div>
@@ -169,7 +175,7 @@
             $('#dialog1').animateCss('bounceInLeft', function() {
                 $('#dialog2').show();
                 $('#dialog2').animateCss('bounceInRight', function() {
-                    $("#chevron_voir_plus").css({ 'margin-top': ($("#dialog2").offset().top) + 'px' });
+                    $("#chevron_voir_plus").css({ 'margin-top': ($("#dialog2").offset().top) + 40 + 'px' });
                     $('#chevron_voir_plus').fadeIn();
                 });
             });
