@@ -183,6 +183,20 @@
                             <i class="icon-wrench menu-icon"></i>
                         </a>
                     </li>
+
+                    <li class="nav-item nav-category">
+                        <span class="nav-link">PHOTOS</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin_photos') }}">
+                            <span class="menu-title">Liste</span>
+                            <i class="icon-wrench menu-icon"></i>
+                        </a>
+                        <a class="nav-link" href="{{ route('admin_add_photos') }}">
+                            <span class="menu-title">Ajouter</span>
+                            <i class="icon-wrench menu-icon"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="content-wrapper">
@@ -218,7 +232,9 @@
         trigger: 'focus',
         html: true,
         placement: 'bottom'
-    })
+    });
+
+    @yield('javascript')
 </script>
 
 </body>

@@ -62,3 +62,6 @@ Route::post('/&admin-pannel/news/store', 'NewsController@store')->name('admin_st
 Route::get('/&admin-pannel/sponsors', 'SponsorsController@index')->name('admin_sponsors');
 Route::get('/&admin-pannel/sponsors/add', 'SponsorsController@index')->name('admin_add_sponsor');
 
+Route::get('/&admin-pannel/photos', 'PhotosController@index')->name('admin_photos');
+Route::get('/&admin-pannel/photos/add', 'PhotosController@add')->name('admin_add_photos');
+Route::post('/&admin-pannel/photos/store', 'PhotosController@store')->name('admin_store_photos');
