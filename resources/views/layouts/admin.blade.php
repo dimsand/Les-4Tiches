@@ -233,9 +233,8 @@
         html: true,
         placement: 'bottom'
     });
-
-    @yield('javascript')
 </script>
+    @yield('javascript')
 
 </body>
 
