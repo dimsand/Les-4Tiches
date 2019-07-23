@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Tableau de bord')
+@section('title', 'Liste des albums')
 
 @section('content')
 
@@ -8,33 +8,29 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Liste des news</h4>
+                    <h4 class="card-title">Liste des albums</h4>
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>
-                                Titre
-                            </th>
-                            <th>
-                                Auteur
-                            </th>
-                            <th>
-                                Date de création
-                            </th>
-                            <th>
-                                Catégorie
-                            </th>
+                            <th>Titre</th>
+                            <th>Date de création</th>
+                            <th>Actif</th>
+                            <th>Voir</th>
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach($news as $n)
+                            @foreach($albums as $a)
                                 <tr>
-                                    <td>{{ $n->title }}</td>
-                                    <td>{{ $n->title }} ---  {{ $n->content }}</td>
-                                    <td>{{ $n->created_at->format('d/m/Y H:i') }}</td>
+                                    <td>{{ $a->title }}</td>
+                                    <td>{{ $a->created_at->format('d/m/Y H:i') }}</td>
                                     <td>
-                                        <label class="badge badge-danger"><td>{{ $n->category_id }}</td></label>
+                                        @if($a->actived)
+                                        <label class="badge badge-success">Oui</label>
+                                        @else
+                                            <label class="badge badge-danger">Non</label>
+                                        @endif
                                     </td>
+                                    <td><a href="{{route('admin_add_images', [$a->id])}}">Voir</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

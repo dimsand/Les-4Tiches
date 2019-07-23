@@ -3,68 +3,6 @@
 @section('title', 'Photos')
 
 <style>
-    .photos-content{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background-color: #efefef;
-        padding: 10px 0 10px 0;
-    }
-    .photos-content .file-container{
-        cursor: pointer;
-        margin-right: 15px;
-    }
-    .photos-content .file-container:hover, .photos-content .file-container.active,
-    .dz-image-preview.dz-success.dz-complete.active img{
-        border: solid #0075cc 1px;
-    }
-
-    /* Next & previous buttons */
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 40%;
-        width: auto;
-        padding: 16px;
-        margin-top: -22px;
-        color: #272727;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-    }
-
-    /* Position the "next button" to the right */
-    .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-    }
-
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.8);
-        color: #fdfdfd !important;
-        text-decoration: none !important;
-    }
-
-    /* On smaller screens, decrease text size */
-    @media only screen and (max-width: 300px) {
-        .prev, .next,.text {font-size: 11px}
-    }
-
-    .mySlides {
-        display: none;
-        text-align: center;
-        height: 550px;
-    }
-
-    .mySlides img {
-        vertical-align: middle;
-        width: auto;
-        min-height: 320px;
-        /*max-height: 60%;*/
-    }
 
     /* Number text (1/3 etc) */
     .numbertext {
@@ -73,62 +11,6 @@
         padding: 8px 12px;
         position: absolute;
         top: 0;
-    }
-
-    #modal-wrapper_viewDoc .modal-body {
-        max-height: 800px;
-        min-height: 600px;
-        padding: 0;
-    }
-
-    @media (max-width: 1100px)
-        #modal-wrapper_viewDoc .modal-body {
-            padding: 0 !important;
-        }
-
-    #modal-wrapper_viewDoc .modal-footer{
-        display: flex;
-        width: 100%;
-        padding: 14px 0 15px 0;
-        justify-content: flex-end;
-    }
-
-    #modal-wrapper_viewDoc .modal-footer .downloadPdf{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .zoom-image i{
-        position: absolute;
-        right: 40px;
-        top: 6px;
-        font-size: 20px !important;
-        color: #717171;
-    }
-
-    .rotate-image i{
-        position: absolute;
-        right: 10px;
-        top: 6px;
-        font-size: 20px !important;
-        color: #717171;
-    }
-
-    .add-files-container{
-        background-color: #efefef;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 30px;
-        border: dashed #828282 1px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-
-    .add-files-container:hover {
-        background-color: #dcdcdc;
     }
 
     .delete-image{
@@ -173,28 +55,6 @@
         padding: 0 5px;
     }
 
-    .file-container-docs{
-        margin-right: 10px;
-    }
-
-    .file-container-docs a:hover {
-        background: #5f5f5f;
-    }
-
-    .file-container-docs a{
-        background: #989898;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 9px;
-        cursor: pointer;
-        display: inline-block;
-        padding: 1px 7px;
-        margin-right: -3px;
-        margin-bottom: 2px;
-        font-size: 11px;
-    }
-
-
     .file-container{
         width:60px;
         height:60px;
@@ -205,8 +65,9 @@
     }
 
     .dz-preview.dz-processing.dz-image-preview.dz-success.dz-complete {
-        margin-top: 10px;
+        margin-top: 5px;
         cursor: pointer;
+        margin-left: 5px;
     }
 
     .dz-error-message{
@@ -267,27 +128,14 @@
         margin-top: 10px;
     }
 
+    .dz-preview.dz-image-preview {
+        float: left;
+    }
+
 </style>
 
 @section('content')
 
-
-    {!! Form::model($album, ['route' => 'admin_store_photos', 'files' => true]) !!}
-
-    <div class="form-group">
-        {!! Form::label('title', 'Titre') !!}
-        {!! Form::text('title', '', ['class' => 'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('description', 'Description de l\'album') !!}
-        {!! Form::textarea('description', '', ['class' => 'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('actived', 'Publié') !!}
-        {!! Form::checkbox('actived', 0, false) !!}
-    </div>
 
     <div id="my_modal" class="">
 
@@ -309,27 +157,17 @@
         </div>
 
         <div class="slideshow-container-no-images" style="<?=(!empty($files['images'])) ? 'display: none;' : ''?>">
-            <div>Je veux uploader ...</div>
-            <div class="photos-content" style="<?=(!empty($files['images']) && !empty($files['docs'])) ? 'display: none;' : ''?>">
-                <div class="list-files list-files-images">
-
-                    <div class="file-container">
-                        <i class="fa fa-times-circle delete-image" data="" key=""></i>
-                    </div>
-                    <div class="add-files-container add-files-container-dropzone">
-                        <i class="fa fa-plus-circle"></i>
-                    </div>
-                </div>
-            </div>
+            <div>Glisser-déposer ou cliquer ici</div>
+            <div class="list-files list-files-images"></div>
         </div>
 
-
-
+        <div class="photos_deja_ajoutees">
+            @foreach($photos as $photo)
+                <img src="/{{ env('GALLERIES_FOLDER') . DIRECTORY_SEPARATOR . $photo->path_image }}">
+                <img src="/{{ env('GALLERIES_FOLDER') . DIRECTORY_SEPARATOR . $photo->path_image_resize }}">
+            @endforeach
+        </div>
     </div>
-
-    <button class="btn btn-success" type="submit">Publier l'album!</button>
-
-    {!! Form::close() !!}
 
 
 @endsection
@@ -347,7 +185,7 @@
             var slideIndex = 0;
 
             var optionsDropzone = {
-                url: "/&admin-pannel/photos/store",
+                url: "/&admin-pannel/photos/storeImages",
                 paramName: "file",
                 previewsContainer: '.slideshow-container-no-images',
                 previewTemplate: '<div class="dz-preview dz-file-preview" key="toEdit">\n  <img data-dz-thumbnail /><i class="fa fa-times-circle delete-image delete-image-added" data="'+nbFiles+'" key=""></i>\n <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>\n</div>',
@@ -363,15 +201,13 @@
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                uploadMultiple: true,
-                parallelUploads: 2,
                 init: function () {
 
                     myDropzone = this;
 
-//                    this.on("sending", function(file, xhr, formData) {
-//                        formData.append("album_id", file.size);
-//                    });
+                    this.on("sending", function(file, xhr, formData) {
+                        formData.append("album_id", '{{ $albumId }}');
+                    });
 
                     this.on("drop", function(event) {
                         nbSuccess = 0;
@@ -404,26 +240,26 @@
                     });
                     this.on("success", function(file, data) {
                         nbSuccess++;
-                        data = JSON.parse(data);
-
-                        nbFiles++;
-                        var mySlide = '<div class="mySlides" key="'+nbFiles+'" style="display: none;">' +
-                            '<div class="numbertext">'+nbFiles+' / '+nbFiles+'</div>' +
-                            '<img src="'+data.imagePath+'">' +
-                            '<a href="'+data.imagePath+'" target="_blank" class="zoom-image"><i class="fa fa-search-plus"></i></a>' +
-                            '<a href="" class="rotate-image"><i class="fa fa-repeat"></i></a>' +
-                            '</div>';
-                        $(".slideshow-container").append(mySlide);
-                        $('.add-files-container').css('background-color', '#efefef');
-                        var addFilesContainer = $('.add-files-container').clone();
-                        $('.add-files-container').remove();
-                        $('.list-files-images').append(addFilesContainer);
-
-                        listDocsId.push({name: (file.name), idDoc: data.idDoc});
-
-                        if(nbFiles > 0){
-                            $('#modal-wrapper_viewDoc').find('.downloadPdf').show();
-                        }
+//                        data = JSON.parse(data);
+//
+//                        nbFiles++;
+//                        var mySlide = '<div class="mySlides" key="'+nbFiles+'" style="display: none;">' +
+//                            '<div class="numbertext">'+nbFiles+' / '+nbFiles+'</div>' +
+//                            '<img src="'+data.imagePath+'">' +
+//                            '<a href="'+data.imagePath+'" target="_blank" class="zoom-image"><i class="fa fa-search-plus"></i></a>' +
+//                            '<a href="" class="rotate-image"><i class="fa fa-repeat"></i></a>' +
+//                            '</div>';
+//                        $(".slideshow-container").append(mySlide);
+//                        $('.add-files-container').css('background-color', '#efefef');
+//                        var addFilesContainer = $('.add-files-container').clone();
+//                        $('.add-files-container').remove();
+//                        $('.list-files-images').append(addFilesContainer);
+//
+//                        listDocsId.push({name: (file.name), idDoc: data.idDoc});
+//
+//                        if(nbFiles > 0){
+//                            $('#modal-wrapper_viewDoc').find('.downloadPdf').show();
+//                        }
 
                     });
                     this.on("error", function(file, data) {
