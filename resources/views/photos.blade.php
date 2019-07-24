@@ -22,44 +22,38 @@
             <div class="row">
                 <div class="col-lg-12 mt-2">
 
-                <!-- ### gallery content ### -->
-                    <div class="card ">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs"  id="myTab" role="tablist">
-                                @foreach($galleries as $labelGallery => $gallery)
-                                <li class="nav-item">
-                                    <a class="nav-link" id="{{ $labelGallery }}-tab" data-toggle="tab" href="#{{ $labelGallery }}" role="tab" aria-controls="{{ $labelGallery }}" aria-selected="true">{{ $labelGallery }}</a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <div class="tab-content" id="myTabContent">
+                    <!-- ### gallery content ### -->
+                    @foreach($albums as $key => $album)
 
-                                @foreach($galleries as $labelGallery => $gallery)
-                                    <div class="tab-pane fade" id="{{ $labelGallery }}" role="tabpanel" aria-labelledby="{{ $labelGallery }}-tab">
-                                        @foreach($gallery as $labelSousGallery => $sousGallery)
-                                            <h3>{{ $labelSousGallery }}</h3>
-                                            <div id="nanogallery-{{ $labelSousGallery }}" data-nanogallery2='{
-    "thumbnailHeight":  150,
-    "thumbnailWidth":   "auto",
-    "thumbnailHoverEffect2":   "scale120",
-    "galleryDisplayMode": "moreButton",
-    "galleryDisplayMoreStep": 3,
-    "itemsBaseURL":     "{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}"
-  }'>
-                                                @foreach($sousGallery as $photo)
-                                                    <a href="{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}/{{ $photo }}"
-                                                       data-ngthumb="{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}/{{ $photo }}"></a>
-                                                @endforeach
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                @endforeach
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                {{ $album->title }}
+                            </div>
+                            <div class="card-body">
+                                <p class="text-center font-italic">{{ $album->description }}</p>
+                                <div id="nanogallery-{{ $key }}" data-nanogallery2='{
+"thumbnailHeight":  150,
+"thumbnailWidth":   "auto",
+"thumbnailHoverEffect2":   "scale120",
+"galleryDisplayMode": "moreButton",
+"galleryDisplayMoreStep": 3,
+"itemsBaseURL":     "{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}"
+}'>
+                                    @foreach($album->photos as $photo)
+                                        @if( !empty($photo) )
+                                            <a href="{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}/{{ $photo->path_image }}"
+                                               data-ngthumb="{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}/{{ $photo->path_image_resize }}"></a>
+                                        @endif
+                                    @endforeach
+                                </div>
+                                @if( empty($album->photos) )
+                                    <em>Pas encore de photos dans l'album</em>
+                                @endif
 
                             </div>
                         </div>
-                    </div>
+
+                    @endforeach
 
                 </div>
             </div>
@@ -71,13 +65,4 @@
 @section('javascript')
     <!-- nanogallery2 -->
     <script type="text/javascript" src="https://unpkg.com/nanogallery2@2.4.2/dist/jquery.nanogallery2.min.js"></script>
-    <script>
-
-        $( document ).ready(function() {
-            $('#myTab li:first a').trigger('click');
-            $("section.photos").on('click', '.nav-link', function(e) {
-                $(".ngy2_container").nanogallery2('refresh');
-            });
-        });
-    </script>
 @endsection

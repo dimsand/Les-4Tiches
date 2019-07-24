@@ -17,4 +17,10 @@ class Album extends Model
         'nom', 'description'
     ];
 
+    public function photos()
+    {
+        return $this->hasMany('App\Photo', 'album_id');
+
+    }
+
 }

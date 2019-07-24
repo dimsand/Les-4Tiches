@@ -34,6 +34,17 @@ class PhotosController extends Controller
      */
     public function index()
     {
+        $albums = Album::with('photos')->get();
+        return view('photos', ['albums' => $albums]);
+    }
+
+    /**
+     * Show the front news page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function adminIndex()
+    {
         $albums = Album::all();
         return view('admin.photos.index', ['albums'=>$albums]);
     }
@@ -83,10 +94,6 @@ class PhotosController extends Controller
      */
     public function storeImages(Request $request)
     {
-
-        ini_set("upload_max_filesize", "1041M");
-        ini_set("post_max_size", "1025M");
-
         $albumId = $request->get('album_id');
         $images = $request->file('file');
 
