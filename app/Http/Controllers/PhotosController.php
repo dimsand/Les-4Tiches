@@ -132,8 +132,10 @@ class PhotosController extends Controller
 
     }
 
-    public function ajaxAddPhotosInAlbum()
+    public function deleteAlbum($id)
     {
-
+        $album = Album::findOrFail($id);
+        $album->delete();
+        return Redirect::route('admin_photos')->with('message', 'L\'album a bien été supprimé.');
     }
 }

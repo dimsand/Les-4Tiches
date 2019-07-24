@@ -67,3 +67,4 @@ Route::get('/&admin-pannel/photos/add', 'PhotosController@add')->name('admin_add
 Route::get('/&admin-pannel/photos/addImages/{id}', 'PhotosController@addImages')->name('admin_add_images');
 Route::post('/&admin-pannel/photos/storeAlbum', 'PhotosController@store')->name('admin_store_albums');
 Route::post('/&admin-pannel/photos/storeImages', 'PhotosController@storeImages')->name('admin_store_images');
+Route::delete('/&admin-pannel/photos/deleteAlbum/{id}', 'PhotosController@deleteAlbum')->name('admin_delete_album');

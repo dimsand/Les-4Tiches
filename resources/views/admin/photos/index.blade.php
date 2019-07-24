@@ -15,7 +15,7 @@
                             <th>Titre</th>
                             <th>Date de création</th>
                             <th>Actif</th>
-                            <th>Ajouter des images</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -27,10 +27,20 @@
                                         @if($a->actived)
                                         <label class="badge badge-success">Oui</label>
                                         @else
-                                            <label class="badge badge-danger">Non</label>
+                                            <label class="badge badge-warning">Non</label>
                                         @endif
                                     </td>
-                                    <td><a class="btn btn-primary" href="{{route('admin_add_images', [$a->id])}}">Ajouter</a></td>
+                                    <td>
+                                        <a class="btn btn-success" href="{{route('admin_add_images', [$a->id])}}">Ajouter images</a>
+                                        <form method="POST" action="{{route('admin_delete_album', [$a->id])}}" style="display: inline-flex;">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+
+                                            <div class="form-group">
+                                                <input type="submit" class="btn btn-danger delete-album" value="Supprimer album">
+                                            </div>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -40,4 +50,16 @@
         </div>
     </div>
 
+@endsection
+
+@section('javascript')
+<script>
+    $('.delete-album').click(function(e){
+        e.preventDefault() // Don't post the form, unless confirmed
+        if (confirm('Etes-vous sûr de vouloir supprimer l\'album ?')) {
+            // Post the form
+            $(e.target).closest('form').submit() // Post the surrounding form
+        }
+    });
+</script>
 @endsection
