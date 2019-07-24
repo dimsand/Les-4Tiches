@@ -15,7 +15,7 @@
                             <th>Titre</th>
                             <th>Date de création</th>
                             <th>Actif</th>
-                            <th>Voir</th>
+                            <th>Ajouter des images</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,7 +30,7 @@
                                             <label class="badge badge-danger">Non</label>
                                         @endif
                                     </td>
-                                    <td><a href="{{route('admin_add_images', [$a->id])}}">Voir</a></td>
+                                    <td><a class="btn btn-primary" href="{{route('admin_add_images', [$a->id])}}">Ajouter</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

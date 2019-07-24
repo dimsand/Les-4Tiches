@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('admin/css/jquery-jvectormap.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}?v={{ time() }}">
     <link rel="stylesheet" href="{{ asset('admin/css/admin.css') }}?v={{ time() }}">
+    <link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}?v={{ time() }}" rel="stylesheet">
 
 </head>
 <body>
