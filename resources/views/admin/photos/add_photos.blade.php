@@ -255,7 +255,6 @@
                     });
                     this.on("uploadprogress", function (file, progress) {
                         $('.dz-error-message').removeClass('alert-danger').removeClass('alert-success').addClass('alert-warning').show().find('span').html("<img src='/images/loaders/loader9.gif'/> Envoi du fichier en cours <a href=\"#\" class=\"close close-alert\" aria-label=\"close\">&times;</a>");
-                        resizePreview();
                     });
                     this.on("success", function(file, data) {
                         nbSuccess++;
