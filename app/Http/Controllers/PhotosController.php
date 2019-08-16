@@ -173,8 +173,25 @@ class PhotosController extends Controller
 
     }
 
+    /**
+     * Suppression de l'album, et des images associées
+     * 
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function deleteAlbum($id)
     {
+        $photos = Photo::where('album_id', $id);
+        $imagesToSupp = $photos->get();
+        foreach ($imagesToSupp as $image) {
+            if(is_file(env('GALLERIES_FOLDER') . '/' . $image->path_image)){
+                unlink(env('GALLERIES_FOLDER') . '/' . $image->path_image);
+            }
+            if(is_file(env('GALLERIES_FOLDER') . '/' . $image->path_image_resize)){
+                unlink(env('GALLERIES_FOLDER') . '/' . $image->path_image_resize);
+            }
+        }
+        $photos->delete();
         $album = Album::findOrFail($id);
         $album->delete();
         return Redirect::route('admin_photos')->with('message', 'L\'album a bien été supprimé.');
