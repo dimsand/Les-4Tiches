@@ -20,18 +20,25 @@
     <section class="banner-sec photos mb-3 mt-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 mt-2">
+                <div class="col-lg-12 p-1">
+                    <a class="btn btn-dark btn-sm" href="{{ route('photos')}}">Voir tous les albums</a>
+                </div>
+                <div class="col-lg-12 p-2 text-center">
+                    Les autres albums<br>
+                    @foreach($othersAlbums as $otherAlbum)
+                        <a href="{{ route('photos.show',[$otherAlbum->slug])}}" class="badge badge-secondary">{{ $otherAlbum->title }}</a>
+                    @endforeach
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="mt-3 text-center">Cliquer sur une photo pour zoomer</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
 
-                    <!-- ### gallery content ### -->
-                    @foreach($albums as $key => $album)
-
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                {{ $album->title }}
-                            </div>
-                            <div class="card-body">
-                                <p class="text-center font-italic">{{ $album->description }}</p>
-                                <div id="nanogallery-{{ $key }}" data-nanogallery2='{
+                    <div id="nanogallery" data-nanogallery2='{
 "thumbnailHeight":  150,
 "thumbnailWidth":   "auto",
 "thumbnailHoverEffect2":   "scale120",
@@ -39,21 +46,16 @@
 "galleryDisplayMoreStep": 3,
 "itemsBaseURL":     "{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}"
 }'>
-                                    @foreach($album->photos as $photo)
-                                        @if( !empty($photo) )
-                                            <a href="{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}/{{ $photo->path_image }}"
-                                               data-ngthumb="{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}/{{ $photo->path_image_resize }}"></a>
-                                        @endif
-                                    @endforeach
-                                </div>
-                                @if( empty($album->photos) )
-                                    <em>Pas encore de photos dans l'album</em>
-                                @endif
-
-                            </div>
-                        </div>
-
-                    @endforeach
+                        @foreach($album->photos as $photo)
+                            @if( !empty($photo) )
+                                <a href="{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}/{{ $photo->path_image }}"
+                                   data-ngthumb="{{ env('APP_URL') }}/{{ env('GALLERIES_FOLDER') }}/{{ $photo->path_image_resize }}"></a>
+                            @endif
+                        @endforeach
+                    </div>
+                    @if( empty($album->photos) )
+                        <em>Pas encore de photos dans l'album</em>
+                    @endif
 
                 </div>
             </div>

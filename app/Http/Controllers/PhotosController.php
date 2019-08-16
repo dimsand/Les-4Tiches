@@ -28,14 +28,27 @@ class PhotosController extends Controller
     }
 
     /**
-     * Show the front news page.
+     * Show all albums
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $albums = Album::with('photos')->get();
-        return view('photos', ['albums' => $albums]);
+        return view('albums', ['albums' => $albums]);
+    }
+
+    /**
+     * Show the photos of the album with this slug
+     *
+     * @param $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function photos($slug)
+    {
+        $album = Album::where('slug',$slug)->with('photos')->first();
+        $othersAlbums = Album::where('slug','<>',$slug)->with('photos')->get();
+        return view('photos', ['album' => $album, 'othersAlbums' => $othersAlbums]);
     }
 
     /**
@@ -81,10 +94,37 @@ class PhotosController extends Controller
         // Création du nouvel album
         $album = new Album();
         $album->title = $request->get('title');
+        $album->slug = $this->slugify($request->get('title'));
         $album->description = $request->get('description');
         $album->actived = $request->get('actived');
         $album->save();
         return Redirect::route('admin_add_images', [$album->id])->with('message', 'Nouvelle ajoutée !');
+    }
+
+    /**
+     * Generate a slug
+     *
+     * @param $text
+     * @return mixed|string
+     */
+    public static function slugify($text)
+    {
+        // replace non letter or digits by -
+        $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+        // transliterate
+        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+        // remove unwanted characters
+        $text = preg_replace('~[^-\w]+~', '', $text);
+        // trim
+        $text = trim($text, '-');
+        // remove duplicate -
+        $text = preg_replace('~-+~', '-', $text);
+        // lowercase
+        $text = strtolower($text);
+        if (empty($text)) {
+            return 'n-a';
+        }
+        return $text;
     }
 
     /**
@@ -109,12 +149,13 @@ class PhotosController extends Controller
             $image = $images[$i];
             $name = sha1(date('YmdHis') . str_random(30));
             $save_name = $name . '.' . $image->getClientOriginalExtension();
-            $resize_name = $name . str_random(2) . '.' . $image->getClientOriginalExtension();
+            $resize_name = $name . str_random(2) . '_resized' . '.' . $image->getClientOriginalExtension();
 
             Image::make($image)
-                ->resize(250, null, function ($constraints) {
+                ->resize(200, null, function ($constraints) {
                     $constraints->aspectRatio();
                 })
+                ->orientate()
                 ->save(env('GALLERIES_FOLDER') . '/' . $resize_name);
 
             $image->move(env('GALLERIES_FOLDER'), $save_name);

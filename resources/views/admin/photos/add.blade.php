@@ -19,7 +19,7 @@
 
     <div class="form-group">
         {!! Form::label('actived', 'Publié') !!}
-        {!! Form::checkbox('actived', 0, false) !!}
+        {!! Form::checkbox('actived', 0, true) !!}
     </div>
 
     <button class="btn btn-success" type="submit">Publier l'album!</button>
