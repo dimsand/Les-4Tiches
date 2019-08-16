@@ -11,12 +11,14 @@ function initCompteRebours(conteneur)
         dateFinTeasing;
 
 
-    $.getJSON( "settings.json", function( data ) {
+    $.getJSON( "/settings.json", function( data ) {
         dateFinTeasing = new Date(data.dateDepartCOurse);
-        var items = [];
-        $.each( data, function( key, val ) {
-            items.push( "<li id='" + key + "'>" + val + "</li>" );
-        });
+        if(dateFinTeasing != undefined){
+            var items = [];
+            $.each( data, function( key, val ) {
+                items.push( "<li id='" + key + "'>" + val + "</li>" );
+            });
+        }
     });
 
     // Ajoute un zéro si le nombre est inférieur à 10

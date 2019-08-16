@@ -32,7 +32,7 @@
 
     .delete-image-added{
         display: none;
-        top: -26px;
+        top: -72px;
         left: -9px;
     }
 
@@ -120,9 +120,11 @@
         align-items: center;
         align-content: center;
         justify-content: center;
-        height: 100%;
         background-color: #dee2e6;
         padding: 10px 5px 20px 5px;
+        min-height: 200px;
+        height: 100%;
+        border: dashed #32323d 2px;
     }
 
     .slideshow-container-no-images:hover{
@@ -254,7 +256,7 @@
                         $('.add-files-container').css('background-color', '#efefef');
                     });
                     this.on("uploadprogress", function (file, progress) {
-                        $('.dz-error-message').removeClass('alert-danger').removeClass('alert-success').addClass('alert-warning').show().find('span').html("<img src='/images/loaders/loader9.gif'/> Envoi du fichier en cours <a href=\"#\" class=\"close close-alert\" aria-label=\"close\">&times;</a>");
+                        $('.dz-error-message').removeClass('alert-danger').removeClass('alert-success').addClass('alert-warning').show().find('span').html("<img src='/img/loaders/loader9.gif'/> Envoi du fichier en cours <a href=\"#\" class=\"close close-alert\" aria-label=\"close\">&times;</a>");
                     });
                     this.on("success", function(file, data) {
                         nbSuccess++;
