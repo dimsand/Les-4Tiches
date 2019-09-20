@@ -5,6 +5,7 @@
 @section('stylesheet')
     <link href="{{ asset('css/caroussel.css') }}" rel="stylesheet">
     <link href="{{ asset('css/write_text.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
 @endsection
 
 @section('content')
@@ -26,6 +27,25 @@
         <div id="chevron_voir_plus" class="scroll-indicator fa fa-chevron-down"></div>
     </div>
 </div>
+
+<section class="features-icons bg-light text-center bg_color_yellow">
+    <div class="container">
+        <h2 class="mb-5">La vidéo de notre aventure</h2>
+        <div class="row">
+            <div class="col-lg-12">
+                <video width="320" height="240" controls>
+                    <source src="videos/FINAL_TEST_v10_finale.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <video poster="img/poster_aftermovie.png" id="player" playsinline controls width="320" height="240">
+                    <source src="videos/FINAL_TEST_v10_finale.mp4" type="video/mp4" />
+                    <source src="videos/FINAL_TEST_v10_finale.webm" type="video/webm" />
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="showcase" id="debut_pres_home">
     <div class="container-fluid p-0">
@@ -169,6 +189,7 @@
 
 @section('javascript')
     <script src="{{ asset('js/caroussel.js') }}"></script>
+    <script src="https://cdn.plyr.io/3.5.6/plyr.polyfilled.js"></script>
     <script>
         $('#title_brand').animateCss('flipInX', function() {
             $('#dialog1').show();
@@ -186,6 +207,10 @@
                 scrollTop: ($("#debut_pres_home").offset().top) - 55
             }, 1000);
         });
+
+
+        const player = new Plyr('#player');
+
     </script>
 
 @endsection
