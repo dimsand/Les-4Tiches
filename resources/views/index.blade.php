@@ -27,6 +27,29 @@
     </div>
 </div>
 
+<section class="features-icons bg-light text-center bg_color_yellow">
+    <div class="container">
+        <h2 class="mb-5">La vidéo de notre aventure</h2>
+        <div class="row">
+            <div class="col-lg-12">
+
+                {{--<div class="plyr__video-embed" id="player">--}}
+                    {{--<iframe--}}
+                            {{--src="https://player.vimeo.com/video/361493537?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media;quality=1080p"--}}
+                            {{--allowfullscreen--}}
+                            {{--allowtransparency--}}
+                            {{--allow="autoplay"--}}
+                    {{--></iframe>--}}
+                {{--</div>--}}
+
+                <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/361493537" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                <p style="font-size: 10px;" class="mt-1"><a href="https://vimeo.com/361493537" target="_blank">Un problème pour voir la vidéo ? Essayer ici !</a></p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="showcase" id="debut_pres_home">
     <div class="container-fluid p-0">
         <div class="row no-gutters bg_color_yellow2">
